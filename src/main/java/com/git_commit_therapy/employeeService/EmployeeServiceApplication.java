@@ -1,13 +1,13 @@
-package com.git_commit_therapy.central_process_service;
+package com.git_commit_therapy.employeeService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CentralProcessServiceApplication {
+public class EmployeeServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CentralProcessServiceApplication.class, args);
+		SpringApplication.run(EmployeeServiceApplication.class, args);
 	}
 
 }
