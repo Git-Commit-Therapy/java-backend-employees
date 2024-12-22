@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: employee-service
+  datasource:
+    url: jdbc:postgresql://<HOST>:<PORT>/<DB_NAME>
+    username: <USERNAME>
+    password: <PASSWORD>
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true #Show the query in the console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  grpc:
+    server:
+      port: 9091
+      enable-reflection: false # Enables gRPC server reflection, allowing clients to dynamically discover services and methods
+      security:
+        enabled: false
+        certificate-chain: classpath:certs/server-cert.pem

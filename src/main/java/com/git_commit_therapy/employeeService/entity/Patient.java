@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -14,8 +16,11 @@ public class Patient {
     private String patientID;
 
     @MapsId
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne
     @JoinColumn(name = "PatientID", nullable = false)
     private User user;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<MedicalInfo> medicalInfos;
 
 }

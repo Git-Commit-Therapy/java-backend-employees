@@ -4,7 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
+import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,10 +18,27 @@ public class MedicalEvent {
     @Column(name = "EventID", nullable = false)
     private Integer id;
 
+    @Column(name = "patientID")
+    private String patientID;
+
     @Column(name = "FromDateTime", nullable = false)
-    private OffsetDateTime fromDateTime;
+    private Date fromDateTime;
 
     @Column(name = "ToDateTime")
-    private OffsetDateTime toDateTime;
+    private Date toDateTime;
+
+    @Column(name = "SeverityCode")
+    private String severity;
+
+    @Column(name = "DischargeLetter")
+    private String dischargeLetter;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ExamID")
+    List<MedicalExam> exams;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "WardID")
+    private Ward ward;
 
 }

@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -25,7 +25,7 @@ public class User {
     private String surname;
 
     @Column(name = "DateOfBirth", nullable = false)
-    private LocalDate dateOfBirth;
+    private Date dateOfBirth;
 
     @Column(name = "SID", nullable = false, length = 50)
     private String sid;
@@ -33,4 +33,6 @@ public class User {
     @Column(name = "PhoneNumber", length = 15)
     private String phoneNumber;
 
+    @Column(name = "Email", nullable = false, length = Integer.MAX_VALUE)
+    private String email;
 }

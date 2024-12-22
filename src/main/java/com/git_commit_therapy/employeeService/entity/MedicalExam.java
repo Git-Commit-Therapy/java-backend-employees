@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.OffsetDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -18,7 +19,7 @@ public class MedicalExam {
     private Integer id;
 
     @Column(name = "DateTime", nullable = false)
-    private OffsetDateTime dateTime;
+    private Date dateTime;
 
     @Column(name = "MedicalReport", length = Integer.MAX_VALUE)
     private String medicalReport;
@@ -26,12 +27,18 @@ public class MedicalExam {
     @Column(name = "ExamType", length = Integer.MAX_VALUE)
     private String examType;
 
+    @Column(name = "PatientID")
+    private String patientID;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DoctorID")
-    private Doctor doctorID;
+    private Doctor doctor;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PatientID")
-    private Patient patientID;
+    private Patient patient;
+
+    @Column(name = "EventID")
+    private Integer medicalEvent;
 
 }

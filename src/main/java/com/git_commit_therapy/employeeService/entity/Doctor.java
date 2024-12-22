@@ -14,7 +14,7 @@ public class Doctor {
     private String doctorID;
 
     @MapsId
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(optional = false)
     @JoinColumn(name = "DoctorID", nullable = false)
     private User user;
 

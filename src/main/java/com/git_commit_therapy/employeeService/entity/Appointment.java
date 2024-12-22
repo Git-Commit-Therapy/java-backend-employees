@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -18,18 +18,21 @@ public class Appointment {
     private Integer id;
 
     @Column(name = "DateTime", nullable = false)
-    private OffsetDateTime dateTime;
+    private Date dateTime;
+
+    @Column(name="PatientID", nullable = false)
+    private String patientID;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "StaffID")
-    private Staff staffID;
+    private Staff staff;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DoctorID")
-    private Doctor doctorID;
+    private Doctor doctor;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PatientID")
-    private Patient patientID;
+    private Patient patient;
 
 }
