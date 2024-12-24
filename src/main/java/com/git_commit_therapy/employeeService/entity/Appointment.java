@@ -9,30 +9,26 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "Appointment")
+@Table(name = "appointment")
 public class Appointment {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Appointment_id_gen")
-    @SequenceGenerator(name = "Appointment_id_gen", sequenceName = "Appointment_AppointmentID_seq", allocationSize = 1)
-    @Column(name = "AppointmentID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "appointment_id", nullable = false)
     private Integer id;
 
-    @Column(name = "DateTime", nullable = false)
+    @Column(name = "date_time", nullable = false)
     private Date dateTime;
 
-    @Column(name="PatientID", nullable = false)
-    private String patientID;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "StaffID")
+    @JoinColumn(name = "staff_id")
     private Staff staff;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DoctorID")
+    @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PatientID")
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
 }

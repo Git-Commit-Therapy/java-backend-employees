@@ -9,11 +9,11 @@ import java.util.List;
 
 public interface MedicalExamRepository extends JpaRepository<MedicalExam, Integer> {
 
-    @Query("SELECT me FROM MedicalExam me WHERE me.patientID = :patientId " +
+    @Query("SELECT me FROM MedicalExam me WHERE me.patient.patientId = :patientId " +
             "AND me.dateTime BETWEEN :fromDate AND :toDate")
     List<MedicalExam> findAllByPatientAndDateRange(String patientId, Date fromDate, Date toDate);
 
-    @Query("SELECT me FROM MedicalExam me JOIN FETCH Doctor d WHERE me.patientID = :patientId " +
+    @Query("SELECT me FROM MedicalExam me JOIN FETCH Doctor d WHERE me.patient.patientId = :patientId " +
             "AND me.id = :id")
     MedicalExam findById(Integer id,String patientId);
 }

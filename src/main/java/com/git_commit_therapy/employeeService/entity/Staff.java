@@ -7,15 +7,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Staff")
+@Table(name = "staff")
 public class Staff {
     @Id
-    @Column(name = "StaffID", nullable = false, length = 16)
+    @Column(name = "staff_id", nullable = false, length = 16)
     private String staffID;
 
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "StaffID", nullable = false)
+    @JoinColumn(name = "staff_id", nullable = false)
     private User user;
 
 }

@@ -12,27 +12,28 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "User")
+@Table(name = "users")
 public class User {
+
     @Id
-    @Column(name = "ID", nullable = false, length = 16)
+    @Column(name = "id", nullable = false, length = 16)
     private String id;
 
-    @Column(name = "Name", nullable = false, length = Integer.MAX_VALUE)
+    @Column(name = "name", nullable = false, length = Integer.MAX_VALUE)
     private String name;
 
-    @Column(name = "Surname", nullable = false, length = Integer.MAX_VALUE)
+    @Column(name = "surname", nullable = false, length = Integer.MAX_VALUE)
     private String surname;
 
-    @Column(name = "DateOfBirth", nullable = false)
+    @Column(name = "date_of_birth", nullable = false)
     private Date dateOfBirth;
 
-    @Column(name = "SID", nullable = false, length = 50)
+    @Column(name = "sid", nullable = false, length = 50)
     private String sid;
 
-    @Column(name = "PhoneNumber", length = 15)
+    @Column(name = "phone_number", length = 15)
     private String phoneNumber;
 
-    @Column(name = "Email", nullable = false, length = Integer.MAX_VALUE)
+    @Column(name = "email", nullable = false, length = Integer.MAX_VALUE)
     private String email;
 }

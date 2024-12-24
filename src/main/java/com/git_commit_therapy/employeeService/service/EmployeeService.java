@@ -1,31 +1,26 @@
 package com.git_commit_therapy.employeeService.service;
 
 import com.git_commit_therapy.employeeService.dao.*;
-import com.git_commit_therapy.employeeService.entity.Appointment;
-import com.git_commit_therapy.employeeService.entity.Doctor;
-import com.git_commit_therapy.employeeService.entity.MedicalExam;
-import com.git_commit_therapy.employeeService.entity.Staff;
+import com.git_commit_therapy.employeeService.entity.*;
+import com.git_commit_therapy.employeeService.security.GrpcInterceptor;
 import com.git_commit_therapy.employeeService.transformer.EmployeeTransformer;
-import com.git_commit_therapy.proto.AppointmentOuterClass;
-import com.git_commit_therapy.proto.EmployeeServicesGrpc;
-import com.git_commit_therapy.proto.EmployeeServicesOuterClass;
-import com.git_commit_therapy.proto.UserOuterClass;
+import com.git_commit_therapy.proto.*;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
+import lombok.extern.java.Log;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.client.RestClient;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 import static com.git_commit_therapy.employeeService.security.GrpcUtils.GrpcInterceptor;
-import static com.git_commit_therapy.employeeService.transformer.EmployeeTransformer.convertToDate;
-import static com.git_commit_therapy.employeeService.transformer.EmployeeTransformer.toEntity;
+import static com.git_commit_therapy.employeeService.transformer.EmployeeTransformer.*;
 
+@Log
+//@GrpcService(interceptors = { GrpcInterceptor.class })
 @GrpcService
 public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBase {
 
@@ -35,17 +30,19 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     private final MedicalExamDao medicalExamDao;
     private final MedicalInfoDao medicalInfoDao;
     private final StaffDao staffDao;
+    private final RestClient.Builder builder;
 
     @Autowired
     public EmployeeService(AppointmentDao appointmentDao, DoctorDao doctorDao,
                            MedicalEventDao medicalEventDao, MedicalExamDao medicalExamDao,
-                           MedicalInfoDao medicalInfoDao, StaffDao staffDao) {
+                           MedicalInfoDao medicalInfoDao, StaffDao staffDao, RestClient.Builder builder) {
         this.appointmentDao = appointmentDao;
         this.doctorDao = doctorDao;
         this.medicalEventDao = medicalEventDao;
         this.medicalExamDao = medicalExamDao;
         this.medicalInfoDao = medicalInfoDao;
         this.staffDao = staffDao;
+        this.builder = builder;
     }
 
     @SuppressWarnings("unchecked")
@@ -63,13 +60,23 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getDoctor(Empty request, StreamObserver<UserOuterClass.Doctor> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             UserOuterClass.Doctor.Builder builder = UserOuterClass.Doctor.newBuilder();
-            String sid = getSidFromContext();
+
+            Optional<Doctor> optionalDoctor = doctorDao.getDoctorById("1");
+            if (optionalDoctor.isPresent()) {
+                builder.setUser(toProto(optionalDoctor.get().getUser()));
+                builder.setMedSpecialization(optionalDoctor.get().getMedSpecialization());
+                builder.setOfficePhoneNumber(optionalDoctor.get().getOfficePhoneNumber());
+            }
+            /*String sid = getSidFromContext();
             if(sid != null){
                 Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sid);
                 if (optionalDoctor.isPresent()) {
-                    EmployeeTransformer.toProto(optionalDoctor.get());
+                    builder.setUser(toProto(optionalDoctor.get().getUser()));
+                    builder.setMedSpecialization(optionalDoctor.get().getMedSpecialization());
+                    builder.setOfficePhoneNumber(optionalDoctor.get().getOfficePhoneNumber());
+                    //builder.setWard(null);  // TODO: serve popolare questo campo? Come?
                 }
-            }
+            }*/
             return builder.build();
         });
     }
@@ -126,15 +133,15 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             String sid = getSidFromContext();
             if(sid != null){
                 // TODO: da capire il sid
-                /*Patient resFromDB = patientDao.getPatientBySid(sid);
+                Patient resFromDB = null;   //.getPatientBySid(sid);
                 if (resFromDB != null){
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<Appointment> appointments = appointmentDao.findAll(resFromDB.getPatientID(), from, to);
-                    if(appointments != null){
+                    List<Appointment> appointments = appointmentDao.findAll(resFromDB.getPatientId(), from, to);
+                    if (appointments != null){
                         appointments.stream().map(EmployeeTransformer::toProto).forEach(builder::addAppointments);
                     }
-                }*/
+                }
             }
             return builder.build();
         });
@@ -148,7 +155,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             if (sid != null){
                 Optional<Appointment> optionalAppointment = appointmentDao.findAppointmentById(request.getAppointmentId());
                 if (optionalAppointment.isPresent()) {
-                    EmployeeTransformer.toProto(optionalAppointment.get());
+                    EmployeeTransformer.toProto(optionalAppointment.get()); // TODO: rivedere perchè da cambiare proto di response
                 }
             }
             return builder.build();
@@ -165,14 +172,19 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 Appointment appointment = new Appointment();
                 appointment.setId(request.getAppointmentId());
                 appointment.setDateTime(convertToDate(request.getDateTime()));
-                appointment.setPatientID(request.getPatient().getUser().getId());
                 appointment.setStaff(toEntity(request.getStaff()));
                 appointment.setDoctor(toEntity(request.getDoctor()));
                 appointment.setPatient(toEntity(request.getPatient()));
+
                 Appointment savedAppointment = appointmentDao.upsert(appointment);
 
                 if (savedAppointment != null) {
-                    EmployeeTransformer.toProto(savedAppointment);
+                    builder.setSuccess(true);
+                    builder.setMessage("Appointment updated successfully");
+                }
+                else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Appointment not updated");
                 }
             }
             return builder.build();
@@ -189,14 +201,19 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 Appointment appointment = new Appointment();
                 appointment.setId(request.getAppointmentId());
                 appointment.setDateTime(convertToDate(request.getDateTime()));
-                appointment.setPatientID(request.getPatient().getUser().getId());
                 appointment.setStaff(toEntity(request.getStaff()));
                 appointment.setDoctor(toEntity(request.getDoctor()));
                 appointment.setPatient(toEntity(request.getPatient()));
+
                 Appointment savedAppointment = appointmentDao.upsert(appointment);
 
                 if (savedAppointment != null) {
-                    EmployeeTransformer.toProto(savedAppointment);
+                    builder.setSuccess(true);
+                    builder.setMessage("Appointment created successfully");
+                }
+                else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Appointment not created");
                 }
             }
             return builder.build();
@@ -213,13 +230,130 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 if (optionalDoctor.isPresent()) {
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<MedicalExam> medicalExams = medicalExamDao.findAll(optionalDoctor.get().getDoctorID(),from,to);
-                    if(medicalExams != null){
+                    List<MedicalExam> medicalExams = medicalExamDao.findAll(optionalDoctor.get().getDoctorId(),from,to);
+                    if (medicalExams != null){
                         medicalExams.stream().map(EmployeeTransformer::toProtoReduced).forEach(builder::addMedicalExams);
                     }
                 }
             }
             return builder.build();
         });
+    }
+
+    @Override
+    public void createMedicalExam(MedicalExamOuterClass.MedicalExam request, StreamObserver<EmployeeServicesOuterClass.CreateMedicalExamResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.CreateMedicalExamResponse.Builder builder = EmployeeServicesOuterClass.CreateMedicalExamResponse.newBuilder();
+            String sid = getSidFromContext();
+            if(sid != null){
+                MedicalExam medicalExam = new MedicalExam();
+                medicalExam.setId(request.getExamId());
+                medicalExam.setDateTime(convertToDate(request.getDateTime()));
+                medicalExam.setMedicalReport(request.getMedicalReport());
+                medicalExam.setExamType(request.getExamType());
+                medicalExam.setDoctor(toEntity(request.getDoctor()));
+                medicalExam.setPatient(toEntity(request.getPatient()));
+                medicalExam.setMedicalEvent(request.getMedicalEvent().getEventId());
+
+                MedicalExam savedMedicalExam = medicalExamDao.insert(medicalExam);
+
+                if (savedMedicalExam != null) {
+                    builder.setSuccess(true);
+                    builder.setMessage("Successfully created medical exam");
+                }
+                else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Medical exam not created");
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
+    public void createMedicalEvent(MedicalEventOuterClass.MedicalEvent request, StreamObserver<EmployeeServicesOuterClass.CreateMedicalEventResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.CreateMedicalEventResponse.Builder builder = EmployeeServicesOuterClass.CreateMedicalEventResponse.newBuilder();
+            String sid = getSidFromContext();
+            if(sid != null){
+                MedicalEvent medicalEvent = new MedicalEvent();
+                medicalEvent.setId(request.getEventId());
+                medicalEvent.setPatientID(request.getPatient().getUser().getId());
+                medicalEvent.setFromDateTime(convertToDate(request.getFromDateTime()));
+                medicalEvent.setToDateTime(convertToDate(request.getToDateTime()));
+                medicalEvent.setSeverity(SeverityCode.valueOf(request.getSeverityCode().name()));
+                medicalEvent.setDischargeLetter(request.getDischargeLetter());
+                medicalEvent.setExams(retrieveMedialExamList(request.getMedicalExamIdsList()));
+                medicalEvent.setWard(toEntity(request.getWard()));
+
+                MedicalEvent savedMedicalEvent = medicalEventDao.insert(medicalEvent);
+
+                if (savedMedicalEvent != null) {
+                    builder.setSuccess(true);
+                    builder.setMessage("Successfully created medical event");
+                }
+                else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Medical event not created");
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
+    public void createMedicalInfo(MedicalInfoOuterClass.MedicalInfo request, StreamObserver<EmployeeServicesOuterClass.CreateMedicalInfoResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.CreateMedicalInfoResponse.Builder builder = EmployeeServicesOuterClass.CreateMedicalInfoResponse.newBuilder();
+            String sid = getSidFromContext();
+            if(sid != null){
+                MedicalInfo medicalInfo = new MedicalInfo();
+                medicalInfo.setId(request.getMedicalInfoId());
+                medicalInfo.setDescription(request.getDescription());
+                medicalInfo.setPatientID(toEntity(request.getPatient()));
+
+                MedicalInfo savedMedicalInfo = medicalInfoDao.insert(medicalInfo);
+
+                if (savedMedicalInfo != null) {
+                    builder.setSuccess(true);
+                    builder.setMessage("Successfully created medical info");
+                }
+                else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Medical info not created");
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
+    public void getMedicalExamDetails(MedicalExamOuterClass.MedicalExam request, StreamObserver<EmployeeServicesOuterClass.GetMedicalExamDetailsResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.GetMedicalExamDetailsResponse.Builder builder = EmployeeServicesOuterClass.GetMedicalExamDetailsResponse.newBuilder();
+            String sid = getSidFromContext();
+            if (sid != null){
+                Optional<MedicalExam> optionalMedicalExam = medicalExamDao.findMedicalExamById(request.getExamId());
+                if (optionalMedicalExam.isPresent()) {
+                    builder.setExam(EmployeeTransformer.toProto(optionalMedicalExam.get()));
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    /**
+     * Utility methods
+     */
+
+    private List<MedicalExam> retrieveMedialExamList(List<Integer> medicalExamIdsList) {
+        List<MedicalExam> medicalExamList = new ArrayList<>();
+
+        for (Integer medicalExamId : medicalExamIdsList) {
+            Optional<MedicalExam> medicalExam = medicalExamDao.findMedicalExamById(medicalExamId);
+            medicalExam.ifPresent(medicalExamList::add);
+        }
+
+        return medicalExamList;
     }
 }

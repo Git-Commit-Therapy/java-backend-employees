@@ -1,22 +1,20 @@
 package com.git_commit_therapy.employeeService.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "Ward")
+@Table(name = "ward")
 public class Ward {
     @Id
-    @Column(name = "WardID")
-    private Integer wardID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ward_id")
+    private Integer wardId;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
 }

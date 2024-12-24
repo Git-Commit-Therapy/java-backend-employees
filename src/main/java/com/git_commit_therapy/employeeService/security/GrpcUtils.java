@@ -9,20 +9,20 @@ import java.util.function.Supplier;
 
 @Log
 public class GrpcUtils {
-    public static <T> void GrpcInterceptor(StreamObserver<T> responseObserver, GeneratedMessage request , Long pollRefresh, Supplier<T> businessLogic) {
+    public static <T> void GrpcInterceptor(StreamObserver<T> responseObserver, GeneratedMessage request, Long pollRefresh, Supplier<T> businessLogic) {
         try {
             while (true) {
                 // Get date from the function
                 T data = businessLogic.get();
-                if(data != null) {
+                if (data != null) {
                     // Send data to client
                     responseObserver.onNext(data);
                 }
                 //In case if the grpc service is not a stream
-                if(pollRefresh == null){
+                if (pollRefresh == null) {
                     break;
-                // Wait if pollRefresh is greater then 0
-                }else if (pollRefresh > 0) {
+                    // Wait if pollRefresh is greater then 0
+                } else if (pollRefresh > 0) {
                     Thread.sleep(pollRefresh);
                 }
             }
@@ -30,8 +30,10 @@ public class GrpcUtils {
             Thread.currentThread().interrupt();
             responseObserver.onError(e);
         } catch (Exception e) {
+            log.warning("Exception occurred in a grpc call. Exception: " + e);
             responseObserver.onError(e);
         } finally {
+            log.fine("Completed grpc call");
             responseObserver.onCompleted();
         }
     }

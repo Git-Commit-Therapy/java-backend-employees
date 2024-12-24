@@ -9,15 +9,15 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "Patient")
+@Table(name = "patient")
 public class Patient {
     @Id
-    @Column(name = "PatientID", nullable = false, length = 16)
-    private String patientID;
+    @Column(name = "patient_id", nullable = false, length = 16)
+    private String patientId;
 
     @MapsId
     @OneToOne
-    @JoinColumn(name = "PatientID", nullable = false)
+    @JoinColumn(name = "patient_id", nullable = false)
     private User user;
 
     @OneToMany(fetch = FetchType.LAZY)

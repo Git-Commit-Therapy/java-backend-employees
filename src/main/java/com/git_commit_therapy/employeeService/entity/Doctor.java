@@ -7,21 +7,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Doctor")
+@Table(name = "doctor")
 public class Doctor {
     @Id
-    @Column(name = "DoctorID", nullable = false, length = 16)
-    private String doctorID;
+    @Column(name = "doctor_id", nullable = false, length = 16)
+    private String doctorId;
 
     @MapsId
     @OneToOne(optional = false)
-    @JoinColumn(name = "DoctorID", nullable = false)
+    @JoinColumn(name = "doctor_id", nullable = false)
     private User user;
 
-    @Column(name = "MedSpecialization", length = Integer.MAX_VALUE)
+    @Column(name = "med_specialization", length = Integer.MAX_VALUE)
     private String medSpecialization;
 
-    @Column(name = "OfficePhoneNumber", length = 15)
+    @Column(name = "office_phone_number", length = 15)
     private String officePhoneNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "ward_id")
+    private Ward ward;
 
 }

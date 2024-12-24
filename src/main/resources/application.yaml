@@ -18,3 +18,6 @@ spring:
       security:
         enabled: false
         certificate-chain: classpath:certs/server-cert.pem
+
+logging:
+  config: classpath:logback.xml

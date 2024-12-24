@@ -10,35 +10,31 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "MedicalExam")
+@Table(name = "medical_exam")
 public class MedicalExam {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MedicalExam_id_gen")
-    @SequenceGenerator(name = "MedicalExam_id_gen", sequenceName = "MedicalExam_ExamID_seq", allocationSize = 1)
-    @Column(name = "ExamID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "exam_id", nullable = false)
     private Integer id;
 
-    @Column(name = "DateTime", nullable = false)
+    @Column(name = "date_time", nullable = false)
     private Date dateTime;
 
-    @Column(name = "MedicalReport", length = Integer.MAX_VALUE)
+    @Column(name = "medical_report", length = Integer.MAX_VALUE)
     private String medicalReport;
 
-    @Column(name = "ExamType", length = Integer.MAX_VALUE)
+    @Column(name = "exam_type", length = Integer.MAX_VALUE)
     private String examType;
 
-    @Column(name = "PatientID")
-    private String patientID;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DoctorID")
+    @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PatientID")
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @Column(name = "EventID")
+    @Column(name = "medical_event_id")
     private Integer medicalEvent;
 
 }

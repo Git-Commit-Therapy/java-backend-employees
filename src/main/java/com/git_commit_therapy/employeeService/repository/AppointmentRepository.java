@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface AppointmentRepository extends JpaRepository<Appointment, Integer> {
 
-    @Query("SELECT a FROM Appointment a JOIN FETCH Doctor d WHERE a.patientID = :patientId " +
+    @Query("SELECT a FROM Appointment a JOIN FETCH Doctor d WHERE a.patient.patientId = :patientId " +
             "AND a.dateTime BETWEEN :fromDate AND :toDate")
     List<Appointment> findAllByPatientAndDateRange(String patientId, Date fromDate, Date toDate);
 }

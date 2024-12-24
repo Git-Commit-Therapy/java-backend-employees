@@ -1,13 +1,15 @@
 package com.git_commit_therapy.employeeService.security;
 
+import io.grpc.Metadata;
+import io.grpc.ServerCall;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,14 +25,19 @@ import java.util.Map;
 
 @Log
 @Component
-public class JwtAuthenticationProvider implements AuthenticationProvider {
+public class GrpcInterceptor implements ServerInterceptor {
 
     @Value("${application.keycloak.secret}")
     private String jwtSecret;
 
     @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String jwtToken = (String) authentication.getCredentials();
+    public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+            ServerCall<ReqT, RespT> serverCall,
+            Metadata metadata,
+            ServerCallHandler<ReqT, RespT> serverCallHandler) {
+
+        String jwtToken = metadata.get(Metadata.Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
+
         if (jwtToken == null || jwtToken.isEmpty()) {
             log.warning("Empty JWT token received");
             throw new AuthenticationException("Empty JWT token received") {
@@ -64,12 +71,7 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
         //Set auth for the current request
         SecurityContextHolder.getContext().setAuthentication(auth);
 
-        return auth;
-    }
-
-    @Override
-    public boolean supports(Class<?> authentication) {
-        return authentication.equals(UsernamePasswordAuthenticationToken.class);
+        return serverCallHandler.startCall(serverCall, metadata);
     }
 
     private Claims validateToken(String token) {
@@ -92,4 +94,3 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
         }
     }
 }
-

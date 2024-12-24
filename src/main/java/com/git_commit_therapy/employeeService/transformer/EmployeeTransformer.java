@@ -53,7 +53,7 @@ public class EmployeeTransformer {
     public static WardOuterClass.Ward toProto(Ward ward) {
         WardOuterClass.Ward.Builder wardBuilder = WardOuterClass.Ward.newBuilder();
 
-        wardBuilder.setWardId(ward.getWardID());
+        wardBuilder.setWardId(ward.getWardId());
         wardBuilder.setName(ward.getName());
 
         return wardBuilder.build();
@@ -118,11 +118,11 @@ public class EmployeeTransformer {
         builder.setFromDateTime(convertToTimestampWithDateTime(medicalEvent.getFromDateTime()));
         builder.setToDateTime(convertToTimestampWithDateTime(medicalEvent.getToDateTime()));
         switch (medicalEvent.getSeverity()){
-            case SeverityCode.WHITE ->builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.WHITE_VALUE);
-            case SeverityCode.GREEN -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.GREEN_VALUE);
-            case SeverityCode.YELLOW -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.YELLOW_VALUE);
-            case SeverityCode.ORANGE -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.ORANGE_VALUE);
-            case SeverityCode.RED -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.RED_VALUE);
+            case WHITE ->builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.WHITE_VALUE);
+            case GREEN -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.GREEN_VALUE);
+            case YELLOW -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.YELLOW_VALUE);
+            case ORANGE -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.ORANGE_VALUE);
+            case RED -> builder.setSeverityCodeValue(MedicalEventOuterClass.SeverityCode.RED_VALUE);
             default -> builder.setSeverityCodeValue(-1);
         }
         if(medicalEvent.getDischargeLetter() != null){
@@ -162,7 +162,7 @@ public class EmployeeTransformer {
 
     public static Doctor toEntity(UserOuterClass.Doctor doctorProto){
         Doctor doctor = new Doctor();
-        doctor.setDoctorID(doctorProto.getUser().getId());
+        doctor.setDoctorId(doctorProto.getUser().getId());
         doctor.setUser(toEntity(doctorProto.getUser()));
         doctor.setMedSpecialization(doctorProto.getMedSpecialization());
         doctor.setOfficePhoneNumber(doctorProto.getOfficePhoneNumber());
@@ -172,11 +172,19 @@ public class EmployeeTransformer {
 
     public static Patient toEntity(UserOuterClass.Patient patientProto){
         Patient patient = new Patient();
-        patient.setPatientID(patientProto.getUser().getId());
+        patient.setPatientId(patientProto.getUser().getId());
         patient.setUser(toEntity(patientProto.getUser()));
         patient.setMedicalInfos(null);  // TODO: come popolare questo campo?
 
         return patient;
+    }
+
+    public static Ward toEntity(WardOuterClass.Ward wardProto){
+        Ward ward = new Ward();
+        ward.setWardId(wardProto.getWardId());
+        ward.setName(wardProto.getName());
+
+        return ward;
     }
 
     // Utility methods
