@@ -37,7 +37,7 @@ public class WaitingQueue implements MultipleQueue<WaitingPatient, SeverityCode>
     }
 
     public void push(Patient item, SeverityCode queueToken) {
-        this.push(new WaitingPatient(item), queueToken);
+        this.push(new WaitingPatient(item,queueToken), queueToken);
     }
 
     @Override
@@ -56,9 +56,9 @@ public class WaitingQueue implements MultipleQueue<WaitingPatient, SeverityCode>
         return p;
     }
 
-    public Patient pop(Patient patient) {
-        WaitingPatient p = this.pop(new WaitingPatient(patient));
-        return (p != null) ? p.getPatient() : null;
+    public WaitingPatient pop(Patient patient) {
+        //The severity code in this does not matter
+        return this.pop(new WaitingPatient(patient,null));
     }
 
     @Override
@@ -99,7 +99,8 @@ public class WaitingQueue implements MultipleQueue<WaitingPatient, SeverityCode>
     }
 
     public boolean contains(Patient patient) {
-        return this.contains(new WaitingPatient(patient));
+        //The severity code in this does not matter
+        return this.contains(new WaitingPatient(patient,null));
     }
 
     @Override
@@ -109,5 +110,16 @@ public class WaitingQueue implements MultipleQueue<WaitingPatient, SeverityCode>
             result.append("\n\t").append(sc.toString()).append(":").append(queues.get(sc).toString());
         }
         return result + "\n}";
+    }
+
+    public WaitingPatient peek(Patient patient) {
+        for (SeverityCode sc : queues.keySet()) {
+            for(WaitingPatient wp : queues.get(sc)) {
+                if(wp.getPatient().equals(patient)) {
+                    return wp;
+                }
+            }
+        }
+        return null;
     }
 }

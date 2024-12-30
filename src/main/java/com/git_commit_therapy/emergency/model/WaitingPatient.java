@@ -1,6 +1,7 @@
 package com.git_commit_therapy.emergency.model;
 
 import com.git_commit_therapy.employeeService.dao.Patient;
+import com.git_commit_therapy.employeeService.dao.SeverityCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -13,10 +14,12 @@ import java.util.Objects;
 @Data
 public class WaitingPatient {
     private Patient patient;
+    private SeverityCode severityCode;
     private Date triageEntry;
 
-    public WaitingPatient(Patient patient){
+    public WaitingPatient(Patient patient, SeverityCode severityCode) {
         this.patient = patient;
+        this.severityCode = severityCode;
         triageEntry = new Date();
     }
 
