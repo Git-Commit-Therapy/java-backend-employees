@@ -13,9 +13,9 @@ import java.util.Objects;
 @AllArgsConstructor
 @Data
 public class WaitingPatient {
-    private Patient patient;
-    private SeverityCode severityCode;
-    private Date triageEntry;
+    protected Patient patient;
+    protected SeverityCode severityCode;
+    protected Date triageEntry;
 
     public WaitingPatient(Patient patient, SeverityCode severityCode) {
         this.patient = patient;

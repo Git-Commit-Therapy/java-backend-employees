@@ -1,6 +1,5 @@
 package com.git_commit_therapy.emergency.service;
 
-import com.git_commit_therapy.proto.UserOuterClass;
 import com.git_commit_therapy.proto.emergency.EmergencyWardServicesGrpc;
 import com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass;
 import com.google.protobuf.Empty;
@@ -25,7 +24,7 @@ public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWar
     }
 
     @Override
-    public void callPatientForVisit(UserOuterClass.Patient request, StreamObserver<Empty> responseObserver) {
+    public void callPatientForVisit(EmergencyWardServicesOuterClass.CallPatientRequest request, StreamObserver<Empty> responseObserver) {
         super.callPatientForVisit(request, responseObserver);
     }
 }

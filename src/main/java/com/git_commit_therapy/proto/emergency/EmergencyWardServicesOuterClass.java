@@ -159,7 +159,7 @@ public final class EmergencyWardServicesOuterClass {
     }
 
     @Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -551,7 +551,7 @@ public final class EmergencyWardServicesOuterClass {
 
     @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -568,7 +568,7 @@ public final class EmergencyWardServicesOuterClass {
       }
 
       @Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
         return EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -581,7 +581,7 @@ public final class EmergencyWardServicesOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1444,7 +1444,7 @@ public final class EmergencyWardServicesOuterClass {
     }
 
     @Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -1643,44 +1643,44 @@ public final class EmergencyWardServicesOuterClass {
       return hash;
     }
 
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(byte[] data)
+    public static AddPatientResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(java.io.InputStream input)
+    public static AddPatientResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1688,26 +1688,26 @@ public final class EmergencyWardServicesOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseDelimitedFrom(java.io.InputStream input)
+    public static AddPatientResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseDelimitedFrom(
+    public static AddPatientResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse parseFrom(
+    public static AddPatientResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1715,23 +1715,23 @@ public final class EmergencyWardServicesOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse prototype) {
+    public static Builder newBuilder(AddPatientResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1741,18 +1741,18 @@ public final class EmergencyWardServicesOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.emergency.AddPatientResponse)
-        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponseOrBuilder {
+        AddPatientResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientResponse_descriptor;
+        return EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientResponse_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientResponse_fieldAccessorTable
+        return EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse.class, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse.Builder.class);
+                AddPatientResponse.class, Builder.class);
       }
 
       // Construct using com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse.newBuilder()
@@ -1761,7 +1761,7 @@ public final class EmergencyWardServicesOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1771,7 +1771,7 @@ public final class EmergencyWardServicesOuterClass {
           getPatientFieldBuilder();
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -1785,35 +1785,35 @@ public final class EmergencyWardServicesOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientResponse_descriptor;
+        return EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_AddPatientResponse_descriptor;
       }
 
-      @java.lang.Override
-      public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse getDefaultInstanceForType() {
-        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse.getDefaultInstance();
+      @Override
+      public AddPatientResponse getDefaultInstanceForType() {
+        return AddPatientResponse.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse build() {
-        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse result = buildPartial();
+      @Override
+      public AddPatientResponse build() {
+        AddPatientResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse buildPartial() {
-        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse result = new com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse(this);
+      @Override
+      public AddPatientResponse buildPartial() {
+        AddPatientResponse result = new AddPatientResponse(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse result) {
+      private void buildPartial0(AddPatientResponse result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1831,18 +1831,18 @@ public final class EmergencyWardServicesOuterClass {
         result.bitField0_ |= to_bitField0_;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse) {
-          return mergeFrom((com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse)other);
+        if (other instanceof AddPatientResponse) {
+          return mergeFrom((AddPatientResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse other) {
-        if (other == com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(AddPatientResponse other) {
+        if (other == AddPatientResponse.getDefaultInstance()) return this;
         if (other.hasPatient()) {
           mergePatient(other.getPatient());
         }
@@ -1859,18 +1859,18 @@ public final class EmergencyWardServicesOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException();
         }
         try {
           boolean done = false;
@@ -2071,7 +2071,7 @@ public final class EmergencyWardServicesOuterClass {
         return patientBuilder_;
       }
 
-      private java.lang.Object emergencyPatientId_ = "";
+      private Object emergencyPatientId_ = "";
       /**
        * <pre>
        * Emergency-ward id
@@ -2080,7 +2080,7 @@ public final class EmergencyWardServicesOuterClass {
        * <code>string emergency_patient_id = 2;</code>
        * @return The emergencyPatientId.
        */
-      public java.lang.String getEmergencyPatientId() {
+      public String getEmergencyPatientId() {
         java.lang.Object ref = emergencyPatientId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -4018,6 +4018,724 @@ public final class EmergencyWardServicesOuterClass {
 
   }
 
+  public interface CallPatientRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.git_commit_therapy.proto.emergency.CallPatientRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+     * @return Whether the patient field is set.
+     */
+    boolean hasPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+     * @return The patient.
+     */
+    com.git_commit_therapy.proto.UserOuterClass.Patient getPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+     */
+    com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder();
+
+    /**
+     * <code>string ambulatory = 2;</code>
+     * @return The ambulatory.
+     */
+    java.lang.String getAmbulatory();
+    /**
+     * <code>string ambulatory = 2;</code>
+     * @return The bytes for ambulatory.
+     */
+    com.google.protobuf.ByteString
+        getAmbulatoryBytes();
+  }
+  /**
+   * Protobuf type {@code com.git_commit_therapy.proto.emergency.CallPatientRequest}
+   */
+  public static final class CallPatientRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.git_commit_therapy.proto.emergency.CallPatientRequest)
+      CallPatientRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        CallPatientRequest.class.getName());
+    }
+    // Use CallPatientRequest.newBuilder() to construct.
+    private CallPatientRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private CallPatientRequest() {
+      ambulatory_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.class, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PATIENT_FIELD_NUMBER = 1;
+    private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+     * @return Whether the patient field is set.
+     */
+    @java.lang.Override
+    public boolean hasPatient() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+     * @return The patient.
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+
+    public static final int AMBULATORY_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ambulatory_ = "";
+    /**
+     * <code>string ambulatory = 2;</code>
+     * @return The ambulatory.
+     */
+    @java.lang.Override
+    public java.lang.String getAmbulatory() {
+      java.lang.Object ref = ambulatory_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ambulatory_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ambulatory = 2;</code>
+     * @return The bytes for ambulatory.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmbulatoryBytes() {
+      java.lang.Object ref = ambulatory_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ambulatory_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getPatient());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ambulatory_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, ambulatory_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getPatient());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ambulatory_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, ambulatory_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest)) {
+        return super.equals(obj);
+      }
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest other = (com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest) obj;
+
+      if (hasPatient() != other.hasPatient()) return false;
+      if (hasPatient()) {
+        if (!getPatient()
+            .equals(other.getPatient())) return false;
+      }
+      if (!getAmbulatory()
+          .equals(other.getAmbulatory())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPatient()) {
+        hash = (37 * hash) + PATIENT_FIELD_NUMBER;
+        hash = (53 * hash) + getPatient().hashCode();
+      }
+      hash = (37 * hash) + AMBULATORY_FIELD_NUMBER;
+      hash = (53 * hash) + getAmbulatory().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.git_commit_therapy.proto.emergency.CallPatientRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.emergency.CallPatientRequest)
+        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.class, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.Builder.class);
+      }
+
+      // Construct using com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getPatientFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
+        }
+        ambulatory_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest build() {
+        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest buildPartial() {
+        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest result = new com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.patient_ = patientBuilder_ == null
+              ? patient_
+              : patientBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ambulatory_ = ambulatory_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest) {
+          return mergeFrom((com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest other) {
+        if (other == com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.getDefaultInstance()) return this;
+        if (other.hasPatient()) {
+          mergePatient(other.getPatient());
+        }
+        if (!other.getAmbulatory().isEmpty()) {
+          ambulatory_ = other.ambulatory_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getPatientFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                ambulatory_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> patientBuilder_;
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       * @return Whether the patient field is set.
+       */
+      public boolean hasPatient() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       * @return The patient.
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+        if (patientBuilder_ == null) {
+          return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        } else {
+          return patientBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       */
+      public Builder setPatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          patient_ = value;
+        } else {
+          patientBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       */
+      public Builder setPatient(
+          com.git_commit_therapy.proto.UserOuterClass.Patient.Builder builderForValue) {
+        if (patientBuilder_ == null) {
+          patient_ = builderForValue.build();
+        } else {
+          patientBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       */
+      public Builder mergePatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            patient_ != null &&
+            patient_ != com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()) {
+            getPatientBuilder().mergeFrom(value);
+          } else {
+            patient_ = value;
+          }
+        } else {
+          patientBuilder_.mergeFrom(value);
+        }
+        if (patient_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       */
+      public Builder clearPatient() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient.Builder getPatientBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getPatientFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+        if (patientBuilder_ != null) {
+          return patientBuilder_.getMessageOrBuilder();
+        } else {
+          return patient_ == null ?
+              com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> 
+          getPatientFieldBuilder() {
+        if (patientBuilder_ == null) {
+          patientBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder>(
+                  getPatient(),
+                  getParentForChildren(),
+                  isClean());
+          patient_ = null;
+        }
+        return patientBuilder_;
+      }
+
+      private java.lang.Object ambulatory_ = "";
+      /**
+       * <code>string ambulatory = 2;</code>
+       * @return The ambulatory.
+       */
+      public java.lang.String getAmbulatory() {
+        java.lang.Object ref = ambulatory_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ambulatory_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ambulatory = 2;</code>
+       * @return The bytes for ambulatory.
+       */
+      public com.google.protobuf.ByteString
+          getAmbulatoryBytes() {
+        java.lang.Object ref = ambulatory_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ambulatory_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ambulatory = 2;</code>
+       * @param value The ambulatory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmbulatory(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ambulatory_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ambulatory = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmbulatory() {
+        ambulatory_ = getDefaultInstance().getAmbulatory();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ambulatory = 2;</code>
+       * @param value The bytes for ambulatory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmbulatoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ambulatory_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.git_commit_therapy.proto.emergency.CallPatientRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.emergency.CallPatientRequest)
+    private static final com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest();
+    }
+
+    public static com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CallPatientRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CallPatientRequest>() {
+      @java.lang.Override
+      public CallPatientRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CallPatientRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CallPatientRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_git_commit_therapy_proto_emergency_AddPatientRequest_descriptor;
   private static final 
@@ -4038,6 +4756,11 @@ public final class EmergencyWardServicesOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_git_commit_therapy_proto_emergency_RemovePatientRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4066,19 +4789,22 @@ public final class EmergencyWardServicesOuterClass {
       "y.proto.Ward\"\201\001\n\024RemovePatientRequest\0226\n" +
       "\007patient\030\001 \001(\0132%.com.git_commit_therapy." +
       "proto.Patient\022\030\n\020medical_event_id\030\002 \001(\005\022" +
-      "\027\n\017dischargeLetter\030\003 \001(\t2\315\003\n\025EmergencyWa" +
-      "rdServices\022\205\001\n\nAddPatient\0229.com.git_comm" +
-      "it_therapy.proto.emergency.AddPatientReq" +
-      "uest\032:.com.git_commit_therapy.proto.emer" +
-      "gency.AddPatientResponse\"\000\022k\n\017TransferPa" +
-      "tient\022>.com.git_commit_therapy.proto.eme" +
-      "rgency.TransferPatientRequest\032\026.google.p" +
-      "rotobuf.Empty\"\000\022g\n\rRemovePatient\022<.com.g" +
-      "it_commit_therapy.proto.emergency.Remove" +
-      "PatientRequest\032\026.google.protobuf.Empty\"\000" +
-      "\022V\n\023CallPatientForVisit\022%.com.git_commit" +
-      "_therapy.proto.Patient\032\026.google.protobuf" +
-      ".Empty\"\000b\006proto3"
+      "\027\n\017dischargeLetter\030\003 \001(\t\"`\n\022CallPatientR" +
+      "equest\0226\n\007patient\030\001 \001(\0132%.com.git_commit" +
+      "_therapy.proto.Patient\022\022\n\nambulatory\030\002 \001" +
+      "(\t2\342\003\n\025EmergencyWardServices\022\205\001\n\nAddPati" +
+      "ent\0229.com.git_commit_therapy.proto.emerg" +
+      "ency.AddPatientRequest\032:.com.git_commit_" +
+      "therapy.proto.emergency.AddPatientRespon" +
+      "se\"\000\022k\n\017TransferPatient\022>.com.git_commit" +
+      "_therapy.proto.emergency.TransferPatient" +
+      "Request\032\026.google.protobuf.Empty\"\000\022g\n\rRem" +
+      "ovePatient\022<.com.git_commit_therapy.prot" +
+      "o.emergency.RemovePatientRequest\032\026.googl" +
+      "e.protobuf.Empty\"\000\022k\n\023CallPatientForVisi" +
+      "t\022:.com.git_commit_therapy.proto.emergen" +
+      "cy.CallPatientRequest\032\026.google.protobuf." +
+      "Empty\"\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4112,6 +4838,12 @@ public final class EmergencyWardServicesOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_emergency_RemovePatientRequest_descriptor,
         new java.lang.String[] { "Patient", "MedicalEventId", "DischargeLetter", });
+    internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_git_commit_therapy_proto_emergency_CallPatientRequest_descriptor,
+        new java.lang.String[] { "Patient", "Ambulatory", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.git_commit_therapy.proto.UserOuterClass.getDescriptor();
