@@ -1,10 +1,10 @@
-package com.git_commit_therapy.central_process_service;
+package com.git_commit_therapy.employeeService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CentralProcessServiceApplicationTests {
+class EmployeeServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
