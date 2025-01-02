@@ -12,7 +12,6 @@ import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.client.RestClient;
 
 import java.util.*;
 
@@ -29,19 +28,17 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     private final MedicalExamDao medicalExamDao;
     private final MedicalInfoDao medicalInfoDao;
     private final StaffDao staffDao;
-    private final RestClient.Builder builder;
 
     @Autowired
     public EmployeeService(AppointmentDao appointmentDao, DoctorDao doctorDao,
                            MedicalEventDao medicalEventDao, MedicalExamDao medicalExamDao,
-                           MedicalInfoDao medicalInfoDao, StaffDao staffDao, RestClient.Builder builder) {
+                           MedicalInfoDao medicalInfoDao, StaffDao staffDao) {
         this.appointmentDao = appointmentDao;
         this.doctorDao = doctorDao;
         this.medicalEventDao = medicalEventDao;
         this.medicalExamDao = medicalExamDao;
         this.medicalInfoDao = medicalInfoDao;
         this.staffDao = staffDao;
-        this.builder = builder;
     }
 
     private String getSubjectFromContext(){
