@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: employee-service
+  datasource:
+    url: jdbc:h2:mem:myDb;DB_CLOSE_DELAY=-1;NON_KEYWORDS=KEY_VALUE
+    username: sa
+    password:
+  jpa:
+    show-sql: true #Show the query in the console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  grpc:
+    server:
+      port: 9091
+      enable-reflection: false # Enables gRPC server reflection, allowing clients to dynamically discover services and methods
+      security:
+        enabled: false
+        certificate-chain: classpath:certs/server-cert.pem
+
+logging:
+  config: classpath:logback.xml
+
+application:
+  keycloak:
+    public-key: test-public-key

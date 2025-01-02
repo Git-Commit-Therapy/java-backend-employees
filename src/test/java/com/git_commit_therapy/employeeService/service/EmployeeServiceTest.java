@@ -87,7 +87,6 @@ public class EmployeeServiceTest {
                 .thenReturn(Optional.of(doctorList.get(0)));
 
         // TODO: proseguire con gli altri mock dei DAO
-        // TODO: fare classe di test anche per il repository (e per i DAO?)
 
         employeeService = new EmployeeService(appointmentDao, doctorDao, medicalEventDao, medicalExamDao, medicalInfoDao, staffDao);
     }
@@ -113,7 +112,7 @@ public class EmployeeServiceTest {
         assertEquals("id0", response.getUser().getId());
     }
 
-    // TODO: proseguire scrivendo gli altri test (esempio di test_getDoctor)
+    // TODO: proseguire scrivendo gli altri test (prendendo esempio di test_getDoctor)
 
     // createAppointmentList
     private static List<Appointment> createAppointmentList(){

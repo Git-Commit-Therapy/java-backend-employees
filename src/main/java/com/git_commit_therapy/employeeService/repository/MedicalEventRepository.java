@@ -3,10 +3,12 @@ package com.git_commit_therapy.employeeService.repository;
 import com.git_commit_therapy.employeeService.entity.MedicalEvent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
 
+@Repository
 public interface MedicalEventRepository extends JpaRepository<MedicalEvent, Integer> {
 
     @Query("SELECT me FROM MedicalEvent me JOIN FETCH MedicalExam medEx WHERE me.patientID = :patientId " +
