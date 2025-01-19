@@ -45,7 +45,7 @@ public class WaitingQueue implements MultipleQueue<WaitingPatient, SeverityCode>
         WaitingPatient p = null;
         for (List<WaitingPatient> queue : queues.values()) {
             if (queue.contains(item)) {
-                p = item;
+                p = queue.stream().filter(elem -> elem.equals(item)).findFirst().get();
                 queue.remove(item);
                 if (comparator != null) {
                     queue.sort(comparator);
