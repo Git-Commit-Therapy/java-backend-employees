@@ -88,6 +88,8 @@ public class EmergencyWardDao {
             return true;
         }else if(inVisiting.contains(patient)) {
             WaitingPatient wp = inVisiting.peek(patient);
+            //Remove patients already called
+            lastPatientsCalled.stream().filter(p->p.getPatient().getPatientId().equals(wp.getPatient().getPatientId())).forEach(lastPatientsCalled::remove);
             lastPatientsCalled.addFirst(new CalledPatient(wp,ambulatory));
             return true;
         }else{
