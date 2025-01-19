@@ -31,12 +31,8 @@ public class WaitingPatient {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        if(o instanceof Patient that){
-            return patient.getPatientId().equals(that.getPatientId());
-        }else{
-            WaitingPatient that = (WaitingPatient) o;
-            return patient.getPatientId().equals(that.patient.getPatientId());
-        }
+        WaitingPatient that = (WaitingPatient) o;
+        return patient.getPatientId().equals(that.patient.getPatientId());
     }
 
     @Override

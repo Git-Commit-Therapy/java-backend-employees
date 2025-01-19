@@ -115,7 +115,7 @@ public class WaitingQueue implements MultipleQueue<WaitingPatient, SeverityCode>
     public WaitingPatient peek(Patient patient) {
         for (SeverityCode sc : queues.keySet()) {
             for(WaitingPatient wp : queues.get(sc)) {
-                if(wp.getPatient().equals(patient)) {
+                if(wp.getPatient().getPatientId().equals(patient.getPatientId())) {
                     return wp;
                 }
             }
