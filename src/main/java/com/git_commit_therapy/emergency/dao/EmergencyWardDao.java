@@ -2,7 +2,6 @@ package com.git_commit_therapy.emergency.dao;
 
 import com.git_commit_therapy.emergency.model.CalledPatient;
 import com.git_commit_therapy.emergency.model.WaitingPatient;
-import com.git_commit_therapy.emergency.utils.Pair;
 import com.git_commit_therapy.emergency.utils.WaitingQueue;
 import com.git_commit_therapy.employeeService.entity.Patient;
 import com.git_commit_therapy.employeeService.entity.SeverityCode;
@@ -16,11 +15,9 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.stream.Collectors;
 
 @Log
 @Service
@@ -28,16 +25,16 @@ public class EmergencyWardDao {
     private final WaitingQueue needToBeVisited = new WaitingQueue();
     private final WaitingQueue inVisiting = new WaitingQueue();
 
-    private final ConcurrentLinkedDeque<Pair<CalledPatient, Date>> lastPatientsCalled = new ConcurrentLinkedDeque<>();
+    private final ConcurrentLinkedDeque<CalledPatient> lastPatientsCalled = new ConcurrentLinkedDeque<>();
     private final EmergencyTaskProperties taskProperties;
 
     @Scheduled(fixedRateString = "#{@emergencyTaskProperties.cleanOldCall * 1000}")
     public void taskCleanOldCalls() {
         log.fine("Executing task: Cleaning old calls...");
-        List<Pair<CalledPatient, Date>>  lastCalls = lastPatientsCalled.stream().toList();
-        for(Pair<CalledPatient, Date> call : lastCalls) {
+        List<CalledPatient>  lastCalls = lastPatientsCalled.stream().toList();
+        for(CalledPatient call : lastCalls) {
             LocalDateTime now = LocalDateTime.now();
-            LocalDateTime callTime = call.getValue().toInstant()
+            LocalDateTime callTime = call.getCalledTime().toInstant()
                     .atZone(ZoneId.systemDefault())
                     .toLocalDateTime();
             //Remove if the difference is greater than the value in configuration
@@ -87,11 +84,13 @@ public class EmergencyWardDao {
         if(needToBeVisited.contains(patient)) {
             WaitingPatient wp = needToBeVisited.pop(patient);
             inVisiting.push(wp,wp.getSeverityCode());
-            lastPatientsCalled.addFirst(new Pair<CalledPatient, Date>(new CalledPatient(wp,ambulatory),new Date()));
+            lastPatientsCalled.addFirst(new CalledPatient(wp,ambulatory));
             return true;
         }else if(inVisiting.contains(patient)) {
             WaitingPatient wp = inVisiting.peek(patient);
-            lastPatientsCalled.addFirst(new Pair<CalledPatient, Date>(new CalledPatient(wp,ambulatory),new Date()));
+            //Remove patients already called
+            lastPatientsCalled.stream().filter(p->p.getPatient().getPatientId().equals(wp.getPatient().getPatientId())).forEach(lastPatientsCalled::remove);
+            lastPatientsCalled.addFirst(new CalledPatient(wp,ambulatory));
             return true;
         }else{
             return false;
@@ -115,6 +114,6 @@ public class EmergencyWardDao {
     }
 
     public List<CalledPatient> getCalledPatients(){
-        return lastPatientsCalled.stream().map(Pair::getKey).collect(Collectors.toList());
+        return lastPatientsCalled.stream().toList();
     }
 }

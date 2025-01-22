@@ -277,7 +277,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 medicalExam.setExamType(request.getExamType());
                 medicalExam.setDoctor(toEntity(request.getDoctor()));
                 medicalExam.setPatient(toEntity(request.getPatient()));
-                medicalExam.setMedicalEvent(request.getMedicalEvent().getEventId());
+                medicalExam.setMedicalEvent(toEntity(request.getMedicalEvent()));
 
                 MedicalExam savedMedicalExam = medicalExamDao.upsert(medicalExam);
 
@@ -302,7 +302,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             if(sid != null){
                 MedicalEvent medicalEvent = new MedicalEvent();
                 medicalEvent.setId(request.getEventId());
-                medicalEvent.setPatientID(request.getPatient().getUser().getId());
+                medicalEvent.setPatient(request.getPatient().getUser());
                 medicalEvent.setFromDateTime(convertToDate(request.getFromDateTime()));
                 medicalEvent.setToDateTime(convertToDate(request.getToDateTime()));
                 medicalEvent.setSeverity(SeverityCode.valueOf(request.getSeverityCode().name()));

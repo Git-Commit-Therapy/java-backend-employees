@@ -30,4 +30,5 @@ public class MedicalExamDao {
     public MedicalExam upsert(MedicalExam medicalExam) {
         return medicalExamRepository.save(medicalExam);
     }
+
 }

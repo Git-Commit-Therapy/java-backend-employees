@@ -2,14 +2,17 @@ package com.git_commit_therapy.employeeService.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "medical_event")
 public class MedicalEvent {
     @Id
@@ -29,10 +32,11 @@ public class MedicalEvent {
     @Column(name = "discharge_letter")
     private String dischargeLetter;
 
-    @Column(name = "patient_id")
-    private String patientID;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER,cascade = {CascadeType.MERGE}, orphanRemoval = true)
     @JoinColumn(name = "exam_id")
     List<MedicalExam> exams;
 
@@ -40,4 +44,21 @@ public class MedicalEvent {
     @JoinColumn(name = "ward_id")
     private Ward ward;
 
+    public MedicalEvent(SeverityCode severity, Patient patient) {
+        this.fromDateTime = new Date();
+        this.severity = severity;
+        this.dischargeLetter = "";
+        this.patient = patient;
+        this.exams = new ArrayList<>(exams);
+        this.ward = null;
+    }
+
+    public void addExam(MedicalExam exam) {
+        if(this.exams == null) {
+            this.exams = new ArrayList<>();
+        }
+        if(exam != null) {
+            this.exams.add(exam);
+        }
+    }
 }

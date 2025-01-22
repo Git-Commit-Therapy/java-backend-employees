@@ -211,4 +211,25 @@ public class EmployeeTransformer {
     public static Date convertToDate(Timestamp timestamp) {
         return new Date(timestamp.getSeconds() * 1000 + timestamp.getNanos() / 1000000);
     }
+
+    public static SeverityCode fromProto(MedicalEventOuterClass.SeverityCode severityCode) {
+         switch (severityCode){
+             case WHITE -> {
+                 return SeverityCode.WHITE;
+             }
+             case GREEN -> {
+                 return SeverityCode.GREEN;
+             }
+             case YELLOW -> {
+                 return SeverityCode.YELLOW;
+             }
+             case ORANGE -> {
+                 return SeverityCode.ORANGE;
+             }
+             case RED -> {
+                 return SeverityCode.RED;
+             }
+             default -> throw new IllegalStateException("Unexpected value: " + severityCode);
+         }
+    }
 }
