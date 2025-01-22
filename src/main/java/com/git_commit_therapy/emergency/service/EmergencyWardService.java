@@ -1,15 +1,22 @@
 package com.git_commit_therapy.emergency.service;
 
 import com.git_commit_therapy.employeeService.service.EmployeeService;
+import com.git_commit_therapy.proto.EmployeeServicesGrpc;
 import com.git_commit_therapy.proto.EmployeeServicesOuterClass;
 import com.git_commit_therapy.proto.MedicalEventOuterClass;
+import com.git_commit_therapy.proto.UserOuterClass;
 import com.git_commit_therapy.proto.emergency.EmergencyWardServicesGrpc;
 import com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Timestamp;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 import lombok.extern.java.Log;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static com.git_commit_therapy.employeeService.security.GrpcUtils.GrpcInterceptor;
 
 @Log
 @GrpcService
@@ -17,57 +24,48 @@ public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWar
 
     @Autowired
     private EmployeeService employeeService;
+    //private final EmployeeServicesGrpc.EmployeeServicesBlockingStub stub;
 
     @Override
     public void addPatient(EmergencyWardServicesOuterClass.AddPatientRequest request, StreamObserver<EmergencyWardServicesOuterClass.AddPatientResponse> responseObserver) {
-        super.addPatient(request, responseObserver);
+        GrpcInterceptor(responseObserver, request, null, () -> {
+            EmergencyWardServicesOuterClass.AddPatientResponse.Builder builder = EmergencyWardServicesOuterClass.AddPatientResponse.newBuilder();
 
-        // TODO: completare campi mancanti commentati
-        // Costruisci la richiesta
-        MedicalEventOuterClass.MedicalEvent medicalEventRequest = MedicalEventOuterClass.MedicalEvent.newBuilder()
-                .setPatient(request.getPatient())
-                .setWard(request.getDoctor().getWard())
-                //.setEventId()
-                //.setMedicalExamIds()
-                .setSeverityCode(request.getSeverityCode())
-                //.setDischargeLetter()
-                //.setFromDateTime()
-                //.setToDateTime()
-                .build();
+            // 1 - Crea il patient se non esiste in database
+            UserOuterClass.Patient patientRequest = UserOuterClass.Patient.newBuilder()
+                    .setUser(request.getPatient().getUser())
+                    .build();
+            EmployeeServicesOuterClass.CreatePatientResponse response = null;//employeeService.createPatient(patientRequest);
+            if (response.getSuccess()) {
+                // 2 - Aggiungi un nuovo medical event
+                MedicalEventOuterClass.MedicalEvent medicalEventRequest = MedicalEventOuterClass.MedicalEvent.newBuilder()
+                        .setPatient(request.getPatient())
+                        .setWard(request.getDoctor().getWard())
+                        //.setEventId()
+                        //.setMedicalExamIds()
+                        .setSeverityCode(request.getSeverityCode())
+                        //.setDischargeLetter(null)
+                        .setFromDateTime(Timestamp.newBuilder().build())
+                        //.setToDateTime()
+                        .build();
 
-        // Crea un observer personalizzato per catturare la risposta (callback)
-        StreamObserver<EmployeeServicesOuterClass.CreateMedicalEventResponse> createMedicalEventObserver =
-            new StreamObserver<>() {
-                @Override
-                public void onNext(EmployeeServicesOuterClass.CreateMedicalEventResponse response) {
-                    // Costruisci la risposta del metodo corrente utilizzando i dati ricevuti
-                    // TODO: capire valori di ritorno perchè createMedicalEvent() non torna i dati del MedicalEvent appena creato
-                    EmergencyWardServicesOuterClass.AddPatientResponse addPatientResponse = EmergencyWardServicesOuterClass.AddPatientResponse.newBuilder()
-                            //.setPatient()
-                            //.setEmergencyPatientId()
-                            //.setMedicalEventId()
+                //stub.getMedicalEventDetails()
+                EmployeeServicesOuterClass.CreateMedicalEventResponse response1 = null;//stub.createMedicalEvent(medicalEventRequest);
+                if (response1.getSuccess()) {
+                    return builder.setPatient(request.getPatient())
+                            .setMedicalEventId(0)
+                            .setEmergencyPatientId(request.getPatient().getUser().getId())
                             .build();
-
-                    responseObserver.onNext(addPatientResponse);
                 }
-
-                @Override
-                public void onError(Throwable t) {
-                    // Gestione dell'errore
-                    responseObserver.onError(t);
-                }
-
-                @Override
-                public void onCompleted() {
-                    // Completa la chiamata
-                    responseObserver.onCompleted();
-                }
-            };
-
-        // Richiama il metodo createMedicalEvent
-        employeeService.createMedicalEvent(medicalEventRequest, createMedicalEventObserver);
-
-        //crea il patient se non esiste in database
+            }
+            else {
+                return builder.setPatient(request.getPatient())
+                        .setMedicalEventId(0)
+                        .setEmergencyPatientId(request.getPatient().getUser().getId())
+                        .build();
+            }
+            return null;
+        });
     }
 
     @Override

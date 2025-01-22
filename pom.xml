@@ -21,6 +21,28 @@
 	</properties>
 
 	<dependencies>
+		<!-- Dipendenze gRPC -->
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-netty-shaded</artifactId>
+			<version>1.57.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-protobuf</artifactId>
+			<version>1.57.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-stub</artifactId>
+			<version>1.57.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-api</artifactId>
+			<version>1.57.2</version>
+		</dependency>
+
 		<!-- Protocol Buffers Compiler -->
 		<dependency>
 			<groupId>com.google.protobuf</groupId>

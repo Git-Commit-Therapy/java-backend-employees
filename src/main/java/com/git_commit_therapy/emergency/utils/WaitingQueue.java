@@ -1,8 +1,8 @@
 package com.git_commit_therapy.emergency.utils;
 
 import com.git_commit_therapy.emergency.model.WaitingPatient;
-import com.git_commit_therapy.employeeService.dao.Patient;
-import com.git_commit_therapy.employeeService.dao.SeverityCode;
+import com.git_commit_therapy.employeeService.entity.Patient;
+import com.git_commit_therapy.employeeService.entity.SeverityCode;
 
 import java.util.*;
 
