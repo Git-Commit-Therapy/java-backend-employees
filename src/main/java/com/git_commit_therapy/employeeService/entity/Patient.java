@@ -1,7 +1,9 @@
 package com.git_commit_therapy.employeeService.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "patient")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Patient {
     @Id
     @Column(name = "patient_id", nullable = false, length = 16)

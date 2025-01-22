@@ -30,11 +30,12 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     private final MedicalInfoDao medicalInfoDao;
     private final StaffDao staffDao;
     private final RestClient.Builder builder;
+    private final PatientDao patientDao;
 
     @Autowired
     public EmployeeService(AppointmentDao appointmentDao, DoctorDao doctorDao,
                            MedicalEventDao medicalEventDao, MedicalExamDao medicalExamDao,
-                           MedicalInfoDao medicalInfoDao, StaffDao staffDao, RestClient.Builder builder) {
+                           MedicalInfoDao medicalInfoDao, StaffDao staffDao, RestClient.Builder builder, PatientDao patientDao) {
         this.appointmentDao = appointmentDao;
         this.doctorDao = doctorDao;
         this.medicalEventDao = medicalEventDao;
@@ -42,6 +43,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
         this.medicalInfoDao = medicalInfoDao;
         this.staffDao = staffDao;
         this.builder = builder;
+        this.patientDao = patientDao;
     }
 
     private String getSubjectFromContext(){
@@ -60,11 +62,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             UserOuterClass.Doctor.Builder builder = UserOuterClass.Doctor.newBuilder();
             String sid = getSubjectFromContext();
             if(sid != null){
-                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sid);
-                if (optionalDoctor.isPresent()) {
-                    builder.setUser(toProto(optionalDoctor.get().getUser()));
-                    builder.setMedSpecialization(optionalDoctor.get().getMedSpecialization());
-                    builder.setOfficePhoneNumber(optionalDoctor.get().getOfficePhoneNumber());
+                Doctor optionalDoctor = doctorDao.getDoctorById(sid);
+                if (optionalDoctor != null) {
+                    builder.setUser(toProto(optionalDoctor.getUser()));
+                    builder.setMedSpecialization(optionalDoctor.getMedSpecialization());
+                    builder.setOfficePhoneNumber(optionalDoctor.getOfficePhoneNumber());
                     //builder.setWard(null);  // TODO: serve popolare questo campo? Come?
                 }
             }
@@ -217,11 +219,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             EmployeeServicesOuterClass.GetAllMedicalExamResponse.Builder builder = EmployeeServicesOuterClass.GetAllMedicalExamResponse.newBuilder();
             String sid = getSubjectFromContext();
             if(sid != null){
-                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sid);
-                if (optionalDoctor.isPresent()) {
+                Doctor optionalDoctor = doctorDao.getDoctorById(sid);
+                if (optionalDoctor != null) {
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<MedicalExam> medicalExams = medicalExamDao.findAll(optionalDoctor.get().getDoctorId(),from,to);
+                    List<MedicalExam> medicalExams = medicalExamDao.findAll(optionalDoctor.getDoctorId(),from,to);
                     if (medicalExams != null){
                         medicalExams.stream().map(EmployeeTransformer::toProtoReduced).forEach(builder::addMedicalExams);
                     }
@@ -244,7 +246,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 medicalExam.setExamType(request.getExamType());
                 medicalExam.setDoctor(toEntity(request.getDoctor()));
                 medicalExam.setPatient(toEntity(request.getPatient()));
-                medicalExam.setMedicalEvent(request.getMedicalEvent().getEventId());
+                medicalExam.setMedicalEvent(medicalEventDao.findById(request.getMedicalEvent().getEventId()));
 
                 MedicalExam savedMedicalExam = medicalExamDao.insert(medicalExam);
 
@@ -269,7 +271,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             if(sid != null){
                 MedicalEvent medicalEvent = new MedicalEvent();
                 medicalEvent.setId(request.getEventId());
-                medicalEvent.setPatientID(request.getPatient().getUser().getId());
+                medicalEvent.setPatient(patientDao.findById(request.getPatient().getUser().getId()));
                 medicalEvent.setFromDateTime(convertToDate(request.getFromDateTime()));
                 medicalEvent.setToDateTime(convertToDate(request.getToDateTime()));
                 medicalEvent.setSeverity(SeverityCode.valueOf(request.getSeverityCode().name()));
@@ -277,7 +279,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 medicalEvent.setExams(retrieveMedialExamList(request.getMedicalExamIdsList()));
                 medicalEvent.setWard(toEntity(request.getWard()));
 
-                MedicalEvent savedMedicalEvent = medicalEventDao.insert(medicalEvent);
+                MedicalEvent savedMedicalEvent = medicalEventDao.save(medicalEvent);
 
                 if (savedMedicalEvent != null) {
                     builder.setSuccess(true);
