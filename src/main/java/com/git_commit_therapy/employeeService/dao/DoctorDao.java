@@ -25,4 +25,8 @@ public class DoctorDao {
     public List<Doctor> findAll() {
         return doctorRepository.findAll();
     }
+
+    public Doctor upsert(Doctor doctor) {
+        return doctorRepository.save(doctor);
+    }
 }

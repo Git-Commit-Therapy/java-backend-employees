@@ -27,7 +27,7 @@ public class MedicalExamDao {
         return medicalExamRepository.findById(medicalExamId);
     }
 
-    public MedicalExam insert(MedicalExam medicalExam) {
+    public MedicalExam upsert(MedicalExam medicalExam) {
         return medicalExamRepository.save(medicalExam);
     }
 }

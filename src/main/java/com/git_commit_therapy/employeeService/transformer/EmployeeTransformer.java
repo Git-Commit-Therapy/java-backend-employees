@@ -50,6 +50,14 @@ public class EmployeeTransformer {
         return staffBuilder.build();
     }
 
+    public static UserOuterClass.Patient toProto(Patient patient) {
+        UserOuterClass.Patient.Builder patientBuilder = UserOuterClass.Patient.newBuilder();
+
+        patientBuilder.setUser(toProto(patient.getUser()));
+
+        return patientBuilder.build();
+    }
+
     public static WardOuterClass.Ward toProto(Ward ward) {
         WardOuterClass.Ward.Builder wardBuilder = WardOuterClass.Ward.newBuilder();
 
@@ -88,6 +96,8 @@ public class EmployeeTransformer {
         builder.setAppointmentId(appointment.getId());
         builder.setDateTime(convertToTimestampWithDateTime(appointment.getDateTime()));
         builder.setDoctor(toProtoReduced(appointment.getDoctor()));
+        builder.setPatient(toProto(appointment.getPatient()));
+        builder.setStaff(toProto(appointment.getStaff()));
 
         return builder.build();
     }

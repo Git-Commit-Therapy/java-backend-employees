@@ -45,6 +45,10 @@ public class EmployeeServiceTest {
     private MedicalInfoDao medicalInfoDao;
     @Mock
     private StaffDao staffDao;
+    @Mock
+    private PatientDao patientDao;
+    @Mock
+    private WardDao wardDao;
 
     // Mocked values
     public static List<Appointment> appointmentList = createAppointmentList();
@@ -88,7 +92,7 @@ public class EmployeeServiceTest {
 
         // TODO: proseguire con gli altri mock dei DAO
 
-        employeeService = new EmployeeService(appointmentDao, doctorDao, medicalEventDao, medicalExamDao, medicalInfoDao, staffDao);
+        employeeService = new EmployeeService(appointmentDao, doctorDao, medicalEventDao, medicalExamDao, medicalInfoDao, staffDao, patientDao, wardDao);
     }
 
     @Test
