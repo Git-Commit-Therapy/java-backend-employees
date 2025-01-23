@@ -36,4 +36,8 @@ public class MedicalEventDao {
         medicalEventRepository.closeMedicalEvent(medicalEventId, dischargeLetter);
         return true;
     }
+
+    public MedicalEvent findMedicalEventIdByPatientAndWard(String patientId, String wardName) {
+        return medicalEventRepository.findMedicalEventIdByPatientAndWard(patientId, wardName);
+    }
 }

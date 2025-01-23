@@ -1,18 +1,19 @@
 package com.git_commit_therapy.employeeService.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Builder
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "medical_event")
 public class MedicalEvent {
     @Id

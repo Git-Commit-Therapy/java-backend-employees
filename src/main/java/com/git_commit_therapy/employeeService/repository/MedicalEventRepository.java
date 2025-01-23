@@ -4,6 +4,7 @@ import com.git_commit_therapy.employeeService.entity.MedicalEvent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
@@ -17,6 +18,10 @@ public interface MedicalEventRepository extends JpaRepository<MedicalEvent, Inte
     List<MedicalEvent> findAllByPatientAndDateRange(String patientId, Date fromDate, Date toDate);
 
     @Modifying
-    @Query("UPDATE MedicalEvent me SET me.dischargeLetter=?2, me.toDateTime=current_date WHERE me.id=?1")
-    void closeMedicalEvent(int medicalEventId, String dischargeLetter);
+    @Query("UPDATE MedicalEvent me SET me.dischargeLetter = :dischargeLetter, me.toDateTime=current_timestamp WHERE me.id = :medicalEventId")
+    void closeMedicalEvent(@Param("medicalEventId") int medicalEventId, @Param("dischargeLetter") String dischargeLetter);
+
+
+    @Query("SELECT me FROM MedicalEvent me WHERE me.patient.patientId = :patientId AND me.ward.name = :wardName")
+    MedicalEvent findMedicalEventIdByPatientAndWard(String patientId, String wardName);
 }

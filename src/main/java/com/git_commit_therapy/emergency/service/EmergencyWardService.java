@@ -1,6 +1,7 @@
 package com.git_commit_therapy.emergency.service;
 
 import com.git_commit_therapy.emergency.dao.EmergencyWardDao;
+import com.git_commit_therapy.employeeService.dao.AppointmentDao;
 import com.git_commit_therapy.employeeService.dao.DoctorDao;
 import com.git_commit_therapy.employeeService.dao.MedicalEventDao;
 import com.git_commit_therapy.employeeService.dao.PatientDao;
@@ -18,9 +19,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 
+import java.util.Date;
 import java.util.Optional;
 
 import static com.git_commit_therapy.employeeService.security.GrpcUtils.GrpcInterceptor;
+import static com.git_commit_therapy.employeeService.transformer.EmployeeTransformer.toEntity;
 
 @GrpcService
 public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWardServicesImplBase {
@@ -29,13 +32,15 @@ public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWar
     private final MedicalEventDao medicalEventDao;
     private final EmergencyWardDao emergencyWardDao;
     private final PatientDao patientDao;
+    private final AppointmentDao appointmentDao;
 
     @Autowired
-    public EmergencyWardService(DoctorDao doctorDao, MedicalEventDao medicalEventDao, EmergencyWardDao emergencyWardDao, PatientDao patientDao) {
+    public EmergencyWardService(DoctorDao doctorDao, MedicalEventDao medicalEventDao, EmergencyWardDao emergencyWardDao, PatientDao patientDao, AppointmentDao appointmentDao) {
         this.doctorDao = doctorDao;
         this.medicalEventDao = medicalEventDao;
         this.emergencyWardDao = emergencyWardDao;
         this.patientDao = patientDao;
+        this.appointmentDao = appointmentDao;
     }
 
     private String getSubjectFromContext(){
@@ -87,17 +92,35 @@ public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWar
 
             Optional<Patient> patient = patientDao.findPatientById(request.getPatient().getUser().getId());
             if (patient.isPresent()) {
-                // Remove the patient from the emergency ward
-                boolean emIdentifier = emergencyWardDao.removePatient(patient.get());
-                if (emIdentifier) {
-                    // TODO: update medical event precedente (quello aperto) e lo chiude
-                    // TODO: create medical event nuovo con un ward diverso da emergency ward
-                    request.getWard();
-
-                    return builder.build();
+                // Recupera il medical event Id
+                MedicalEvent medicalEvent = medicalEventDao.findMedicalEventIdByPatientAndWard(
+                        request.getPatient().getUser().getId(), "emergency");
+                // Chiude il medical event
+                boolean closed = medicalEventDao.closeMedicalEvent(medicalEvent.getId(), request.getPatient().getUser().getId());
+                if (closed) {
+                    // Remove the patient from the emergency ward
+                    boolean emIdentifier = emergencyWardDao.removePatient(patient.get());
+                    if (emIdentifier) {
+                        //creo nuovo medicalEvent con il nuovo ward
+                        MedicalEvent newMedicalEvent = MedicalEvent.builder()
+                                .id(null)
+                                .toDateTime(null)
+                                .exams(medicalEvent.getExams())
+                                .dischargeLetter(null)
+                                .patient(patient.get())
+                                .fromDateTime(new Date())
+                                .severity(null)
+                                .ward(toEntity(request.getWard()))
+                                .build();
+                        medicalEventDao.upsert(newMedicalEvent);
+                        return builder.build();
+                    }
+                    else {
+                        throw Status.INTERNAL.withDescription("Patient not removed").asRuntimeException();
+                    }
                 }
                 else {
-                    throw Status.INTERNAL.withDescription("Patient not removed").asRuntimeException();
+                    throw Status.INTERNAL.withDescription("Medical Event not closed").asRuntimeException();
                 }
             }
             throw Status.NOT_FOUND.withDescription("Patient not found").asRuntimeException();
@@ -138,10 +161,15 @@ public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWar
 
             Optional<Patient> patient = patientDao.findPatientById(request.getPatient().getUser().getId());
             if (patient.isPresent()) {
-                // TODO: crea un appuntamento e un medicalExam
-                // ...
-
-                // Call the patient for the visit
+                Appointment newAppointment = Appointment.builder()
+                        .id(null)
+                        .staff(null)
+                        .dateTime(new Date())
+                        .doctor(null)
+                        .patient(patient.get())
+                        .build();
+                appointmentDao.upsert(newAppointment);
+                // Call the patient for the visitcloseMedicalEvent
                 boolean emIdentifier = emergencyWardDao.callPatient(patient.get(), request.getAmbulatory());
                 if (emIdentifier) {
                     return builder.build();
