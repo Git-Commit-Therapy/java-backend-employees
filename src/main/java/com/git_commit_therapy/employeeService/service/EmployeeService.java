@@ -63,9 +63,9 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getDoctor(Empty request, StreamObserver<UserOuterClass.Doctor> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             UserOuterClass.Doctor.Builder builder = UserOuterClass.Doctor.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
-                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sid);
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
                 if (optionalDoctor.isPresent()) {
                     builder.setUser(toProto(optionalDoctor.get().getUser()));
                     builder.setMedSpecialization(optionalDoctor.get().getMedSpecialization());
@@ -81,8 +81,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAllDoctors(Empty request, StreamObserver<EmployeeServicesOuterClass.GetAllDoctorsResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetAllDoctorsResponse.Builder builder = EmployeeServicesOuterClass.GetAllDoctorsResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
+            String sub = getSubjectFromContext();
+            if(sub != null){
                 List<Doctor> doctorList = doctorDao.findAll();
                 if (doctorList != null && !doctorList.isEmpty()){
                     doctorList.stream().map(EmployeeTransformer::toProto).forEach(builder::addDoctors);
@@ -96,9 +96,9 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getStaff(Empty request, StreamObserver<UserOuterClass.Staff> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             UserOuterClass.Staff.Builder builder = UserOuterClass.Staff.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
-                Optional<Staff> optionalStaff = staffDao.findStaffById(sid);
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                Optional<Staff> optionalStaff = staffDao.findStaffById(sub);
                 optionalStaff.ifPresent(staff -> builder.setUser(EmployeeTransformer.toProto(staff.getUser())));
             }
             return builder.build();
@@ -109,8 +109,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAllStaffs(Empty request, StreamObserver<EmployeeServicesOuterClass.GetAllStaffsResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetAllStaffsResponse.Builder builder = EmployeeServicesOuterClass.GetAllStaffsResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
+            String sub = getSubjectFromContext();
+            if(sub != null){
                 List<Staff> staffList = staffDao.findAll();
                 if (staffList != null && !staffList.isEmpty()){
                     staffList.stream().map(EmployeeTransformer::toProto).forEach(builder::addStaffs);
@@ -124,9 +124,9 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getPatient(Empty request, StreamObserver<UserOuterClass.Patient> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             UserOuterClass.Patient.Builder builder = UserOuterClass.Patient.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
-                Optional<Patient> optionalPatient = patientDao.findPatientById(sid);
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                Optional<Patient> optionalPatient = patientDao.findPatientById(sub);
                 optionalPatient.ifPresent(patient -> builder.setUser(EmployeeTransformer.toProto(patient.getUser())));
             }
             return builder.build();
@@ -137,8 +137,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAllPatients(Empty request, StreamObserver<EmployeeServicesOuterClass.GetAllPatientsResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetAllPatientsResponse.Builder builder = EmployeeServicesOuterClass.GetAllPatientsResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
+            String sub = getSubjectFromContext();
+            if(sub != null){
                 List<Patient> patientList = patientDao.findAll();
                 if (patientList != null && !patientList.isEmpty()){
                     patientList.stream().map(EmployeeTransformer::toProto).forEach(builder::addPatients);
@@ -152,10 +152,10 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAppointments(EmployeeServicesOuterClass.GetAppointmentsRequest request, StreamObserver<EmployeeServicesOuterClass.GetAppointmentsResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetAppointmentsResponse.Builder builder = EmployeeServicesOuterClass.GetAppointmentsResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
-                // TODO: da capire il sid
-                Patient resFromDB = null;   //.getPatientBySid(sid);
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                // TODO: da capire il sub
+                Patient resFromDB = null;   //.getPatientBysub(sub);
                 if (resFromDB != null){
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
@@ -174,8 +174,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAppointmentDetails(AppointmentOuterClass.Appointment request, StreamObserver<EmployeeServicesOuterClass.GetAppointmentDetailsResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetAppointmentDetailsResponse.Builder builder = EmployeeServicesOuterClass.GetAppointmentDetailsResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 Optional<Appointment> optionalAppointment = appointmentDao.findAppointmentById(request.getAppointmentId());
                 optionalAppointment.ifPresent(EmployeeTransformer::toProto);
             }
@@ -187,9 +187,9 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAllMedicalExam(EmployeeServicesOuterClass.GetAllMedicalExamRequest request, StreamObserver<EmployeeServicesOuterClass.GetAllMedicalExamResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetAllMedicalExamResponse.Builder builder = EmployeeServicesOuterClass.GetAllMedicalExamResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
-                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sid);
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
                 if (optionalDoctor.isPresent()) {
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
@@ -207,8 +207,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getMedicalExamDetails(MedicalExamOuterClass.MedicalExam request, StreamObserver<EmployeeServicesOuterClass.GetMedicalExamDetailsResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetMedicalExamDetailsResponse.Builder builder = EmployeeServicesOuterClass.GetMedicalExamDetailsResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 Optional<MedicalExam> optionalMedicalExam = medicalExamDao.findMedicalExamById(request.getExamId());
                 optionalMedicalExam.ifPresent(medicalExam -> builder.setExam(EmployeeTransformer.toProto(medicalExam)));
             }
@@ -220,9 +220,9 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAllMedicalEvent(EmployeeServicesOuterClass.GetAllMedicalEventRequest request, StreamObserver<EmployeeServicesOuterClass.GetAllMedicalEventResponse> responseObserver) {
        GrpcInterceptor(responseObserver, request,null,()->{
            EmployeeServicesOuterClass.GetAllMedicalEventResponse.Builder builder = EmployeeServicesOuterClass.GetAllMedicalEventResponse.newBuilder();
-           String sid = getSubjectFromContext();
-           if(sid != null){
-               Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sid);
+           String sub = getSubjectFromContext();
+           if(sub != null){
+               Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
                if (optionalDoctor.isPresent()) {
                    Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                    Date to = EmployeeTransformer.convertToDate(request.getToDate());
@@ -240,8 +240,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getMedicalEventDetails(MedicalEventOuterClass.MedicalEvent request, StreamObserver<EmployeeServicesOuterClass.GetMedicalEventDetailsResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetMedicalEventDetailsResponse.Builder builder = EmployeeServicesOuterClass.GetMedicalEventDetailsResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 Optional<MedicalEvent> optionalMedicalEvent = medicalEventDao.findMedicalEventById(request.getEventId());
                 optionalMedicalEvent.ifPresent(medicalEvent -> builder.setEvent(EmployeeTransformer.toProto(medicalEvent)));
             }
@@ -253,8 +253,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void getAllWard(Empty request, StreamObserver<EmployeeServicesOuterClass.GetAllWardResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.GetAllWardResponse.Builder builder = EmployeeServicesOuterClass.GetAllWardResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
+            String sub = getSubjectFromContext();
+            if(sub != null){
                 List<Ward> wardList = wardDao.findAll();
                 if (wardList != null && !wardList.isEmpty()){
                     wardList.stream().map(EmployeeTransformer::toProto).forEach(builder::addWard);
@@ -268,8 +268,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void createMedicalExam(MedicalExamOuterClass.MedicalExam request, StreamObserver<EmployeeServicesOuterClass.CreateMedicalExamResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreateMedicalExamResponse.Builder builder = EmployeeServicesOuterClass.CreateMedicalExamResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
+            String sub = getSubjectFromContext();
+            if(sub != null){
                 MedicalExam medicalExam = new MedicalExam();
                 medicalExam.setId(request.getExamId());
                 medicalExam.setDateTime(convertToDate(request.getDateTime()));
@@ -278,6 +278,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 medicalExam.setDoctor(toEntity(request.getDoctor()));
                 medicalExam.setPatient(toEntity(request.getPatient()));
                 medicalExam.setMedicalEvent(toEntity(request.getMedicalEvent()));
+                medicalExam.getMedicalEvent().setExams(this.retrieveMedialExamList(request.getMedicalEvent().getMedicalExamIdsList()));
 
                 MedicalExam savedMedicalExam = medicalExamDao.upsert(medicalExam);
 
@@ -298,11 +299,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void createMedicalEvent(MedicalEventOuterClass.MedicalEvent request, StreamObserver<EmployeeServicesOuterClass.CreateMedicalEventResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreateMedicalEventResponse.Builder builder = EmployeeServicesOuterClass.CreateMedicalEventResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
+            String sub = getSubjectFromContext();
+            if(sub != null){
                 MedicalEvent medicalEvent = new MedicalEvent();
                 medicalEvent.setId(request.getEventId());
-                medicalEvent.setPatient(request.getPatient().getUser());
+                medicalEvent.setPatient(toEntity(request.getPatient()));
                 medicalEvent.setFromDateTime(convertToDate(request.getFromDateTime()));
                 medicalEvent.setToDateTime(convertToDate(request.getToDateTime()));
                 medicalEvent.setSeverity(SeverityCode.valueOf(request.getSeverityCode().name()));
@@ -329,8 +330,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void createMedicalInfo(MedicalInfoOuterClass.MedicalInfo request, StreamObserver<EmployeeServicesOuterClass.CreateMedicalInfoResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreateMedicalInfoResponse.Builder builder = EmployeeServicesOuterClass.CreateMedicalInfoResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if(sid != null){
+            String sub = getSubjectFromContext();
+            if(sub != null){
                 MedicalInfo medicalInfo = new MedicalInfo();
                 medicalInfo.setId(request.getMedicalInfoId());
                 medicalInfo.setDescription(request.getDescription());
@@ -355,8 +356,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void createAppointment(AppointmentOuterClass.Appointment request, StreamObserver<EmployeeServicesOuterClass.CreateAppointmentResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreateAppointmentResponse.Builder builder = EmployeeServicesOuterClass.CreateAppointmentResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // prepare appointment to be edit
                 Appointment appointment = new Appointment();
                 appointment.setId(request.getAppointmentId());
@@ -384,8 +385,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void createPatient(UserOuterClass.Patient request, StreamObserver<EmployeeServicesOuterClass.CreatePatientResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreatePatientResponse.Builder builder = EmployeeServicesOuterClass.CreatePatientResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // prepare patient to be inserted
                 Patient patient = new Patient();
                 patient.setPatientId(request.getUser().getId());
@@ -411,8 +412,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void createDoctor(UserOuterClass.Doctor request, StreamObserver<EmployeeServicesOuterClass.CreateDoctorResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreateDoctorResponse.Builder builder = EmployeeServicesOuterClass.CreateDoctorResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // prepare doctor to be inserted
                 Doctor doctor = new Doctor();
                 doctor.setDoctorId(request.getUser().getId());
@@ -440,8 +441,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void createWard(WardOuterClass.Ward request, StreamObserver<EmployeeServicesOuterClass.CreateWardResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreateWardResponse.Builder builder = EmployeeServicesOuterClass.CreateWardResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // prepare ward to be inserted
                 Ward ward = toEntity(request);
                 Ward savedWard = wardDao.upsert(ward);
@@ -463,8 +464,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void modifyAppointment(AppointmentOuterClass.Appointment request, StreamObserver<EmployeeServicesOuterClass.ModifyAppointmentResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.ModifyAppointmentResponse.Builder builder = EmployeeServicesOuterClass.ModifyAppointmentResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // prepare appointment to be edit
                 Appointment appointment = new Appointment();
                 appointment.setId(request.getAppointmentId());
@@ -492,8 +493,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void modifyPatient(UserOuterClass.Patient request, StreamObserver<EmployeeServicesOuterClass.ModifyPatientResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.ModifyPatientResponse.Builder builder = EmployeeServicesOuterClass.ModifyPatientResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // Prepare patient to be edit
                 Optional<Patient> optionalPatient = patientDao.findPatientById(request.getUser().getId());
                 if(optionalPatient.isPresent()){
@@ -526,8 +527,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void modifyDoctor(UserOuterClass.Doctor request, StreamObserver<EmployeeServicesOuterClass.ModifyDoctorResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.ModifyDoctorResponse.Builder builder = EmployeeServicesOuterClass.ModifyDoctorResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // Prepare doctor to be edit
                 Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(request.getUser().getId());
                 if(optionalDoctor.isPresent()){
@@ -560,8 +561,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void modifyMedicalEvent(MedicalEventOuterClass.MedicalEvent request, StreamObserver<EmployeeServicesOuterClass.ModifyMedicalEventResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.ModifyMedicalEventResponse.Builder builder = EmployeeServicesOuterClass.ModifyMedicalEventResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // Prepare medicalEvent to be edit
                 Optional<MedicalEvent> optionalMedicalEvent = medicalEventDao.findMedicalEventById(request.getEventId());
                 if(optionalMedicalEvent.isPresent()){
@@ -599,15 +600,18 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void modifyMedicalExam(MedicalExamOuterClass.MedicalExam request, StreamObserver<EmployeeServicesOuterClass.ModifyMedicalExamResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.ModifyMedicalExamResponse.Builder builder = EmployeeServicesOuterClass.ModifyMedicalExamResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // Prepare medicalExam to be edit
                 Optional<MedicalExam> optionalMedicalExam = medicalExamDao.findMedicalExamById(request.getExamId());
                 if(optionalMedicalExam.isPresent()){
                     MedicalExam medicalExam = optionalMedicalExam.get();
                     if (request.hasDateTime()) medicalExam.setDateTime(convertToDate(request.getDateTime()));
                     if (request.hasDoctor()) medicalExam.setDoctor(toEntity(request.getDoctor()));
-                    if (request.hasMedicalEvent()) medicalExam.setMedicalEvent(request.getMedicalEvent().getEventId());
+                    if (request.hasMedicalEvent()) {
+                        medicalExam.setMedicalEvent(toEntity(request.getMedicalEvent()));
+                        medicalExam.getMedicalEvent().setExams(this.retrieveMedialExamList(request.getMedicalEvent().getMedicalExamIdsList()));
+                    }
                     if (StringUtils.isNotBlank(request.getExamType())) medicalExam.setExamType(request.getExamType());
                     if (StringUtils.isNotBlank(request.getMedicalReport())) medicalExam.setMedicalReport(request.getMedicalReport());
 
@@ -633,8 +637,8 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     public void modifyMedicalInfo(MedicalInfoOuterClass.MedicalInfo request, StreamObserver<EmployeeServicesOuterClass.ModifyMedicalInfoResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.ModifyMedicalInfoResponse.Builder builder = EmployeeServicesOuterClass.ModifyMedicalInfoResponse.newBuilder();
-            String sid = getSubjectFromContext();
-            if (sid != null){
+            String sub = getSubjectFromContext();
+            if (sub != null){
                 // Prepare medicalInfo to be edit
                 Optional<MedicalInfo> optionalMedicalInfo = medicalInfoDao.findMedicalInfoById(request.getMedicalInfoId());
                 if(optionalMedicalInfo.isPresent()){
