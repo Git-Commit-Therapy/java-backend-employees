@@ -13,18 +13,20 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   grpc:
     server:
-      port: 9090
+      port: ${GRPC_PORT}
       enable-reflection: false # Enables gRPC server reflection, allowing clients to dynamically discover services and methods
       security:
-        enabled: false
-        certificate-chain: classpath:certs/server-cert.pem
+        enabled: ${GRPC_HTTPS}
+        certificateChain: ${GRPC_HTTPS_CERTIFICATE}
+        privateKey: ${GRPC_HTTPS_PRIVATE_KEY}
+        trustCertCollection: ${GRPC_HTTPS_TRUSTED_CERTIFICATE_COLLECTION}
 
 logging:
   config: classpath:logback.xml
 
 application:
   keycloak:
-    public-key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv0JV8ehW0poPF4hIEIhSbKVGB2FH1nRvkRQANvDrRxORKXObTLtz7PUwvPyJ49bfdovbpDUqo1xHrfKQvTgQiGY7WFVuZhYhgW9xcsQ1HzsKlXsy2TEjGEWkOAaDAdXbKaKzE8ERvpoO8s8jFpj+F517G67/o98H0f0FuPdPV3wEnKIHtA+dMA9gb0QUhqfVv8YBOqIanHQfivwnUyoq3V70itvQvLrY02RagH9gb7PXQwQFgScC9chkM+Wp0XI3bfSEgdE27OgjWlV0/tQq82rTTPzE+Cw887C5lAypFdoAC6mNv5fYKPUASgajNQuOzU51AbmF/ywJMmMqjBQJuwIDAQAB"
+    public-key: ${KEYCLOAK_PUBLIC_KEY}
   emergency:
     task:
       clean-old-call: 5 #Time in seconds (for the schedule task)
