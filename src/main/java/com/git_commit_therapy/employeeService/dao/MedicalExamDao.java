@@ -30,4 +30,5 @@ public class MedicalExamDao {
     public MedicalExam insert(MedicalExam medicalExam) {
         return medicalExamRepository.save(medicalExam);
     }
+
 }

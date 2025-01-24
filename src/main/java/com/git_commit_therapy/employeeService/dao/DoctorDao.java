@@ -18,8 +18,8 @@ public class DoctorDao {
         this.doctorRepository = doctorRepository;
     }
 
-    public Optional<Doctor> getDoctorById(String doctorId) {
-        return doctorRepository.findById(doctorId);
+    public Doctor getDoctorById(String doctorId) {
+        return doctorRepository.findById(doctorId).get();
     }
 
     public List<Doctor> findAll() {

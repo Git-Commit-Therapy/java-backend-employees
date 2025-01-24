@@ -1,19 +1,19 @@
 spring:
   application:
-    name: employee-service
+    name: central-process-service
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
-    show-sql: true #Show the query in the console
+    show-sql: false #Show the query in the console
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   grpc:
     server:
-      port: 9091
+      port: 9090
       enable-reflection: false # Enables gRPC server reflection, allowing clients to dynamically discover services and methods
       security:
         enabled: false
@@ -24,4 +24,8 @@ logging:
 
 application:
   keycloak:
-    public-key: ${KEYCLOAK_PUBLIC_KEY}
+    public-key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv0JV8ehW0poPF4hIEIhSbKVGB2FH1nRvkRQANvDrRxORKXObTLtz7PUwvPyJ49bfdovbpDUqo1xHrfKQvTgQiGY7WFVuZhYhgW9xcsQ1HzsKlXsy2TEjGEWkOAaDAdXbKaKzE8ERvpoO8s8jFpj+F517G67/o98H0f0FuPdPV3wEnKIHtA+dMA9gb0QUhqfVv8YBOqIanHQfivwnUyoq3V70itvQvLrY02RagH9gb7PXQwQFgScC9chkM+Wp0XI3bfSEgdE27OgjWlV0/tQq82rTTPzE+Cw887C5lAypFdoAC6mNv5fYKPUASgajNQuOzU51AbmF/ywJMmMqjBQJuwIDAQAB"
+  emergency:
+    task:
+      clean-old-call: 5 #Time in seconds (for the schedule task)
+      max-old-call: 30 #Time in seconds

@@ -14,7 +14,13 @@ public class MedicalEventDao {
         this.medicalEventRepository = medicalEventRepository;
     }
 
-    public MedicalEvent insert(MedicalEvent medicalEvent) {
-        return medicalEventRepository.save(medicalEvent);
+    public MedicalEvent save(MedicalEvent medicalEvent) {
+        //TODO check if the medicalEvent already exists and the updates
+        return medicalEventRepository.saveAndFlush(medicalEvent);
     }
+
+    public MedicalEvent findById(Integer id) {
+        return medicalEventRepository.findById(id).get();
+    }
+
 }

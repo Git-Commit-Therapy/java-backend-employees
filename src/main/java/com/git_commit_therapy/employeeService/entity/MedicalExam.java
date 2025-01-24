@@ -2,6 +2,7 @@ package com.git_commit_therapy.employeeService.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.OffsetDateTime;
@@ -10,6 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "medical_exam")
 public class MedicalExam {
     @Id
@@ -34,7 +36,17 @@ public class MedicalExam {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @Column(name = "medical_event_id")
-    private Integer medicalEvent;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "medical_event_id")
+    private MedicalEvent medicalEvent;
 
+
+    public MedicalExam(String medicalReport, String examType, Doctor doctor, Patient patient, MedicalEvent medicalEvent) {
+        this.medicalReport = medicalReport;
+        this.examType = examType;
+        this.doctor = doctor;
+        this.patient = patient;
+        this.medicalEvent = medicalEvent;
+        this.dateTime = new Date();
+    }
 }
