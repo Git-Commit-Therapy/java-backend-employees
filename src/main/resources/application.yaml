@@ -29,3 +29,5 @@ application:
     task:
       clean-old-call: 5 #Time in seconds (for the schedule task)
       max-old-call: 30 #Time in seconds
+  senderMail: "therapyHospital@gmail.com"
+  uriMail: "http://localhost:7443/email"

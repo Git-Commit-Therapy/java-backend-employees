@@ -1,6 +1,7 @@
 package com.git_commit_therapy.employeeService.service;
 
 import com.git_commit_therapy.employeeService.dao.*;
+import com.git_commit_therapy.employeeService.dto.EmailDTO;
 import com.git_commit_therapy.employeeService.entity.*;
 import com.git_commit_therapy.employeeService.transformer.EmployeeTransformer;
 import com.git_commit_therapy.proto.*;
@@ -11,8 +12,10 @@ import lombok.extern.java.Log;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.client.RestClient;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -20,6 +23,7 @@ import java.util.stream.Collectors;
 import static com.git_commit_therapy.employeeService.security.GrpcUtils.GrpcInterceptor;
 import static com.git_commit_therapy.employeeService.transformer.EmployeeTransformer.*;
 import static com.git_commit_therapy.employeeService.transformer.EmployeeTransformer.toEntity;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 @Log
 @GrpcService
@@ -33,6 +37,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     private final StaffDao staffDao;
     private final PatientDao patientDao;
     private final WardDao wardDao;
+
+    @Value("${application.senderMail}")
+    private String senderMail;
+    @Value("${application.uriMail}")
+    private String uriMail;
 
     @Autowired
     public EmployeeService(AppointmentDao appointmentDao, DoctorDao doctorDao,
@@ -314,8 +323,33 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 MedicalEvent savedMedicalEvent = medicalEventDao.upsert(medicalEvent);
 
                 if (savedMedicalEvent != null) {
-                    builder.setSuccess(true);
-                    builder.setMessage("Successfully created medical event");
+                    String mailBody = "Gentile "+medicalEvent.getPatient().getUser().getName()+" "+
+                            medicalEvent.getPatient().getUser().getSurname()+", "+
+                            "la informiamo che è stato creato un nuovo evento medico a suo nome.";
+
+                    EmailDTO newEmail = new EmailDTO(
+                            senderMail,
+                            medicalEvent.getPatient().getUser().getEmail(),
+                            "Creazione nuovo evento medico",
+                            mailBody,
+                            null
+                    );
+
+                    RestClient restClient = RestClient.create();
+                    Boolean emailSent = restClient.post()
+                            .uri(uriMail)
+                            .contentType(APPLICATION_JSON)
+                            .body(newEmail)
+                            .retrieve()
+                            .body(Boolean.class);
+
+                    if(Boolean.TRUE.equals(emailSent)) {
+                        builder.setSuccess(true);
+                        builder.setMessage("Successfully created medical event and email sent");
+                    } else {
+                        builder.setSuccess(false);
+                        builder.setMessage("Successfully created medical event, but email not sent");
+                    }
                 }
                 else {
                     builder.setSuccess(false);
