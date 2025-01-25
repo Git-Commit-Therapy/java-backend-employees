@@ -16,5 +16,4 @@ public class Ward {
 
     @Column(name = "name")
     private String name;
-
 }

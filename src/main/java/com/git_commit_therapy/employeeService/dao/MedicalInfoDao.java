@@ -5,6 +5,8 @@ import com.git_commit_therapy.employeeService.repository.MedicalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class MedicalInfoDao {
     private final MedicalInfoRepository medicalInfoRepository;
@@ -14,7 +16,11 @@ public class MedicalInfoDao {
         this.medicalInfoRepository = medicalInfoRepository;
     }
 
-    public MedicalInfo insert(MedicalInfo medicalInfo) {
+    public MedicalInfo upsert(MedicalInfo medicalInfo) {
         return medicalInfoRepository.save(medicalInfo);
+    }
+
+    public Optional<MedicalInfo> findMedicalInfoById(Integer medicalInfoId) {
+        return medicalInfoRepository.findById(medicalInfoId);
     }
 }

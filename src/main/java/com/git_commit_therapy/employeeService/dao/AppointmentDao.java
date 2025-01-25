@@ -28,7 +28,7 @@ public class AppointmentDao {
     }
 
     public Appointment upsert(Appointment appointment) {
-        // TODO: capire se serve splittare questo metodo in 2, uno per insert e uno per update
+        // TODO: capire se serve splittare questo metodo in 2, uno per upsert e uno per update
         // il metodo .save() di JPA Repository fa anche l'update nel caso l'id sia già esistente a DB (per questo il nome del metodo "upsert")
         return appointmentRepository.save(appointment);
     }

@@ -54,7 +54,7 @@ public final class MedicalExamOuterClass {
      * <code>string medicalReport = 3;</code>
      * @return The medicalReport.
      */
-    String getMedicalReport();
+    java.lang.String getMedicalReport();
     /**
      * <code>string medicalReport = 3;</code>
      * @return The bytes for medicalReport.
@@ -66,7 +66,7 @@ public final class MedicalExamOuterClass {
      * <code>string examType = 4;</code>
      * @return The examType.
      */
-    String getExamType();
+    java.lang.String getExamType();
     /**
      * <code>string examType = 4;</code>
      * @return The bytes for examType.
@@ -113,11 +113,11 @@ public final class MedicalExamOuterClass {
      * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
      * @return The medicalEvent.
      */
-    MedicalEventOuterClass.MedicalEvent getMedicalEvent();
+    com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent getMedicalEvent();
     /**
      * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
      */
-    MedicalEventOuterClass.MedicalEventOrBuilder getMedicalEventOrBuilder();
+    com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEventOrBuilder getMedicalEventOrBuilder();
   }
   /**
    * Protobuf type {@code com.git_commit_therapy.proto.MedicalExam}
@@ -147,15 +147,15 @@ public final class MedicalExamOuterClass {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor;
+      return com.git_commit_therapy.proto.MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_fieldAccessorTable
+      return com.git_commit_therapy.proto.MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MedicalExam.class, Builder.class);
+              com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam.class, com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam.Builder.class);
     }
 
     private int bitField0_;
@@ -165,7 +165,7 @@ public final class MedicalExamOuterClass {
      * <code>int32 examId = 1;</code>
      * @return The examId.
      */
-    @Override
+    @java.lang.Override
     public int getExamId() {
       return examId_;
     }
@@ -176,7 +176,7 @@ public final class MedicalExamOuterClass {
      * <code>.google.protobuf.Timestamp dateTime = 2;</code>
      * @return Whether the dateTime field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasDateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -184,34 +184,34 @@ public final class MedicalExamOuterClass {
      * <code>.google.protobuf.Timestamp dateTime = 2;</code>
      * @return The dateTime.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Timestamp getDateTime() {
       return dateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp dateTime = 2;</code>
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getDateTimeOrBuilder() {
       return dateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTime_;
     }
 
     public static final int MEDICALREPORT_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile Object medicalReport_ = "";
+    private volatile java.lang.Object medicalReport_ = "";
     /**
      * <code>string medicalReport = 3;</code>
      * @return The medicalReport.
      */
-    @Override
-    public String getMedicalReport() {
-      Object ref = medicalReport_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getMedicalReport() {
+      java.lang.Object ref = medicalReport_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         medicalReport_ = s;
         return s;
       }
@@ -220,14 +220,14 @@ public final class MedicalExamOuterClass {
      * <code>string medicalReport = 3;</code>
      * @return The bytes for medicalReport.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMedicalReportBytes() {
-      Object ref = medicalReport_;
-      if (ref instanceof String) {
+      java.lang.Object ref = medicalReport_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         medicalReport_ = b;
         return b;
       } else {
@@ -237,20 +237,20 @@ public final class MedicalExamOuterClass {
 
     public static final int EXAMTYPE_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
-    private volatile Object examType_ = "";
+    private volatile java.lang.Object examType_ = "";
     /**
      * <code>string examType = 4;</code>
      * @return The examType.
      */
-    @Override
-    public String getExamType() {
-      Object ref = examType_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getExamType() {
+      java.lang.Object ref = examType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         examType_ = s;
         return s;
       }
@@ -259,14 +259,14 @@ public final class MedicalExamOuterClass {
      * <code>string examType = 4;</code>
      * @return The bytes for examType.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getExamTypeBytes() {
-      Object ref = examType_;
-      if (ref instanceof String) {
+      java.lang.Object ref = examType_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         examType_ = b;
         return b;
       } else {
@@ -280,7 +280,7 @@ public final class MedicalExamOuterClass {
      * <code>.com.git_commit_therapy.proto.Doctor doctor = 5;</code>
      * @return Whether the doctor field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasDoctor() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -288,14 +288,14 @@ public final class MedicalExamOuterClass {
      * <code>.com.git_commit_therapy.proto.Doctor doctor = 5;</code>
      * @return The doctor.
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.Doctor getDoctor() {
       return doctor_ == null ? com.git_commit_therapy.proto.UserOuterClass.Doctor.getDefaultInstance() : doctor_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.Doctor doctor = 5;</code>
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.DoctorOrBuilder getDoctorOrBuilder() {
       return doctor_ == null ? com.git_commit_therapy.proto.UserOuterClass.Doctor.getDefaultInstance() : doctor_;
     }
@@ -306,7 +306,7 @@ public final class MedicalExamOuterClass {
      * <code>.com.git_commit_therapy.proto.Patient patient = 6;</code>
      * @return Whether the patient field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasPatient() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -314,25 +314,25 @@ public final class MedicalExamOuterClass {
      * <code>.com.git_commit_therapy.proto.Patient patient = 6;</code>
      * @return The patient.
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
       return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.Patient patient = 6;</code>
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
       return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
     }
 
     public static final int MEDICALEVENT_FIELD_NUMBER = 7;
-    private MedicalEventOuterClass.MedicalEvent medicalEvent_;
+    private com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent medicalEvent_;
     /**
      * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
      * @return Whether the medicalEvent field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasMedicalEvent() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -340,20 +340,20 @@ public final class MedicalExamOuterClass {
      * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
      * @return The medicalEvent.
      */
-    @Override
-    public MedicalEventOuterClass.MedicalEvent getMedicalEvent() {
-      return medicalEvent_ == null ? MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent getMedicalEvent() {
+      return medicalEvent_ == null ? com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
      */
-    @Override
-    public MedicalEventOuterClass.MedicalEventOrBuilder getMedicalEventOrBuilder() {
-      return medicalEvent_ == null ? MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEventOrBuilder getMedicalEventOrBuilder() {
+      return medicalEvent_ == null ? com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -363,7 +363,7 @@ public final class MedicalExamOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (examId_ != 0) {
@@ -390,7 +390,7 @@ public final class MedicalExamOuterClass {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -427,15 +427,15 @@ public final class MedicalExamOuterClass {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MedicalExam)) {
+      if (!(obj instanceof com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam)) {
         return super.equals(obj);
       }
-      MedicalExam other = (MedicalExam) obj;
+      com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam other = (com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam) obj;
 
       if (getExamId()
           != other.getExamId()) return false;
@@ -467,7 +467,7 @@ public final class MedicalExamOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -501,44 +501,44 @@ public final class MedicalExamOuterClass {
       return hash;
     }
 
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MedicalExam parseFrom(byte[] data)
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MedicalExam parseFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -546,26 +546,26 @@ public final class MedicalExamOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static MedicalExam parseDelimitedFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static MedicalExam parseDelimitedFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static MedicalExam parseFrom(
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -573,23 +573,23 @@ public final class MedicalExamOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MedicalExam prototype) {
+    public static Builder newBuilder(com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -599,18 +599,18 @@ public final class MedicalExamOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.MedicalExam)
-        MedicalExamOrBuilder {
+        com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExamOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor;
+        return com.git_commit_therapy.proto.MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_fieldAccessorTable
+        return com.git_commit_therapy.proto.MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MedicalExam.class, Builder.class);
+                com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam.class, com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam.Builder.class);
       }
 
       // Construct using com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam.newBuilder()
@@ -619,7 +619,7 @@ public final class MedicalExamOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -632,7 +632,7 @@ public final class MedicalExamOuterClass {
           getMedicalEventFieldBuilder();
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -662,35 +662,35 @@ public final class MedicalExamOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor;
+        return com.git_commit_therapy.proto.MedicalExamOuterClass.internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor;
       }
 
-      @Override
-      public MedicalExam getDefaultInstanceForType() {
-        return MedicalExam.getDefaultInstance();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam.getDefaultInstance();
       }
 
-      @Override
-      public MedicalExam build() {
-        MedicalExam result = buildPartial();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam build() {
+        com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public MedicalExam buildPartial() {
-        MedicalExam result = new MedicalExam(this);
+      @java.lang.Override
+      public com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam buildPartial() {
+        com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam result = new com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(MedicalExam result) {
+      private void buildPartial0(com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.examId_ = examId_;
@@ -729,18 +729,18 @@ public final class MedicalExamOuterClass {
         result.bitField0_ |= to_bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MedicalExam) {
-          return mergeFrom((MedicalExam)other);
+        if (other instanceof com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam) {
+          return mergeFrom((com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MedicalExam other) {
-        if (other == MedicalExam.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam other) {
+        if (other == com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam.getDefaultInstance()) return this;
         if (other.getExamId() != 0) {
           setExamId(other.getExamId());
         }
@@ -771,18 +771,18 @@ public final class MedicalExamOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -857,7 +857,7 @@ public final class MedicalExamOuterClass {
        * <code>int32 examId = 1;</code>
        * @return The examId.
        */
-      @Override
+      @java.lang.Override
       public int getExamId() {
         return examId_;
       }
@@ -1005,21 +1005,21 @@ public final class MedicalExamOuterClass {
         return dateTimeBuilder_;
       }
 
-      private Object medicalReport_ = "";
+      private java.lang.Object medicalReport_ = "";
       /**
        * <code>string medicalReport = 3;</code>
        * @return The medicalReport.
        */
-      public String getMedicalReport() {
-        Object ref = medicalReport_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMedicalReport() {
+        java.lang.Object ref = medicalReport_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           medicalReport_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1028,11 +1028,11 @@ public final class MedicalExamOuterClass {
        */
       public com.google.protobuf.ByteString
           getMedicalReportBytes() {
-        Object ref = medicalReport_;
+        java.lang.Object ref = medicalReport_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           medicalReport_ = b;
           return b;
         } else {
@@ -1045,7 +1045,7 @@ public final class MedicalExamOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMedicalReport(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         medicalReport_ = value;
         bitField0_ |= 0x00000004;
@@ -1077,21 +1077,21 @@ public final class MedicalExamOuterClass {
         return this;
       }
 
-      private Object examType_ = "";
+      private java.lang.Object examType_ = "";
       /**
        * <code>string examType = 4;</code>
        * @return The examType.
        */
-      public String getExamType() {
-        Object ref = examType_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getExamType() {
+        java.lang.Object ref = examType_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           examType_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1100,11 +1100,11 @@ public final class MedicalExamOuterClass {
        */
       public com.google.protobuf.ByteString
           getExamTypeBytes() {
-        Object ref = examType_;
+        java.lang.Object ref = examType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           examType_ = b;
           return b;
         } else {
@@ -1117,7 +1117,7 @@ public final class MedicalExamOuterClass {
        * @return This builder for chaining.
        */
       public Builder setExamType(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         examType_ = value;
         bitField0_ |= 0x00000008;
@@ -1391,9 +1391,9 @@ public final class MedicalExamOuterClass {
         return patientBuilder_;
       }
 
-      private MedicalEventOuterClass.MedicalEvent medicalEvent_;
+      private com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent medicalEvent_;
       private com.google.protobuf.SingleFieldBuilder<
-          MedicalEventOuterClass.MedicalEvent, MedicalEventOuterClass.MedicalEvent.Builder, MedicalEventOuterClass.MedicalEventOrBuilder> medicalEventBuilder_;
+          com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent, com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.Builder, com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEventOrBuilder> medicalEventBuilder_;
       /**
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        * @return Whether the medicalEvent field is set.
@@ -1405,9 +1405,9 @@ public final class MedicalExamOuterClass {
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        * @return The medicalEvent.
        */
-      public MedicalEventOuterClass.MedicalEvent getMedicalEvent() {
+      public com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent getMedicalEvent() {
         if (medicalEventBuilder_ == null) {
-          return medicalEvent_ == null ? MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
+          return medicalEvent_ == null ? com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
         } else {
           return medicalEventBuilder_.getMessage();
         }
@@ -1415,7 +1415,7 @@ public final class MedicalExamOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        */
-      public Builder setMedicalEvent(MedicalEventOuterClass.MedicalEvent value) {
+      public Builder setMedicalEvent(com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent value) {
         if (medicalEventBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1432,7 +1432,7 @@ public final class MedicalExamOuterClass {
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        */
       public Builder setMedicalEvent(
-          MedicalEventOuterClass.MedicalEvent.Builder builderForValue) {
+          com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.Builder builderForValue) {
         if (medicalEventBuilder_ == null) {
           medicalEvent_ = builderForValue.build();
         } else {
@@ -1445,11 +1445,11 @@ public final class MedicalExamOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        */
-      public Builder mergeMedicalEvent(MedicalEventOuterClass.MedicalEvent value) {
+      public Builder mergeMedicalEvent(com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent value) {
         if (medicalEventBuilder_ == null) {
           if (((bitField0_ & 0x00000040) != 0) &&
             medicalEvent_ != null &&
-            medicalEvent_ != MedicalEventOuterClass.MedicalEvent.getDefaultInstance()) {
+            medicalEvent_ != com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.getDefaultInstance()) {
             getMedicalEventBuilder().mergeFrom(value);
           } else {
             medicalEvent_ = value;
@@ -1479,7 +1479,7 @@ public final class MedicalExamOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        */
-      public MedicalEventOuterClass.MedicalEvent.Builder getMedicalEventBuilder() {
+      public com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.Builder getMedicalEventBuilder() {
         bitField0_ |= 0x00000040;
         onChanged();
         return getMedicalEventFieldBuilder().getBuilder();
@@ -1487,23 +1487,23 @@ public final class MedicalExamOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        */
-      public MedicalEventOuterClass.MedicalEventOrBuilder getMedicalEventOrBuilder() {
+      public com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEventOrBuilder getMedicalEventOrBuilder() {
         if (medicalEventBuilder_ != null) {
           return medicalEventBuilder_.getMessageOrBuilder();
         } else {
           return medicalEvent_ == null ?
-              MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
+              com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.getDefaultInstance() : medicalEvent_;
         }
       }
       /**
        * <code>.com.git_commit_therapy.proto.MedicalEvent medicalEvent = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          MedicalEventOuterClass.MedicalEvent, MedicalEventOuterClass.MedicalEvent.Builder, MedicalEventOuterClass.MedicalEventOrBuilder>
+          com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent, com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.Builder, com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEventOrBuilder> 
           getMedicalEventFieldBuilder() {
         if (medicalEventBuilder_ == null) {
           medicalEventBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              MedicalEventOuterClass.MedicalEvent, MedicalEventOuterClass.MedicalEvent.Builder, MedicalEventOuterClass.MedicalEventOrBuilder>(
+              com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent, com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEvent.Builder, com.git_commit_therapy.proto.MedicalEventOuterClass.MedicalEventOrBuilder>(
                   getMedicalEvent(),
                   getParentForChildren(),
                   isClean());
@@ -1516,18 +1516,18 @@ public final class MedicalExamOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.MedicalExam)
-    private static final MedicalExam DEFAULT_INSTANCE;
+    private static final com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MedicalExam();
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam();
     }
 
-    public static MedicalExam getDefaultInstance() {
+    public static com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<MedicalExam>
         PARSER = new com.google.protobuf.AbstractParser<MedicalExam>() {
-      @Override
+      @java.lang.Override
       public MedicalExam parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1551,13 +1551,13 @@ public final class MedicalExamOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MedicalExam> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public MedicalExam getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1576,7 +1576,7 @@ public final class MedicalExamOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\022medical_exam.proto\022\034com.git_commit_the" +
       "rapy.proto\032\037google/protobuf/timestamp.pr" +
       "oto\032\023medical_event.proto\032\nuser.proto\"\244\002\n" +
@@ -1587,13 +1587,14 @@ public final class MedicalExamOuterClass {
       "to.Doctor\0226\n\007patient\030\006 \001(\0132%.com.git_com" +
       "mit_therapy.proto.Patient\022@\n\014medicalEven" +
       "t\030\007 \001(\0132*.com.git_commit_therapy.proto.M" +
-      "edicalEventb\006proto3"
+      "edicalEventB%Z#github.com/git_commit_the" +
+      "rapy/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
-          MedicalEventOuterClass.getDescriptor(),
+          com.git_commit_therapy.proto.MedicalEventOuterClass.getDescriptor(),
           com.git_commit_therapy.proto.UserOuterClass.getDescriptor(),
         });
     internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor =
@@ -1601,10 +1602,10 @@ public final class MedicalExamOuterClass {
     internal_static_com_git_commit_therapy_proto_MedicalExam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_MedicalExam_descriptor,
-        new String[] { "ExamId", "DateTime", "MedicalReport", "ExamType", "Doctor", "Patient", "MedicalEvent", });
+        new java.lang.String[] { "ExamId", "DateTime", "MedicalReport", "ExamType", "Doctor", "Patient", "MedicalEvent", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.TimestampProto.getDescriptor();
-    MedicalEventOuterClass.getDescriptor();
+    com.git_commit_therapy.proto.MedicalEventOuterClass.getDescriptor();
     com.git_commit_therapy.proto.UserOuterClass.getDescriptor();
   }
 

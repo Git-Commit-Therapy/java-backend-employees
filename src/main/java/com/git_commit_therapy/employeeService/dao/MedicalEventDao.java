@@ -4,8 +4,14 @@ import com.git_commit_therapy.employeeService.entity.MedicalEvent;
 import com.git_commit_therapy.employeeService.repository.MedicalEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 @Service
+@Transactional
 public class MedicalEventDao {
     private final MedicalEventRepository medicalEventRepository;
 
@@ -14,13 +20,24 @@ public class MedicalEventDao {
         this.medicalEventRepository = medicalEventRepository;
     }
 
-    public MedicalEvent save(MedicalEvent medicalEvent) {
-        //TODO check if the medicalEvent already exists and the updates
-        return medicalEventRepository.saveAndFlush(medicalEvent);
+    public List<MedicalEvent> findAll(String patientId, Date fromDate, Date toDate) {
+        return medicalEventRepository.findAllByPatientAndDateRange(patientId,fromDate,toDate);
     }
 
-    public MedicalEvent findById(Integer id) {
-        return medicalEventRepository.findById(id).get();
+    public Optional<MedicalEvent> findMedicalEventById(Integer medicalEventId) {
+        return medicalEventRepository.findById(medicalEventId);
     }
 
+    public MedicalEvent upsert(MedicalEvent medicalEvent) {
+        return medicalEventRepository.save(medicalEvent);
+    }
+
+    public boolean closeMedicalEvent(int medicalEventId, String dischargeLetter) {
+        medicalEventRepository.closeMedicalEvent(medicalEventId, dischargeLetter);
+        return true;
+    }
+
+    public MedicalEvent findMedicalEventIdByPatientAndWard(String patientId, String wardName) {
+        return medicalEventRepository.findMedicalEventIdByPatientAndWard(patientId, wardName);
+    }
 }
