@@ -472,6 +472,32 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     }
 
     @Override
+    public void createStaff(UserOuterClass.Staff request, StreamObserver<EmployeeServicesOuterClass.CreateStaffResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.CreateStaffResponse.Builder builder = EmployeeServicesOuterClass.CreateStaffResponse.newBuilder();
+            String sub = getSubjectFromContext();
+            if (sub != null){
+                // prepare doctor to be inserted
+                Staff staff = new Staff();
+                staff.setStaffID((request.getUser().getId()));
+                staff.setUser(toEntity(request.getUser()));
+
+                Staff savedStaff = staffDao.upsert(staff);
+
+                if (savedStaff != null) {
+                    builder.setSuccess(true);
+                    builder.setMessage("Staff created successfully");
+                }
+                else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Staff not created");
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
     public void createWard(WardOuterClass.Ward request, StreamObserver<EmployeeServicesOuterClass.CreateWardResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.CreateWardResponse.Builder builder = EmployeeServicesOuterClass.CreateWardResponse.newBuilder();
@@ -592,6 +618,40 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     }
 
     @Override
+    public void modifyStaff(UserOuterClass.Staff request, StreamObserver<EmployeeServicesOuterClass.ModifyStaffResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.ModifyStaffResponse.Builder builder = EmployeeServicesOuterClass.ModifyStaffResponse.newBuilder();
+            String sub = getSubjectFromContext();
+            if (sub != null){
+                // Prepare doctor to be edit
+                Optional<Staff> optionalStaff = staffDao.findStaffById(request.getUser().getId());
+                if(optionalStaff.isPresent()){
+                    Staff staff = optionalStaff.get();
+                    if (StringUtils.isNotBlank(request.getUser().getName())) staff.getUser().setName(request.getUser().getName());
+                    if (StringUtils.isNotBlank(request.getUser().getEmail())) staff.getUser().setEmail(request.getUser().getEmail());
+                    if (StringUtils.isNotBlank(request.getUser().getPhoneNumber())) staff.getUser().setPhoneNumber(request.getUser().getPhoneNumber());
+                    if (StringUtils.isNotBlank(request.getUser().getSurname())) staff.getUser().setSurname(request.getUser().getSurname());
+                    //if (request.getUser().getBirthDate() != null) patient.getUser().setDateOfBirth(convertToDate(request.getUser().getBirthDate()));
+
+                    Staff savedStaff = staffDao.upsert(staff);
+                    if (savedStaff != null) {
+                        builder.setSuccess(true);
+                        builder.setMessage("Staff updated successfully");
+                    }
+                    else {
+                        builder.setSuccess(false);
+                        builder.setMessage("Staff not updated");
+                    }
+                } else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Staff not found");
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
     public void modifyMedicalEvent(MedicalEventOuterClass.MedicalEvent request, StreamObserver<EmployeeServicesOuterClass.ModifyMedicalEventResponse> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             EmployeeServicesOuterClass.ModifyMedicalEventResponse.Builder builder = EmployeeServicesOuterClass.ModifyMedicalEventResponse.newBuilder();
@@ -691,6 +751,26 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 } else {
                     builder.setSuccess(false);
                     builder.setMessage("Medical Info not found");
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
+    public void getAppointmentsFromDoctor(EmployeeServicesOuterClass.GetAppointmentsFromDoctorRequest request, StreamObserver<EmployeeServicesOuterClass.GetAppointmentsFromDoctorResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.GetAppointmentsFromDoctorResponse.Builder builder = EmployeeServicesOuterClass.GetAppointmentsFromDoctorResponse.newBuilder();
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
+                if (optionalDoctor.isPresent()) {
+                    Date from = EmployeeTransformer.convertToDate(request.getFromDate());
+                    Date to = EmployeeTransformer.convertToDate(request.getToDate());
+                    List<Appointment> appointments = appointmentDao.findAll(optionalDoctor.get().getDoctorId(), from, to);
+                    if (appointments != null){
+                        appointments.stream().map(EmployeeTransformer::toProto).forEach(builder::addAppointments);
+                    }
                 }
             }
             return builder.build();
