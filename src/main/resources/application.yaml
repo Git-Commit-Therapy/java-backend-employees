@@ -11,13 +11,15 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  grpc:
-    server:
-      port: 9090
-      enable-reflection: false # Enables gRPC server reflection, allowing clients to dynamically discover services and methods
-      security:
-        enabled: false
-        certificate-chain: classpath:certs/server-cert.pem
+grpc:
+  server:
+    port: ${GRPC_PORT}
+    enable-reflection: false # Enables gRPC server reflection, allowing clients to dynamically discover services and methods
+    security:
+      enabled: ${GRPC_HTTPS}
+      certificateChain: ${GRPC_HTTPS_CERTIFICATE}
+      privateKey: ${GRPC_HTTPS_PRIVATE_KEY}
+      trustCertCollection: ${GRPC_HTTPS_TRUSTED_CERTIFICATE_COLLECTION}
 
 logging:
   config: classpath:logback.xml
@@ -29,5 +31,5 @@ application:
     task:
       clean-old-call: 5 #Time in seconds (for the schedule task)
       max-old-call: 30 #Time in seconds
-  senderMail: "therapyHospital@gmail.com"
-  uriMail: "http://localhost:7443/email"
+  senderMail: ${SENDER_MAIL} #"therapyHospital@gmail.com"
+  uriMail: ${MAIL_SERVER_URL}
