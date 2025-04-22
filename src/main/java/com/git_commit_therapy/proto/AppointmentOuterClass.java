@@ -121,15 +121,15 @@ public final class AppointmentOuterClass {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_descriptor;
+      return com.git_commit_therapy.proto.AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_fieldAccessorTable
+      return com.git_commit_therapy.proto.AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Appointment.class, Builder.class);
+              com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.class, com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.Builder.class);
     }
 
     private int bitField0_;
@@ -139,7 +139,7 @@ public final class AppointmentOuterClass {
      * <code>int32 appointmentId = 1;</code>
      * @return The appointmentId.
      */
-    @Override
+    @java.lang.Override
     public int getAppointmentId() {
       return appointmentId_;
     }
@@ -150,7 +150,7 @@ public final class AppointmentOuterClass {
      * <code>.google.protobuf.Timestamp dateTime = 2;</code>
      * @return Whether the dateTime field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasDateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -158,14 +158,14 @@ public final class AppointmentOuterClass {
      * <code>.google.protobuf.Timestamp dateTime = 2;</code>
      * @return The dateTime.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Timestamp getDateTime() {
       return dateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp dateTime = 2;</code>
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getDateTimeOrBuilder() {
       return dateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTime_;
     }
@@ -176,7 +176,7 @@ public final class AppointmentOuterClass {
      * <code>.com.git_commit_therapy.proto.Staff staff = 3;</code>
      * @return Whether the staff field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasStaff() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -184,14 +184,14 @@ public final class AppointmentOuterClass {
      * <code>.com.git_commit_therapy.proto.Staff staff = 3;</code>
      * @return The staff.
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.Staff getStaff() {
       return staff_ == null ? com.git_commit_therapy.proto.UserOuterClass.Staff.getDefaultInstance() : staff_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.Staff staff = 3;</code>
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.StaffOrBuilder getStaffOrBuilder() {
       return staff_ == null ? com.git_commit_therapy.proto.UserOuterClass.Staff.getDefaultInstance() : staff_;
     }
@@ -202,7 +202,7 @@ public final class AppointmentOuterClass {
      * <code>.com.git_commit_therapy.proto.Doctor doctor = 4;</code>
      * @return Whether the doctor field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasDoctor() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -210,14 +210,14 @@ public final class AppointmentOuterClass {
      * <code>.com.git_commit_therapy.proto.Doctor doctor = 4;</code>
      * @return The doctor.
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.Doctor getDoctor() {
       return doctor_ == null ? com.git_commit_therapy.proto.UserOuterClass.Doctor.getDefaultInstance() : doctor_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.Doctor doctor = 4;</code>
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.DoctorOrBuilder getDoctorOrBuilder() {
       return doctor_ == null ? com.git_commit_therapy.proto.UserOuterClass.Doctor.getDefaultInstance() : doctor_;
     }
@@ -228,7 +228,7 @@ public final class AppointmentOuterClass {
      * <code>.com.git_commit_therapy.proto.Patient patient = 5;</code>
      * @return Whether the patient field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasPatient() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -236,20 +236,20 @@ public final class AppointmentOuterClass {
      * <code>.com.git_commit_therapy.proto.Patient patient = 5;</code>
      * @return The patient.
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
       return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.Patient patient = 5;</code>
      */
-    @Override
+    @java.lang.Override
     public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
       return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -259,7 +259,7 @@ public final class AppointmentOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (appointmentId_ != 0) {
@@ -280,7 +280,7 @@ public final class AppointmentOuterClass {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -311,15 +311,15 @@ public final class AppointmentOuterClass {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Appointment)) {
+      if (!(obj instanceof com.git_commit_therapy.proto.AppointmentOuterClass.Appointment)) {
         return super.equals(obj);
       }
-      Appointment other = (Appointment) obj;
+      com.git_commit_therapy.proto.AppointmentOuterClass.Appointment other = (com.git_commit_therapy.proto.AppointmentOuterClass.Appointment) obj;
 
       if (getAppointmentId()
           != other.getAppointmentId()) return false;
@@ -347,7 +347,7 @@ public final class AppointmentOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -377,44 +377,44 @@ public final class AppointmentOuterClass {
       return hash;
     }
 
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Appointment parseFrom(byte[] data)
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Appointment parseFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -422,26 +422,26 @@ public final class AppointmentOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Appointment parseDelimitedFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static Appointment parseDelimitedFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Appointment parseFrom(
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -449,23 +449,23 @@ public final class AppointmentOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Appointment prototype) {
+    public static Builder newBuilder(com.git_commit_therapy.proto.AppointmentOuterClass.Appointment prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -475,18 +475,18 @@ public final class AppointmentOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.Appointment)
-        AppointmentOrBuilder {
+        com.git_commit_therapy.proto.AppointmentOuterClass.AppointmentOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_descriptor;
+        return com.git_commit_therapy.proto.AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_fieldAccessorTable
+        return com.git_commit_therapy.proto.AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Appointment.class, Builder.class);
+                com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.class, com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.Builder.class);
       }
 
       // Construct using com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.newBuilder()
@@ -495,7 +495,7 @@ public final class AppointmentOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -508,7 +508,7 @@ public final class AppointmentOuterClass {
           getPatientFieldBuilder();
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -536,35 +536,35 @@ public final class AppointmentOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_descriptor;
+        return com.git_commit_therapy.proto.AppointmentOuterClass.internal_static_com_git_commit_therapy_proto_Appointment_descriptor;
       }
 
-      @Override
-      public Appointment getDefaultInstanceForType() {
-        return Appointment.getDefaultInstance();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.AppointmentOuterClass.Appointment getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.getDefaultInstance();
       }
 
-      @Override
-      public Appointment build() {
-        Appointment result = buildPartial();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.AppointmentOuterClass.Appointment build() {
+        com.git_commit_therapy.proto.AppointmentOuterClass.Appointment result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public Appointment buildPartial() {
-        Appointment result = new Appointment(this);
+      @java.lang.Override
+      public com.git_commit_therapy.proto.AppointmentOuterClass.Appointment buildPartial() {
+        com.git_commit_therapy.proto.AppointmentOuterClass.Appointment result = new com.git_commit_therapy.proto.AppointmentOuterClass.Appointment(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(Appointment result) {
+      private void buildPartial0(com.git_commit_therapy.proto.AppointmentOuterClass.Appointment result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.appointmentId_ = appointmentId_;
@@ -597,18 +597,18 @@ public final class AppointmentOuterClass {
         result.bitField0_ |= to_bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Appointment) {
-          return mergeFrom((Appointment)other);
+        if (other instanceof com.git_commit_therapy.proto.AppointmentOuterClass.Appointment) {
+          return mergeFrom((com.git_commit_therapy.proto.AppointmentOuterClass.Appointment)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Appointment other) {
-        if (other == Appointment.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.git_commit_therapy.proto.AppointmentOuterClass.Appointment other) {
+        if (other == com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.getDefaultInstance()) return this;
         if (other.getAppointmentId() != 0) {
           setAppointmentId(other.getAppointmentId());
         }
@@ -629,18 +629,18 @@ public final class AppointmentOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -705,7 +705,7 @@ public final class AppointmentOuterClass {
        * <code>int32 appointmentId = 1;</code>
        * @return The appointmentId.
        */
-      @Override
+      @java.lang.Override
       public int getAppointmentId() {
         return appointmentId_;
       }
@@ -1220,18 +1220,18 @@ public final class AppointmentOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.Appointment)
-    private static final Appointment DEFAULT_INSTANCE;
+    private static final com.git_commit_therapy.proto.AppointmentOuterClass.Appointment DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Appointment();
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.AppointmentOuterClass.Appointment();
     }
 
-    public static Appointment getDefaultInstance() {
+    public static com.git_commit_therapy.proto.AppointmentOuterClass.Appointment getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<Appointment>
         PARSER = new com.google.protobuf.AbstractParser<Appointment>() {
-      @Override
+      @java.lang.Override
       public Appointment parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1255,13 +1255,13 @@ public final class AppointmentOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Appointment> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public Appointment getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.git_commit_therapy.proto.AppointmentOuterClass.Appointment getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1280,7 +1280,7 @@ public final class AppointmentOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\021appointment.proto\022\034com.git_commit_ther" +
       "apy.proto\032\nuser.proto\032\037google/protobuf/t" +
       "imestamp.proto\"\364\001\n\013Appointment\022\025\n\rappoin" +
@@ -1289,7 +1289,8 @@ public final class AppointmentOuterClass {
       ".git_commit_therapy.proto.Staff\0224\n\006docto" +
       "r\030\004 \001(\0132$.com.git_commit_therapy.proto.D" +
       "octor\0226\n\007patient\030\005 \001(\0132%.com.git_commit_" +
-      "therapy.proto.Patientb\006proto3"
+      "therapy.proto.PatientB%Z#github.com/git_" +
+      "commit_therapy/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1302,7 +1303,7 @@ public final class AppointmentOuterClass {
     internal_static_com_git_commit_therapy_proto_Appointment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_Appointment_descriptor,
-        new String[] { "AppointmentId", "DateTime", "Staff", "Doctor", "Patient", });
+        new java.lang.String[] { "AppointmentId", "DateTime", "Staff", "Doctor", "Patient", });
     descriptor.resolveAllFeaturesImmutable();
     com.git_commit_therapy.proto.UserOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

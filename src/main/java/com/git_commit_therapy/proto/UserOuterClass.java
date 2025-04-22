@@ -33,7 +33,7 @@ public final class UserOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
-    String getId();
+    java.lang.String getId();
     /**
      * <code>string id = 1;</code>
      * @return The bytes for id.
@@ -45,7 +45,7 @@ public final class UserOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
-    String getName();
+    java.lang.String getName();
     /**
      * <code>string name = 2;</code>
      * @return The bytes for name.
@@ -57,7 +57,7 @@ public final class UserOuterClass {
      * <code>string surname = 3;</code>
      * @return The surname.
      */
-    String getSurname();
+    java.lang.String getSurname();
     /**
      * <code>string surname = 3;</code>
      * @return The bytes for surname.
@@ -84,7 +84,7 @@ public final class UserOuterClass {
      * <code>string phoneNumber = 5;</code>
      * @return The phoneNumber.
      */
-    String getPhoneNumber();
+    java.lang.String getPhoneNumber();
     /**
      * <code>string phoneNumber = 5;</code>
      * @return The bytes for phoneNumber.
@@ -96,7 +96,7 @@ public final class UserOuterClass {
      * <code>string email = 6;</code>
      * @return The email.
      */
-    String getEmail();
+    java.lang.String getEmail();
     /**
      * <code>string email = 6;</code>
      * @return The bytes for email.
@@ -135,34 +135,34 @@ public final class UserOuterClass {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_User_descriptor;
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_User_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_User_fieldAccessorTable
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_User_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              User.class, Builder.class);
+              com.git_commit_therapy.proto.UserOuterClass.User.class, com.git_commit_therapy.proto.UserOuterClass.User.Builder.class);
     }
 
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile Object id_ = "";
+    private volatile java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @Override
-    public String getId() {
-      Object ref = id_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         id_ = s;
         return s;
       }
@@ -171,14 +171,14 @@ public final class UserOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
-      Object ref = id_;
-      if (ref instanceof String) {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -188,20 +188,20 @@ public final class UserOuterClass {
 
     public static final int NAME_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile Object name_ = "";
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @Override
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
@@ -210,14 +210,14 @@ public final class UserOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -227,20 +227,20 @@ public final class UserOuterClass {
 
     public static final int SURNAME_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile Object surname_ = "";
+    private volatile java.lang.Object surname_ = "";
     /**
      * <code>string surname = 3;</code>
      * @return The surname.
      */
-    @Override
-    public String getSurname() {
-      Object ref = surname_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getSurname() {
+      java.lang.Object ref = surname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         surname_ = s;
         return s;
       }
@@ -249,14 +249,14 @@ public final class UserOuterClass {
      * <code>string surname = 3;</code>
      * @return The bytes for surname.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSurnameBytes() {
-      Object ref = surname_;
-      if (ref instanceof String) {
+      java.lang.Object ref = surname_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         surname_ = b;
         return b;
       } else {
@@ -270,7 +270,7 @@ public final class UserOuterClass {
      * <code>.google.protobuf.Timestamp birthDate = 4;</code>
      * @return Whether the birthDate field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasBirthDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -278,34 +278,34 @@ public final class UserOuterClass {
      * <code>.google.protobuf.Timestamp birthDate = 4;</code>
      * @return The birthDate.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Timestamp getBirthDate() {
       return birthDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : birthDate_;
     }
     /**
      * <code>.google.protobuf.Timestamp birthDate = 4;</code>
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getBirthDateOrBuilder() {
       return birthDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : birthDate_;
     }
 
     public static final int PHONENUMBER_FIELD_NUMBER = 5;
     @SuppressWarnings("serial")
-    private volatile Object phoneNumber_ = "";
+    private volatile java.lang.Object phoneNumber_ = "";
     /**
      * <code>string phoneNumber = 5;</code>
      * @return The phoneNumber.
      */
-    @Override
-    public String getPhoneNumber() {
-      Object ref = phoneNumber_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getPhoneNumber() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         phoneNumber_ = s;
         return s;
       }
@@ -314,14 +314,14 @@ public final class UserOuterClass {
      * <code>string phoneNumber = 5;</code>
      * @return The bytes for phoneNumber.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPhoneNumberBytes() {
-      Object ref = phoneNumber_;
-      if (ref instanceof String) {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         phoneNumber_ = b;
         return b;
       } else {
@@ -331,20 +331,20 @@ public final class UserOuterClass {
 
     public static final int EMAIL_FIELD_NUMBER = 6;
     @SuppressWarnings("serial")
-    private volatile Object email_ = "";
+    private volatile java.lang.Object email_ = "";
     /**
      * <code>string email = 6;</code>
      * @return The email.
      */
-    @Override
-    public String getEmail() {
-      Object ref = email_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         email_ = s;
         return s;
       }
@@ -353,14 +353,14 @@ public final class UserOuterClass {
      * <code>string email = 6;</code>
      * @return The bytes for email.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getEmailBytes() {
-      Object ref = email_;
-      if (ref instanceof String) {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         email_ = b;
         return b;
       } else {
@@ -369,7 +369,7 @@ public final class UserOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -379,7 +379,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
@@ -403,7 +403,7 @@ public final class UserOuterClass {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -433,15 +433,15 @@ public final class UserOuterClass {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof User)) {
+      if (!(obj instanceof com.git_commit_therapy.proto.UserOuterClass.User)) {
         return super.equals(obj);
       }
-      User other = (User) obj;
+      com.git_commit_therapy.proto.UserOuterClass.User other = (com.git_commit_therapy.proto.UserOuterClass.User) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -462,7 +462,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -488,44 +488,44 @@ public final class UserOuterClass {
       return hash;
     }
 
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static User parseFrom(byte[] data)
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static User parseFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -533,26 +533,26 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static User parseDelimitedFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static User parseDelimitedFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static User parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.User parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -560,23 +560,23 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(User prototype) {
+    public static Builder newBuilder(com.git_commit_therapy.proto.UserOuterClass.User prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -586,18 +586,18 @@ public final class UserOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.User)
-        UserOrBuilder {
+        com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_User_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_User_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_User_fieldAccessorTable
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_User_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                User.class, Builder.class);
+                com.git_commit_therapy.proto.UserOuterClass.User.class, com.git_commit_therapy.proto.UserOuterClass.User.Builder.class);
       }
 
       // Construct using com.git_commit_therapy.proto.UserOuterClass.User.newBuilder()
@@ -606,7 +606,7 @@ public final class UserOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -616,7 +616,7 @@ public final class UserOuterClass {
           getBirthDateFieldBuilder();
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -633,35 +633,35 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_User_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_User_descriptor;
       }
 
-      @Override
-      public User getDefaultInstanceForType() {
-        return User.getDefaultInstance();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.User getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance();
       }
 
-      @Override
-      public User build() {
-        User result = buildPartial();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.User build() {
+        com.git_commit_therapy.proto.UserOuterClass.User result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public User buildPartial() {
-        User result = new User(this);
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.User buildPartial() {
+        com.git_commit_therapy.proto.UserOuterClass.User result = new com.git_commit_therapy.proto.UserOuterClass.User(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(User result) {
+      private void buildPartial0(com.git_commit_therapy.proto.UserOuterClass.User result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
@@ -688,18 +688,18 @@ public final class UserOuterClass {
         result.bitField0_ |= to_bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof User) {
-          return mergeFrom((User)other);
+        if (other instanceof com.git_commit_therapy.proto.UserOuterClass.User) {
+          return mergeFrom((com.git_commit_therapy.proto.UserOuterClass.User)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(User other) {
-        if (other == User.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.git_commit_therapy.proto.UserOuterClass.User other) {
+        if (other == com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           bitField0_ |= 0x00000001;
@@ -733,18 +733,18 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -803,21 +803,21 @@ public final class UserOuterClass {
       }
       private int bitField0_;
 
-      private Object id_ = "";
+      private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
        * @return The id.
        */
-      public String getId() {
-        Object ref = id_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           id_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -826,11 +826,11 @@ public final class UserOuterClass {
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
-        Object ref = id_;
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           id_ = b;
           return b;
         } else {
@@ -843,7 +843,7 @@ public final class UserOuterClass {
        * @return This builder for chaining.
        */
       public Builder setId(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         id_ = value;
         bitField0_ |= 0x00000001;
@@ -875,21 +875,21 @@ public final class UserOuterClass {
         return this;
       }
 
-      private Object name_ = "";
+      private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
        * @return The name.
        */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -898,11 +898,11 @@ public final class UserOuterClass {
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
-        Object ref = name_;
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -915,7 +915,7 @@ public final class UserOuterClass {
        * @return This builder for chaining.
        */
       public Builder setName(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         name_ = value;
         bitField0_ |= 0x00000002;
@@ -947,21 +947,21 @@ public final class UserOuterClass {
         return this;
       }
 
-      private Object surname_ = "";
+      private java.lang.Object surname_ = "";
       /**
        * <code>string surname = 3;</code>
        * @return The surname.
        */
-      public String getSurname() {
-        Object ref = surname_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSurname() {
+        java.lang.Object ref = surname_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           surname_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -970,11 +970,11 @@ public final class UserOuterClass {
        */
       public com.google.protobuf.ByteString
           getSurnameBytes() {
-        Object ref = surname_;
+        java.lang.Object ref = surname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           surname_ = b;
           return b;
         } else {
@@ -987,7 +987,7 @@ public final class UserOuterClass {
        * @return This builder for chaining.
        */
       public Builder setSurname(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         surname_ = value;
         bitField0_ |= 0x00000004;
@@ -1140,21 +1140,21 @@ public final class UserOuterClass {
         return birthDateBuilder_;
       }
 
-      private Object phoneNumber_ = "";
+      private java.lang.Object phoneNumber_ = "";
       /**
        * <code>string phoneNumber = 5;</code>
        * @return The phoneNumber.
        */
-      public String getPhoneNumber() {
-        Object ref = phoneNumber_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getPhoneNumber() {
+        java.lang.Object ref = phoneNumber_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           phoneNumber_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1163,11 +1163,11 @@ public final class UserOuterClass {
        */
       public com.google.protobuf.ByteString
           getPhoneNumberBytes() {
-        Object ref = phoneNumber_;
+        java.lang.Object ref = phoneNumber_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           phoneNumber_ = b;
           return b;
         } else {
@@ -1180,7 +1180,7 @@ public final class UserOuterClass {
        * @return This builder for chaining.
        */
       public Builder setPhoneNumber(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         phoneNumber_ = value;
         bitField0_ |= 0x00000010;
@@ -1212,21 +1212,21 @@ public final class UserOuterClass {
         return this;
       }
 
-      private Object email_ = "";
+      private java.lang.Object email_ = "";
       /**
        * <code>string email = 6;</code>
        * @return The email.
        */
-      public String getEmail() {
-        Object ref = email_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           email_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1235,11 +1235,11 @@ public final class UserOuterClass {
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
-        Object ref = email_;
+        java.lang.Object ref = email_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           email_ = b;
           return b;
         } else {
@@ -1252,7 +1252,7 @@ public final class UserOuterClass {
        * @return This builder for chaining.
        */
       public Builder setEmail(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         email_ = value;
         bitField0_ |= 0x00000020;
@@ -1288,18 +1288,18 @@ public final class UserOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.User)
-    private static final User DEFAULT_INSTANCE;
+    private static final com.git_commit_therapy.proto.UserOuterClass.User DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new User();
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.UserOuterClass.User();
     }
 
-    public static User getDefaultInstance() {
+    public static com.git_commit_therapy.proto.UserOuterClass.User getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<User>
         PARSER = new com.google.protobuf.AbstractParser<User>() {
-      @Override
+      @java.lang.Override
       public User parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1323,13 +1323,13 @@ public final class UserOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<User> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public User getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.User getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1348,11 +1348,11 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return The user.
      */
-    User getUser();
+    com.git_commit_therapy.proto.UserOuterClass.User getUser();
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      */
-    UserOrBuilder getUserOrBuilder();
+    com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder();
   }
   /**
    * Protobuf type {@code com.git_commit_therapy.proto.Patient}
@@ -1380,25 +1380,25 @@ public final class UserOuterClass {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_descriptor;
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_fieldAccessorTable
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Patient.class, Builder.class);
+              com.git_commit_therapy.proto.UserOuterClass.Patient.class, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder.class);
     }
 
     private int bitField0_;
     public static final int USER_FIELD_NUMBER = 1;
-    private User user_;
+    private com.git_commit_therapy.proto.UserOuterClass.User user_;
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return Whether the user field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -1406,20 +1406,20 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return The user.
      */
-    @Override
-    public User getUser() {
-      return user_ == null ? User.getDefaultInstance() : user_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.User getUser() {
+      return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      */
-    @Override
-    public UserOrBuilder getUserOrBuilder() {
-      return user_ == null ? User.getDefaultInstance() : user_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder() {
+      return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1429,7 +1429,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -1438,7 +1438,7 @@ public final class UserOuterClass {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1453,15 +1453,15 @@ public final class UserOuterClass {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Patient)) {
+      if (!(obj instanceof com.git_commit_therapy.proto.UserOuterClass.Patient)) {
         return super.equals(obj);
       }
-      Patient other = (Patient) obj;
+      com.git_commit_therapy.proto.UserOuterClass.Patient other = (com.git_commit_therapy.proto.UserOuterClass.Patient) obj;
 
       if (hasUser() != other.hasUser()) return false;
       if (hasUser()) {
@@ -1472,7 +1472,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1488,44 +1488,44 @@ public final class UserOuterClass {
       return hash;
     }
 
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Patient parseFrom(byte[] data)
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Patient parseFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1533,26 +1533,26 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Patient parseDelimitedFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static Patient parseDelimitedFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Patient parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1560,23 +1560,23 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Patient prototype) {
+    public static Builder newBuilder(com.git_commit_therapy.proto.UserOuterClass.Patient prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1586,18 +1586,18 @@ public final class UserOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.Patient)
-        PatientOrBuilder {
+        com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_fieldAccessorTable
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Patient.class, Builder.class);
+                com.git_commit_therapy.proto.UserOuterClass.Patient.class, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder.class);
       }
 
       // Construct using com.git_commit_therapy.proto.UserOuterClass.Patient.newBuilder()
@@ -1606,7 +1606,7 @@ public final class UserOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1616,7 +1616,7 @@ public final class UserOuterClass {
           getUserFieldBuilder();
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -1628,35 +1628,35 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Patient_descriptor;
       }
 
-      @Override
-      public Patient getDefaultInstanceForType() {
-        return Patient.getDefaultInstance();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Patient getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance();
       }
 
-      @Override
-      public Patient build() {
-        Patient result = buildPartial();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Patient build() {
+        com.git_commit_therapy.proto.UserOuterClass.Patient result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public Patient buildPartial() {
-        Patient result = new Patient(this);
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Patient buildPartial() {
+        com.git_commit_therapy.proto.UserOuterClass.Patient result = new com.git_commit_therapy.proto.UserOuterClass.Patient(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(Patient result) {
+      private void buildPartial0(com.git_commit_therapy.proto.UserOuterClass.Patient result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1668,18 +1668,18 @@ public final class UserOuterClass {
         result.bitField0_ |= to_bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Patient) {
-          return mergeFrom((Patient)other);
+        if (other instanceof com.git_commit_therapy.proto.UserOuterClass.Patient) {
+          return mergeFrom((com.git_commit_therapy.proto.UserOuterClass.Patient)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Patient other) {
-        if (other == Patient.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.git_commit_therapy.proto.UserOuterClass.Patient other) {
+        if (other == com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()) return this;
         if (other.hasUser()) {
           mergeUser(other.getUser());
         }
@@ -1688,18 +1688,18 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -1733,9 +1733,9 @@ public final class UserOuterClass {
       }
       private int bitField0_;
 
-      private User user_;
+      private com.git_commit_therapy.proto.UserOuterClass.User user_;
       private com.google.protobuf.SingleFieldBuilder<
-          User, User.Builder, UserOrBuilder> userBuilder_;
+          com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder> userBuilder_;
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        * @return Whether the user field is set.
@@ -1747,9 +1747,9 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        * @return The user.
        */
-      public User getUser() {
+      public com.git_commit_therapy.proto.UserOuterClass.User getUser() {
         if (userBuilder_ == null) {
-          return user_ == null ? User.getDefaultInstance() : user_;
+          return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
         } else {
           return userBuilder_.getMessage();
         }
@@ -1757,7 +1757,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public Builder setUser(User value) {
+      public Builder setUser(com.git_commit_therapy.proto.UserOuterClass.User value) {
         if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1774,7 +1774,7 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
       public Builder setUser(
-          User.Builder builderForValue) {
+          com.git_commit_therapy.proto.UserOuterClass.User.Builder builderForValue) {
         if (userBuilder_ == null) {
           user_ = builderForValue.build();
         } else {
@@ -1787,11 +1787,11 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public Builder mergeUser(User value) {
+      public Builder mergeUser(com.git_commit_therapy.proto.UserOuterClass.User value) {
         if (userBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
             user_ != null &&
-            user_ != User.getDefaultInstance()) {
+            user_ != com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance()) {
             getUserBuilder().mergeFrom(value);
           } else {
             user_ = value;
@@ -1821,7 +1821,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public User.Builder getUserBuilder() {
+      public com.git_commit_therapy.proto.UserOuterClass.User.Builder getUserBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getUserFieldBuilder().getBuilder();
@@ -1829,23 +1829,23 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public UserOrBuilder getUserOrBuilder() {
+      public com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder() {
         if (userBuilder_ != null) {
           return userBuilder_.getMessageOrBuilder();
         } else {
           return user_ == null ?
-              User.getDefaultInstance() : user_;
+              com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
         }
       }
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          User, User.Builder, UserOrBuilder>
+          com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder> 
           getUserFieldBuilder() {
         if (userBuilder_ == null) {
           userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              User, User.Builder, UserOrBuilder>(
+              com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder>(
                   getUser(),
                   getParentForChildren(),
                   isClean());
@@ -1858,18 +1858,18 @@ public final class UserOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.Patient)
-    private static final Patient DEFAULT_INSTANCE;
+    private static final com.git_commit_therapy.proto.UserOuterClass.Patient DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Patient();
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.UserOuterClass.Patient();
     }
 
-    public static Patient getDefaultInstance() {
+    public static com.git_commit_therapy.proto.UserOuterClass.Patient getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<Patient>
         PARSER = new com.google.protobuf.AbstractParser<Patient>() {
-      @Override
+      @java.lang.Override
       public Patient parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1893,13 +1893,13 @@ public final class UserOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Patient> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public Patient getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.Patient getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1918,11 +1918,11 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return The user.
      */
-    User getUser();
+    com.git_commit_therapy.proto.UserOuterClass.User getUser();
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      */
-    UserOrBuilder getUserOrBuilder();
+    com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder();
   }
   /**
    * Protobuf type {@code com.git_commit_therapy.proto.Staff}
@@ -1950,25 +1950,25 @@ public final class UserOuterClass {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_descriptor;
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_fieldAccessorTable
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Staff.class, Builder.class);
+              com.git_commit_therapy.proto.UserOuterClass.Staff.class, com.git_commit_therapy.proto.UserOuterClass.Staff.Builder.class);
     }
 
     private int bitField0_;
     public static final int USER_FIELD_NUMBER = 1;
-    private User user_;
+    private com.git_commit_therapy.proto.UserOuterClass.User user_;
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return Whether the user field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -1976,20 +1976,20 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return The user.
      */
-    @Override
-    public User getUser() {
-      return user_ == null ? User.getDefaultInstance() : user_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.User getUser() {
+      return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      */
-    @Override
-    public UserOrBuilder getUserOrBuilder() {
-      return user_ == null ? User.getDefaultInstance() : user_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder() {
+      return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1999,7 +1999,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -2008,7 +2008,7 @@ public final class UserOuterClass {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2023,15 +2023,15 @@ public final class UserOuterClass {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Staff)) {
+      if (!(obj instanceof com.git_commit_therapy.proto.UserOuterClass.Staff)) {
         return super.equals(obj);
       }
-      Staff other = (Staff) obj;
+      com.git_commit_therapy.proto.UserOuterClass.Staff other = (com.git_commit_therapy.proto.UserOuterClass.Staff) obj;
 
       if (hasUser() != other.hasUser()) return false;
       if (hasUser()) {
@@ -2042,7 +2042,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2058,44 +2058,44 @@ public final class UserOuterClass {
       return hash;
     }
 
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Staff parseFrom(byte[] data)
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Staff parseFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2103,26 +2103,26 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Staff parseDelimitedFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static Staff parseDelimitedFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Staff parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2130,23 +2130,23 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Staff prototype) {
+    public static Builder newBuilder(com.git_commit_therapy.proto.UserOuterClass.Staff prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2156,18 +2156,18 @@ public final class UserOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.Staff)
-        StaffOrBuilder {
+        com.git_commit_therapy.proto.UserOuterClass.StaffOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_fieldAccessorTable
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Staff.class, Builder.class);
+                com.git_commit_therapy.proto.UserOuterClass.Staff.class, com.git_commit_therapy.proto.UserOuterClass.Staff.Builder.class);
       }
 
       // Construct using com.git_commit_therapy.proto.UserOuterClass.Staff.newBuilder()
@@ -2176,7 +2176,7 @@ public final class UserOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2186,7 +2186,7 @@ public final class UserOuterClass {
           getUserFieldBuilder();
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -2198,35 +2198,35 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Staff_descriptor;
       }
 
-      @Override
-      public Staff getDefaultInstanceForType() {
-        return Staff.getDefaultInstance();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Staff getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.UserOuterClass.Staff.getDefaultInstance();
       }
 
-      @Override
-      public Staff build() {
-        Staff result = buildPartial();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Staff build() {
+        com.git_commit_therapy.proto.UserOuterClass.Staff result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public Staff buildPartial() {
-        Staff result = new Staff(this);
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Staff buildPartial() {
+        com.git_commit_therapy.proto.UserOuterClass.Staff result = new com.git_commit_therapy.proto.UserOuterClass.Staff(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(Staff result) {
+      private void buildPartial0(com.git_commit_therapy.proto.UserOuterClass.Staff result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -2238,18 +2238,18 @@ public final class UserOuterClass {
         result.bitField0_ |= to_bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Staff) {
-          return mergeFrom((Staff)other);
+        if (other instanceof com.git_commit_therapy.proto.UserOuterClass.Staff) {
+          return mergeFrom((com.git_commit_therapy.proto.UserOuterClass.Staff)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Staff other) {
-        if (other == Staff.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.git_commit_therapy.proto.UserOuterClass.Staff other) {
+        if (other == com.git_commit_therapy.proto.UserOuterClass.Staff.getDefaultInstance()) return this;
         if (other.hasUser()) {
           mergeUser(other.getUser());
         }
@@ -2258,18 +2258,18 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -2303,9 +2303,9 @@ public final class UserOuterClass {
       }
       private int bitField0_;
 
-      private User user_;
+      private com.git_commit_therapy.proto.UserOuterClass.User user_;
       private com.google.protobuf.SingleFieldBuilder<
-          User, User.Builder, UserOrBuilder> userBuilder_;
+          com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder> userBuilder_;
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        * @return Whether the user field is set.
@@ -2317,9 +2317,9 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        * @return The user.
        */
-      public User getUser() {
+      public com.git_commit_therapy.proto.UserOuterClass.User getUser() {
         if (userBuilder_ == null) {
-          return user_ == null ? User.getDefaultInstance() : user_;
+          return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
         } else {
           return userBuilder_.getMessage();
         }
@@ -2327,7 +2327,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public Builder setUser(User value) {
+      public Builder setUser(com.git_commit_therapy.proto.UserOuterClass.User value) {
         if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2344,7 +2344,7 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
       public Builder setUser(
-          User.Builder builderForValue) {
+          com.git_commit_therapy.proto.UserOuterClass.User.Builder builderForValue) {
         if (userBuilder_ == null) {
           user_ = builderForValue.build();
         } else {
@@ -2357,11 +2357,11 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public Builder mergeUser(User value) {
+      public Builder mergeUser(com.git_commit_therapy.proto.UserOuterClass.User value) {
         if (userBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
             user_ != null &&
-            user_ != User.getDefaultInstance()) {
+            user_ != com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance()) {
             getUserBuilder().mergeFrom(value);
           } else {
             user_ = value;
@@ -2391,7 +2391,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public User.Builder getUserBuilder() {
+      public com.git_commit_therapy.proto.UserOuterClass.User.Builder getUserBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getUserFieldBuilder().getBuilder();
@@ -2399,23 +2399,23 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public UserOrBuilder getUserOrBuilder() {
+      public com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder() {
         if (userBuilder_ != null) {
           return userBuilder_.getMessageOrBuilder();
         } else {
           return user_ == null ?
-              User.getDefaultInstance() : user_;
+              com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
         }
       }
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          User, User.Builder, UserOrBuilder>
+          com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder> 
           getUserFieldBuilder() {
         if (userBuilder_ == null) {
           userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              User, User.Builder, UserOrBuilder>(
+              com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder>(
                   getUser(),
                   getParentForChildren(),
                   isClean());
@@ -2428,18 +2428,18 @@ public final class UserOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.Staff)
-    private static final Staff DEFAULT_INSTANCE;
+    private static final com.git_commit_therapy.proto.UserOuterClass.Staff DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Staff();
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.UserOuterClass.Staff();
     }
 
-    public static Staff getDefaultInstance() {
+    public static com.git_commit_therapy.proto.UserOuterClass.Staff getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<Staff>
         PARSER = new com.google.protobuf.AbstractParser<Staff>() {
-      @Override
+      @java.lang.Override
       public Staff parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2463,13 +2463,13 @@ public final class UserOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Staff> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public Staff getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.Staff getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2488,17 +2488,17 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return The user.
      */
-    User getUser();
+    com.git_commit_therapy.proto.UserOuterClass.User getUser();
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      */
-    UserOrBuilder getUserOrBuilder();
+    com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder();
 
     /**
      * <code>string medSpecialization = 2;</code>
      * @return The medSpecialization.
      */
-    String getMedSpecialization();
+    java.lang.String getMedSpecialization();
     /**
      * <code>string medSpecialization = 2;</code>
      * @return The bytes for medSpecialization.
@@ -2510,7 +2510,7 @@ public final class UserOuterClass {
      * <code>string officePhoneNumber = 3;</code>
      * @return The officePhoneNumber.
      */
-    String getOfficePhoneNumber();
+    java.lang.String getOfficePhoneNumber();
     /**
      * <code>string officePhoneNumber = 3;</code>
      * @return The bytes for officePhoneNumber.
@@ -2527,11 +2527,11 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
      * @return The ward.
      */
-    WardOuterClass.Ward getWard();
+    com.git_commit_therapy.proto.WardOuterClass.Ward getWard();
     /**
      * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
      */
-    WardOuterClass.WardOrBuilder getWardOrBuilder();
+    com.git_commit_therapy.proto.WardOuterClass.WardOrBuilder getWardOrBuilder();
   }
   /**
    * Protobuf type {@code com.git_commit_therapy.proto.Doctor}
@@ -2561,25 +2561,25 @@ public final class UserOuterClass {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_descriptor;
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_fieldAccessorTable
+      return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Doctor.class, Builder.class);
+              com.git_commit_therapy.proto.UserOuterClass.Doctor.class, com.git_commit_therapy.proto.UserOuterClass.Doctor.Builder.class);
     }
 
     private int bitField0_;
     public static final int USER_FIELD_NUMBER = 1;
-    private User user_;
+    private com.git_commit_therapy.proto.UserOuterClass.User user_;
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return Whether the user field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -2587,34 +2587,34 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      * @return The user.
      */
-    @Override
-    public User getUser() {
-      return user_ == null ? User.getDefaultInstance() : user_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.User getUser() {
+      return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.User user = 1;</code>
      */
-    @Override
-    public UserOrBuilder getUserOrBuilder() {
-      return user_ == null ? User.getDefaultInstance() : user_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder() {
+      return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
     }
 
     public static final int MEDSPECIALIZATION_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile Object medSpecialization_ = "";
+    private volatile java.lang.Object medSpecialization_ = "";
     /**
      * <code>string medSpecialization = 2;</code>
      * @return The medSpecialization.
      */
-    @Override
-    public String getMedSpecialization() {
-      Object ref = medSpecialization_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getMedSpecialization() {
+      java.lang.Object ref = medSpecialization_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         medSpecialization_ = s;
         return s;
       }
@@ -2623,14 +2623,14 @@ public final class UserOuterClass {
      * <code>string medSpecialization = 2;</code>
      * @return The bytes for medSpecialization.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMedSpecializationBytes() {
-      Object ref = medSpecialization_;
-      if (ref instanceof String) {
+      java.lang.Object ref = medSpecialization_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         medSpecialization_ = b;
         return b;
       } else {
@@ -2640,20 +2640,20 @@ public final class UserOuterClass {
 
     public static final int OFFICEPHONENUMBER_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile Object officePhoneNumber_ = "";
+    private volatile java.lang.Object officePhoneNumber_ = "";
     /**
      * <code>string officePhoneNumber = 3;</code>
      * @return The officePhoneNumber.
      */
-    @Override
-    public String getOfficePhoneNumber() {
-      Object ref = officePhoneNumber_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getOfficePhoneNumber() {
+      java.lang.Object ref = officePhoneNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         officePhoneNumber_ = s;
         return s;
       }
@@ -2662,14 +2662,14 @@ public final class UserOuterClass {
      * <code>string officePhoneNumber = 3;</code>
      * @return The bytes for officePhoneNumber.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOfficePhoneNumberBytes() {
-      Object ref = officePhoneNumber_;
-      if (ref instanceof String) {
+      java.lang.Object ref = officePhoneNumber_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         officePhoneNumber_ = b;
         return b;
       } else {
@@ -2678,12 +2678,12 @@ public final class UserOuterClass {
     }
 
     public static final int WARD_FIELD_NUMBER = 4;
-    private WardOuterClass.Ward ward_;
+    private com.git_commit_therapy.proto.WardOuterClass.Ward ward_;
     /**
      * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
      * @return Whether the ward field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasWard() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -2691,20 +2691,20 @@ public final class UserOuterClass {
      * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
      * @return The ward.
      */
-    @Override
-    public WardOuterClass.Ward getWard() {
-      return ward_ == null ? WardOuterClass.Ward.getDefaultInstance() : ward_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.WardOuterClass.Ward getWard() {
+      return ward_ == null ? com.git_commit_therapy.proto.WardOuterClass.Ward.getDefaultInstance() : ward_;
     }
     /**
      * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
      */
-    @Override
-    public WardOuterClass.WardOrBuilder getWardOrBuilder() {
-      return ward_ == null ? WardOuterClass.Ward.getDefaultInstance() : ward_;
+    @java.lang.Override
+    public com.git_commit_therapy.proto.WardOuterClass.WardOrBuilder getWardOrBuilder() {
+      return ward_ == null ? com.git_commit_therapy.proto.WardOuterClass.Ward.getDefaultInstance() : ward_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2714,7 +2714,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -2732,7 +2732,7 @@ public final class UserOuterClass {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2757,15 +2757,15 @@ public final class UserOuterClass {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Doctor)) {
+      if (!(obj instanceof com.git_commit_therapy.proto.UserOuterClass.Doctor)) {
         return super.equals(obj);
       }
-      Doctor other = (Doctor) obj;
+      com.git_commit_therapy.proto.UserOuterClass.Doctor other = (com.git_commit_therapy.proto.UserOuterClass.Doctor) obj;
 
       if (hasUser() != other.hasUser()) return false;
       if (hasUser()) {
@@ -2785,7 +2785,7 @@ public final class UserOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2809,44 +2809,44 @@ public final class UserOuterClass {
       return hash;
     }
 
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Doctor parseFrom(byte[] data)
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Doctor parseFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2854,26 +2854,26 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Doctor parseDelimitedFrom(java.io.InputStream input)
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static Doctor parseDelimitedFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Doctor parseFrom(
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2881,23 +2881,23 @@ public final class UserOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Doctor prototype) {
+    public static Builder newBuilder(com.git_commit_therapy.proto.UserOuterClass.Doctor prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2907,18 +2907,18 @@ public final class UserOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.Doctor)
-        DoctorOrBuilder {
+        com.git_commit_therapy.proto.UserOuterClass.DoctorOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_fieldAccessorTable
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Doctor.class, Builder.class);
+                com.git_commit_therapy.proto.UserOuterClass.Doctor.class, com.git_commit_therapy.proto.UserOuterClass.Doctor.Builder.class);
       }
 
       // Construct using com.git_commit_therapy.proto.UserOuterClass.Doctor.newBuilder()
@@ -2927,7 +2927,7 @@ public final class UserOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2938,7 +2938,7 @@ public final class UserOuterClass {
           getWardFieldBuilder();
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -2957,35 +2957,35 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_descriptor;
+        return com.git_commit_therapy.proto.UserOuterClass.internal_static_com_git_commit_therapy_proto_Doctor_descriptor;
       }
 
-      @Override
-      public Doctor getDefaultInstanceForType() {
-        return Doctor.getDefaultInstance();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Doctor getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.UserOuterClass.Doctor.getDefaultInstance();
       }
 
-      @Override
-      public Doctor build() {
-        Doctor result = buildPartial();
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Doctor build() {
+        com.git_commit_therapy.proto.UserOuterClass.Doctor result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public Doctor buildPartial() {
-        Doctor result = new Doctor(this);
+      @java.lang.Override
+      public com.git_commit_therapy.proto.UserOuterClass.Doctor buildPartial() {
+        com.git_commit_therapy.proto.UserOuterClass.Doctor result = new com.git_commit_therapy.proto.UserOuterClass.Doctor(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(Doctor result) {
+      private void buildPartial0(com.git_commit_therapy.proto.UserOuterClass.Doctor result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -3009,18 +3009,18 @@ public final class UserOuterClass {
         result.bitField0_ |= to_bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Doctor) {
-          return mergeFrom((Doctor)other);
+        if (other instanceof com.git_commit_therapy.proto.UserOuterClass.Doctor) {
+          return mergeFrom((com.git_commit_therapy.proto.UserOuterClass.Doctor)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Doctor other) {
-        if (other == Doctor.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.git_commit_therapy.proto.UserOuterClass.Doctor other) {
+        if (other == com.git_commit_therapy.proto.UserOuterClass.Doctor.getDefaultInstance()) return this;
         if (other.hasUser()) {
           mergeUser(other.getUser());
         }
@@ -3042,18 +3042,18 @@ public final class UserOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -3104,9 +3104,9 @@ public final class UserOuterClass {
       }
       private int bitField0_;
 
-      private User user_;
+      private com.git_commit_therapy.proto.UserOuterClass.User user_;
       private com.google.protobuf.SingleFieldBuilder<
-          User, User.Builder, UserOrBuilder> userBuilder_;
+          com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder> userBuilder_;
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        * @return Whether the user field is set.
@@ -3118,9 +3118,9 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        * @return The user.
        */
-      public User getUser() {
+      public com.git_commit_therapy.proto.UserOuterClass.User getUser() {
         if (userBuilder_ == null) {
-          return user_ == null ? User.getDefaultInstance() : user_;
+          return user_ == null ? com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
         } else {
           return userBuilder_.getMessage();
         }
@@ -3128,7 +3128,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public Builder setUser(User value) {
+      public Builder setUser(com.git_commit_therapy.proto.UserOuterClass.User value) {
         if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3145,7 +3145,7 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
       public Builder setUser(
-          User.Builder builderForValue) {
+          com.git_commit_therapy.proto.UserOuterClass.User.Builder builderForValue) {
         if (userBuilder_ == null) {
           user_ = builderForValue.build();
         } else {
@@ -3158,11 +3158,11 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public Builder mergeUser(User value) {
+      public Builder mergeUser(com.git_commit_therapy.proto.UserOuterClass.User value) {
         if (userBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
             user_ != null &&
-            user_ != User.getDefaultInstance()) {
+            user_ != com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance()) {
             getUserBuilder().mergeFrom(value);
           } else {
             user_ = value;
@@ -3192,7 +3192,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public User.Builder getUserBuilder() {
+      public com.git_commit_therapy.proto.UserOuterClass.User.Builder getUserBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getUserFieldBuilder().getBuilder();
@@ -3200,23 +3200,23 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
-      public UserOrBuilder getUserOrBuilder() {
+      public com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder getUserOrBuilder() {
         if (userBuilder_ != null) {
           return userBuilder_.getMessageOrBuilder();
         } else {
           return user_ == null ?
-              User.getDefaultInstance() : user_;
+              com.git_commit_therapy.proto.UserOuterClass.User.getDefaultInstance() : user_;
         }
       }
       /**
        * <code>.com.git_commit_therapy.proto.User user = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          User, User.Builder, UserOrBuilder>
+          com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder> 
           getUserFieldBuilder() {
         if (userBuilder_ == null) {
           userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              User, User.Builder, UserOrBuilder>(
+              com.git_commit_therapy.proto.UserOuterClass.User, com.git_commit_therapy.proto.UserOuterClass.User.Builder, com.git_commit_therapy.proto.UserOuterClass.UserOrBuilder>(
                   getUser(),
                   getParentForChildren(),
                   isClean());
@@ -3225,21 +3225,21 @@ public final class UserOuterClass {
         return userBuilder_;
       }
 
-      private Object medSpecialization_ = "";
+      private java.lang.Object medSpecialization_ = "";
       /**
        * <code>string medSpecialization = 2;</code>
        * @return The medSpecialization.
        */
-      public String getMedSpecialization() {
-        Object ref = medSpecialization_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMedSpecialization() {
+        java.lang.Object ref = medSpecialization_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           medSpecialization_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3248,11 +3248,11 @@ public final class UserOuterClass {
        */
       public com.google.protobuf.ByteString
           getMedSpecializationBytes() {
-        Object ref = medSpecialization_;
+        java.lang.Object ref = medSpecialization_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           medSpecialization_ = b;
           return b;
         } else {
@@ -3265,7 +3265,7 @@ public final class UserOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMedSpecialization(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         medSpecialization_ = value;
         bitField0_ |= 0x00000002;
@@ -3297,21 +3297,21 @@ public final class UserOuterClass {
         return this;
       }
 
-      private Object officePhoneNumber_ = "";
+      private java.lang.Object officePhoneNumber_ = "";
       /**
        * <code>string officePhoneNumber = 3;</code>
        * @return The officePhoneNumber.
        */
-      public String getOfficePhoneNumber() {
-        Object ref = officePhoneNumber_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getOfficePhoneNumber() {
+        java.lang.Object ref = officePhoneNumber_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           officePhoneNumber_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3320,11 +3320,11 @@ public final class UserOuterClass {
        */
       public com.google.protobuf.ByteString
           getOfficePhoneNumberBytes() {
-        Object ref = officePhoneNumber_;
+        java.lang.Object ref = officePhoneNumber_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           officePhoneNumber_ = b;
           return b;
         } else {
@@ -3337,7 +3337,7 @@ public final class UserOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOfficePhoneNumber(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         officePhoneNumber_ = value;
         bitField0_ |= 0x00000004;
@@ -3369,9 +3369,9 @@ public final class UserOuterClass {
         return this;
       }
 
-      private WardOuterClass.Ward ward_;
+      private com.git_commit_therapy.proto.WardOuterClass.Ward ward_;
       private com.google.protobuf.SingleFieldBuilder<
-          WardOuterClass.Ward, WardOuterClass.Ward.Builder, WardOuterClass.WardOrBuilder> wardBuilder_;
+          com.git_commit_therapy.proto.WardOuterClass.Ward, com.git_commit_therapy.proto.WardOuterClass.Ward.Builder, com.git_commit_therapy.proto.WardOuterClass.WardOrBuilder> wardBuilder_;
       /**
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        * @return Whether the ward field is set.
@@ -3383,9 +3383,9 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        * @return The ward.
        */
-      public WardOuterClass.Ward getWard() {
+      public com.git_commit_therapy.proto.WardOuterClass.Ward getWard() {
         if (wardBuilder_ == null) {
-          return ward_ == null ? WardOuterClass.Ward.getDefaultInstance() : ward_;
+          return ward_ == null ? com.git_commit_therapy.proto.WardOuterClass.Ward.getDefaultInstance() : ward_;
         } else {
           return wardBuilder_.getMessage();
         }
@@ -3393,7 +3393,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        */
-      public Builder setWard(WardOuterClass.Ward value) {
+      public Builder setWard(com.git_commit_therapy.proto.WardOuterClass.Ward value) {
         if (wardBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3410,7 +3410,7 @@ public final class UserOuterClass {
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        */
       public Builder setWard(
-          WardOuterClass.Ward.Builder builderForValue) {
+          com.git_commit_therapy.proto.WardOuterClass.Ward.Builder builderForValue) {
         if (wardBuilder_ == null) {
           ward_ = builderForValue.build();
         } else {
@@ -3423,11 +3423,11 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        */
-      public Builder mergeWard(WardOuterClass.Ward value) {
+      public Builder mergeWard(com.git_commit_therapy.proto.WardOuterClass.Ward value) {
         if (wardBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
             ward_ != null &&
-            ward_ != WardOuterClass.Ward.getDefaultInstance()) {
+            ward_ != com.git_commit_therapy.proto.WardOuterClass.Ward.getDefaultInstance()) {
             getWardBuilder().mergeFrom(value);
           } else {
             ward_ = value;
@@ -3457,7 +3457,7 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        */
-      public WardOuterClass.Ward.Builder getWardBuilder() {
+      public com.git_commit_therapy.proto.WardOuterClass.Ward.Builder getWardBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getWardFieldBuilder().getBuilder();
@@ -3465,23 +3465,23 @@ public final class UserOuterClass {
       /**
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        */
-      public WardOuterClass.WardOrBuilder getWardOrBuilder() {
+      public com.git_commit_therapy.proto.WardOuterClass.WardOrBuilder getWardOrBuilder() {
         if (wardBuilder_ != null) {
           return wardBuilder_.getMessageOrBuilder();
         } else {
           return ward_ == null ?
-              WardOuterClass.Ward.getDefaultInstance() : ward_;
+              com.git_commit_therapy.proto.WardOuterClass.Ward.getDefaultInstance() : ward_;
         }
       }
       /**
        * <code>.com.git_commit_therapy.proto.Ward ward = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          WardOuterClass.Ward, WardOuterClass.Ward.Builder, WardOuterClass.WardOrBuilder>
+          com.git_commit_therapy.proto.WardOuterClass.Ward, com.git_commit_therapy.proto.WardOuterClass.Ward.Builder, com.git_commit_therapy.proto.WardOuterClass.WardOrBuilder> 
           getWardFieldBuilder() {
         if (wardBuilder_ == null) {
           wardBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              WardOuterClass.Ward, WardOuterClass.Ward.Builder, WardOuterClass.WardOrBuilder>(
+              com.git_commit_therapy.proto.WardOuterClass.Ward, com.git_commit_therapy.proto.WardOuterClass.Ward.Builder, com.git_commit_therapy.proto.WardOuterClass.WardOrBuilder>(
                   getWard(),
                   getParentForChildren(),
                   isClean());
@@ -3494,18 +3494,18 @@ public final class UserOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.Doctor)
-    private static final Doctor DEFAULT_INSTANCE;
+    private static final com.git_commit_therapy.proto.UserOuterClass.Doctor DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Doctor();
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.UserOuterClass.Doctor();
     }
 
-    public static Doctor getDefaultInstance() {
+    public static com.git_commit_therapy.proto.UserOuterClass.Doctor getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<Doctor>
         PARSER = new com.google.protobuf.AbstractParser<Doctor>() {
-      @Override
+      @java.lang.Override
       public Doctor parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3529,13 +3529,13 @@ public final class UserOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Doctor> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public Doctor getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.Doctor getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3569,7 +3569,7 @@ public final class UserOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\nuser.proto\022\034com.git_commit_therapy.pro" +
       "to\032\nward.proto\032\037google/protobuf/timestam" +
       "p.proto\"\204\001\n\004User\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001" +
@@ -3582,12 +3582,13 @@ public final class UserOuterClass {
       "r\030\001 \001(\0132\".com.git_commit_therapy.proto.U" +
       "ser\022\031\n\021medSpecialization\030\002 \001(\t\022\031\n\021office" +
       "PhoneNumber\030\003 \001(\t\0220\n\004ward\030\004 \001(\0132\".com.gi" +
-      "t_commit_therapy.proto.Wardb\006proto3"
+      "t_commit_therapy.proto.WardB%Z#github.co" +
+      "m/git_commit_therapy/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          WardOuterClass.getDescriptor(),
+          com.git_commit_therapy.proto.WardOuterClass.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_com_git_commit_therapy_proto_User_descriptor =
@@ -3595,27 +3596,27 @@ public final class UserOuterClass {
     internal_static_com_git_commit_therapy_proto_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_User_descriptor,
-        new String[] { "Id", "Name", "Surname", "BirthDate", "PhoneNumber", "Email", });
+        new java.lang.String[] { "Id", "Name", "Surname", "BirthDate", "PhoneNumber", "Email", });
     internal_static_com_git_commit_therapy_proto_Patient_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_git_commit_therapy_proto_Patient_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_Patient_descriptor,
-        new String[] { "User", });
+        new java.lang.String[] { "User", });
     internal_static_com_git_commit_therapy_proto_Staff_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_git_commit_therapy_proto_Staff_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_Staff_descriptor,
-        new String[] { "User", });
+        new java.lang.String[] { "User", });
     internal_static_com_git_commit_therapy_proto_Doctor_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_git_commit_therapy_proto_Doctor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_Doctor_descriptor,
-        new String[] { "User", "MedSpecialization", "OfficePhoneNumber", "Ward", });
+        new java.lang.String[] { "User", "MedSpecialization", "OfficePhoneNumber", "Ward", });
     descriptor.resolveAllFeaturesImmutable();
-    WardOuterClass.getDescriptor();
+    com.git_commit_therapy.proto.WardOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

@@ -7,7 +7,10 @@ import com.google.protobuf.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 public class EmployeeTransformer {
 
@@ -50,6 +53,14 @@ public class EmployeeTransformer {
         return staffBuilder.build();
     }
 
+    public static UserOuterClass.Patient toProto(Patient patient) {
+        UserOuterClass.Patient.Builder patientBuilder = UserOuterClass.Patient.newBuilder();
+
+        patientBuilder.setUser(toProto(patient.getUser()));
+
+        return patientBuilder.build();
+    }
+
     public static WardOuterClass.Ward toProto(Ward ward) {
         WardOuterClass.Ward.Builder wardBuilder = WardOuterClass.Ward.newBuilder();
 
@@ -88,6 +99,8 @@ public class EmployeeTransformer {
         builder.setAppointmentId(appointment.getId());
         builder.setDateTime(convertToTimestampWithDateTime(appointment.getDateTime()));
         builder.setDoctor(toProtoReduced(appointment.getDoctor()));
+        builder.setPatient(toProto(appointment.getPatient()));
+        builder.setStaff(toProto(appointment.getStaff()));
 
         return builder.build();
     }
@@ -185,6 +198,20 @@ public class EmployeeTransformer {
         ward.setName(wardProto.getName());
 
         return ward;
+    }
+
+    public static MedicalEvent toEntity(MedicalEventOuterClass.MedicalEvent medicalEventProto){
+        MedicalEvent medicalEvent = new MedicalEvent();
+        medicalEvent.setId(medicalEventProto.getEventId());
+        medicalEvent.setFromDateTime(convertToDate(medicalEventProto.getFromDateTime()));
+        medicalEvent.setToDateTime(convertToDate(medicalEventProto.getToDateTime()));
+        medicalEvent.setDischargeLetter(medicalEventProto.getDischargeLetter());
+        medicalEvent.setSeverity(SeverityCode.valueOf(medicalEventProto.getSeverityCode().name()));
+        //medicalEvent.setExams(); --> impostato a codice per recuperare i MedicalEvent
+        medicalEvent.setPatient(toEntity(medicalEventProto.getPatient()));
+        medicalEvent.setWard(toEntity(medicalEventProto.getWard()));
+
+        return medicalEvent;
     }
 
     // Utility methods

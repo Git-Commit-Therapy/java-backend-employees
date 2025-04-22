@@ -1,14 +1,16 @@
 package com.git_commit_therapy.employeeService.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
+@Builder
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "appointment")
 public class Appointment {
     @Id
