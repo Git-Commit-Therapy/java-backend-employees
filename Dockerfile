@@ -19,7 +19,7 @@ VOLUME /app/certs
 
 ENV GRPC_PORT=443
 
-LABEL org.opencontainers.image.source=https://github.com/Git-Commit-Therapy/java-backend-emplyees
+LABEL org.opencontainers.image.source=https://github.com/Git-Commit-Therapy/java-backend-employees
 
 
 ENTRYPOINT ["java", "-jar", "./employeeService-0.0.1-SNAPSHOT.jar"]
