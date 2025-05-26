@@ -28,6 +28,7 @@ public class MedicalEvent {
     private Date toDateTime;
 
     @Column(name = "severity_code")
+    @Enumerated(EnumType.STRING)
     private SeverityCode severity;
 
     @Column(name = "discharge_letter")

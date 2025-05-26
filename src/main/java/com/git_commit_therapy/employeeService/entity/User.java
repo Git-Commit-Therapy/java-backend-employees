@@ -32,8 +32,8 @@ public class User {
     @Column(name = "date_of_birth", nullable = false)
     private Date dateOfBirth;
 
-    @Column(name = "sid", nullable = false, length = 50)
-    private String sid;
+    @Column(name = "sub", nullable = false, length = 50)
+    private String sub;
 
     @Column(name = "phone_number", length = 15)
     private String phoneNumber;

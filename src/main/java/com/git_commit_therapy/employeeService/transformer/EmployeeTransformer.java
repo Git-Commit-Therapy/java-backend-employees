@@ -158,7 +158,7 @@ public class EmployeeTransformer {
         user.setName(userProto.getName());
         user.setSurname(userProto.getSurname());
         user.setDateOfBirth(convertToDate(userProto.getBirthDate()));
-        user.setSid(userProto.getId());
+        user.setSub(userProto.getId());
         user.setPhoneNumber(userProto.getPhoneNumber());
         user.setEmail(userProto.getEmail());
 
