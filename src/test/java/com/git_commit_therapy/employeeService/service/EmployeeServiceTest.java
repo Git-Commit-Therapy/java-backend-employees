@@ -198,7 +198,7 @@ public class EmployeeServiceTest {
         user.setName("name" + i);
         user.setSurname("surname" + i);
         user.setDateOfBirth(Date.from(Instant.now()));
-        user.setSid("sid" + i);
+        user.setSub("sub" + i);
         user.setPhoneNumber("phone" + i);
         user.setEmail("email" + i);
 
