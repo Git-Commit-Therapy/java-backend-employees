@@ -395,11 +395,32 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             if (sub != null){
                 // prepare appointment to be edit
                 Appointment appointment = new Appointment();
-                appointment.setId(request.getAppointmentId());
                 appointment.setDateTime(convertToDate(request.getDateTime()));
-                appointment.setStaff(toEntity(request.getStaff()));
-                appointment.setDoctor(toEntity(request.getDoctor()));
-                appointment.setPatient(toEntity(request.getPatient()));
+                Optional<Staff> staff = staffDao.findStaffById(request.getStaff().getUser().getId());
+                if(staff.isPresent()) {
+                    appointment.setStaff(staff.get());
+                } else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Staff not found");
+                    return builder.build();
+                }
+                appointment.setStaff(staff.get());
+                Optional<Doctor> doctor = doctorDao.getDoctorById(request.getDoctor().getUser().getId());
+                if(doctor.isPresent()) {
+                    appointment.setDoctor(doctor.get());
+                } else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Doctor not found");
+                    return builder.build();
+                }
+                Optional<Patient> patient = patientDao.findPatientById(request.getPatient().getUser().getId());
+                if(patient.isPresent()) {
+                    appointment.setPatient(patient.get());
+                } else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Patient not found");
+                    return builder.build();
+                }
 
                 Appointment savedAppointment = appointmentDao.upsert(appointment);
 
