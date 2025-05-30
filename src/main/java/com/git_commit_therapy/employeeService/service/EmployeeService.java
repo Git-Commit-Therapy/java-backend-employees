@@ -82,6 +82,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                     builder.setWard(toProto(optionalDoctor.get().getWard()));
                 }
             }
+            log.fine("getDoctor: " + builder.build());
             return builder.build();
         });
     }

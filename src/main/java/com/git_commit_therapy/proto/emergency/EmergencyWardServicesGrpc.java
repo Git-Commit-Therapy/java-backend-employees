@@ -12,32 +12,32 @@ public final class EmergencyWardServicesGrpc {
 
   private EmergencyWardServicesGrpc() {}
 
-  public static final String SERVICE_NAME = "com.git_commit_therapy.proto.emergency.EmergencyWardServices";
+  public static final java.lang.String SERVICE_NAME = "com.git_commit_therapy.proto.emergency.EmergencyWardServices";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.AddPatientRequest,
-      EmergencyWardServicesOuterClass.AddPatientResponse> getAddPatientMethod;
+  private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest,
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse> getAddPatientMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "AddPatient",
-      requestType = EmergencyWardServicesOuterClass.AddPatientRequest.class,
-      responseType = EmergencyWardServicesOuterClass.AddPatientResponse.class,
+      requestType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest.class,
+      responseType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.AddPatientRequest,
-      EmergencyWardServicesOuterClass.AddPatientResponse> getAddPatientMethod() {
-    io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.AddPatientRequest, EmergencyWardServicesOuterClass.AddPatientResponse> getAddPatientMethod;
+  public static io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest,
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse> getAddPatientMethod() {
+    io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse> getAddPatientMethod;
     if ((getAddPatientMethod = EmergencyWardServicesGrpc.getAddPatientMethod) == null) {
       synchronized (EmergencyWardServicesGrpc.class) {
         if ((getAddPatientMethod = EmergencyWardServicesGrpc.getAddPatientMethod) == null) {
           EmergencyWardServicesGrpc.getAddPatientMethod = getAddPatientMethod =
-              io.grpc.MethodDescriptor.<EmergencyWardServicesOuterClass.AddPatientRequest, EmergencyWardServicesOuterClass.AddPatientResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddPatient"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.AddPatientRequest.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.AddPatientResponse.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse.getDefaultInstance()))
               .setSchemaDescriptor(new EmergencyWardServicesMethodDescriptorSupplier("AddPatient"))
               .build();
         }
@@ -46,27 +46,27 @@ public final class EmergencyWardServicesGrpc {
     return getAddPatientMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.TransferPatientRequest,
+  private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest,
       com.google.protobuf.Empty> getTransferPatientMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "TransferPatient",
-      requestType = EmergencyWardServicesOuterClass.TransferPatientRequest.class,
+      requestType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.TransferPatientRequest,
+  public static io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest,
       com.google.protobuf.Empty> getTransferPatientMethod() {
-    io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.TransferPatientRequest, com.google.protobuf.Empty> getTransferPatientMethod;
+    io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest, com.google.protobuf.Empty> getTransferPatientMethod;
     if ((getTransferPatientMethod = EmergencyWardServicesGrpc.getTransferPatientMethod) == null) {
       synchronized (EmergencyWardServicesGrpc.class) {
         if ((getTransferPatientMethod = EmergencyWardServicesGrpc.getTransferPatientMethod) == null) {
           EmergencyWardServicesGrpc.getTransferPatientMethod = getTransferPatientMethod =
-              io.grpc.MethodDescriptor.<EmergencyWardServicesOuterClass.TransferPatientRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TransferPatient"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.TransferPatientRequest.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new EmergencyWardServicesMethodDescriptorSupplier("TransferPatient"))
@@ -77,27 +77,27 @@ public final class EmergencyWardServicesGrpc {
     return getTransferPatientMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.RemovePatientRequest,
+  private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest,
       com.google.protobuf.Empty> getRemovePatientMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "RemovePatient",
-      requestType = EmergencyWardServicesOuterClass.RemovePatientRequest.class,
+      requestType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.RemovePatientRequest,
+  public static io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest,
       com.google.protobuf.Empty> getRemovePatientMethod() {
-    io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.RemovePatientRequest, com.google.protobuf.Empty> getRemovePatientMethod;
+    io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest, com.google.protobuf.Empty> getRemovePatientMethod;
     if ((getRemovePatientMethod = EmergencyWardServicesGrpc.getRemovePatientMethod) == null) {
       synchronized (EmergencyWardServicesGrpc.class) {
         if ((getRemovePatientMethod = EmergencyWardServicesGrpc.getRemovePatientMethod) == null) {
           EmergencyWardServicesGrpc.getRemovePatientMethod = getRemovePatientMethod =
-              io.grpc.MethodDescriptor.<EmergencyWardServicesOuterClass.RemovePatientRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemovePatient"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.RemovePatientRequest.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new EmergencyWardServicesMethodDescriptorSupplier("RemovePatient"))
@@ -108,27 +108,27 @@ public final class EmergencyWardServicesGrpc {
     return getRemovePatientMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.CallPatientRequest,
+  private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest,
       com.google.protobuf.Empty> getCallPatientForVisitMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CallPatientForVisit",
-      requestType = EmergencyWardServicesOuterClass.CallPatientRequest.class,
+      requestType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.CallPatientRequest,
+  public static io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest,
       com.google.protobuf.Empty> getCallPatientForVisitMethod() {
-    io.grpc.MethodDescriptor<EmergencyWardServicesOuterClass.CallPatientRequest, com.google.protobuf.Empty> getCallPatientForVisitMethod;
+    io.grpc.MethodDescriptor<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest, com.google.protobuf.Empty> getCallPatientForVisitMethod;
     if ((getCallPatientForVisitMethod = EmergencyWardServicesGrpc.getCallPatientForVisitMethod) == null) {
       synchronized (EmergencyWardServicesGrpc.class) {
         if ((getCallPatientForVisitMethod = EmergencyWardServicesGrpc.getCallPatientForVisitMethod) == null) {
           EmergencyWardServicesGrpc.getCallPatientForVisitMethod = getCallPatientForVisitMethod =
-              io.grpc.MethodDescriptor.<EmergencyWardServicesOuterClass.CallPatientRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CallPatientForVisit"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.CallPatientRequest.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new EmergencyWardServicesMethodDescriptorSupplier("CallPatientForVisit"))
@@ -145,7 +145,7 @@ public final class EmergencyWardServicesGrpc {
   public static EmergencyWardServicesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EmergencyWardServicesStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<EmergencyWardServicesStub>() {
-        @Override
+        @java.lang.Override
         public EmergencyWardServicesStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new EmergencyWardServicesStub(channel, callOptions);
         }
@@ -160,7 +160,7 @@ public final class EmergencyWardServicesGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EmergencyWardServicesBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<EmergencyWardServicesBlockingStub>() {
-        @Override
+        @java.lang.Override
         public EmergencyWardServicesBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new EmergencyWardServicesBlockingStub(channel, callOptions);
         }
@@ -175,7 +175,7 @@ public final class EmergencyWardServicesGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EmergencyWardServicesFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<EmergencyWardServicesFutureStub>() {
-        @Override
+        @java.lang.Override
         public EmergencyWardServicesFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new EmergencyWardServicesFutureStub(channel, callOptions);
         }
@@ -192,8 +192,8 @@ public final class EmergencyWardServicesGrpc {
      *Method for adding a patient to the emergency ward. Returns a code to identify the patient in the waiting queue
      * </pre>
      */
-    default void addPatient(EmergencyWardServicesOuterClass.AddPatientRequest request,
-                            io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.AddPatientResponse> responseObserver) {
+    default void addPatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest request,
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddPatientMethod(), responseObserver);
     }
 
@@ -202,8 +202,8 @@ public final class EmergencyWardServicesGrpc {
      *Transfers a patient from the emergency ward to a specific ward.
      * </pre>
      */
-    default void transferPatient(EmergencyWardServicesOuterClass.TransferPatientRequest request,
-                                 io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    default void transferPatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTransferPatientMethod(), responseObserver);
     }
 
@@ -212,8 +212,8 @@ public final class EmergencyWardServicesGrpc {
      *Removes a patient from the emergency ward.
      * </pre>
      */
-    default void removePatient(EmergencyWardServicesOuterClass.RemovePatientRequest request,
-                               io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    default void removePatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemovePatientMethod(), responseObserver);
     }
 
@@ -222,8 +222,8 @@ public final class EmergencyWardServicesGrpc {
      *Notifies a patient that is called for a visit
      * </pre>
      */
-    default void callPatientForVisit(EmergencyWardServicesOuterClass.CallPatientRequest request,
-                                     io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    default void callPatientForVisit(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCallPatientForVisitMethod(), responseObserver);
     }
   }
@@ -234,7 +234,7 @@ public final class EmergencyWardServicesGrpc {
   public static abstract class EmergencyWardServicesImplBase
       implements io.grpc.BindableService, AsyncService {
 
-    @Override public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return EmergencyWardServicesGrpc.bindService(this);
     }
   }
@@ -249,7 +249,7 @@ public final class EmergencyWardServicesGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmergencyWardServicesStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EmergencyWardServicesStub(channel, callOptions);
@@ -260,8 +260,8 @@ public final class EmergencyWardServicesGrpc {
      *Method for adding a patient to the emergency ward. Returns a code to identify the patient in the waiting queue
      * </pre>
      */
-    public void addPatient(EmergencyWardServicesOuterClass.AddPatientRequest request,
-                           io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.AddPatientResponse> responseObserver) {
+    public void addPatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest request,
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAddPatientMethod(), getCallOptions()), request, responseObserver);
     }
@@ -271,8 +271,8 @@ public final class EmergencyWardServicesGrpc {
      *Transfers a patient from the emergency ward to a specific ward.
      * </pre>
      */
-    public void transferPatient(EmergencyWardServicesOuterClass.TransferPatientRequest request,
-                                io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    public void transferPatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTransferPatientMethod(), getCallOptions()), request, responseObserver);
     }
@@ -282,8 +282,8 @@ public final class EmergencyWardServicesGrpc {
      *Removes a patient from the emergency ward.
      * </pre>
      */
-    public void removePatient(EmergencyWardServicesOuterClass.RemovePatientRequest request,
-                              io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    public void removePatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRemovePatientMethod(), getCallOptions()), request, responseObserver);
     }
@@ -293,8 +293,8 @@ public final class EmergencyWardServicesGrpc {
      *Notifies a patient that is called for a visit
      * </pre>
      */
-    public void callPatientForVisit(EmergencyWardServicesOuterClass.CallPatientRequest request,
-                                    io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    public void callPatientForVisit(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCallPatientForVisitMethod(), getCallOptions()), request, responseObserver);
     }
@@ -310,7 +310,7 @@ public final class EmergencyWardServicesGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmergencyWardServicesBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EmergencyWardServicesBlockingStub(channel, callOptions);
@@ -321,7 +321,7 @@ public final class EmergencyWardServicesGrpc {
      *Method for adding a patient to the emergency ward. Returns a code to identify the patient in the waiting queue
      * </pre>
      */
-    public EmergencyWardServicesOuterClass.AddPatientResponse addPatient(EmergencyWardServicesOuterClass.AddPatientRequest request) {
+    public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse addPatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAddPatientMethod(), getCallOptions(), request);
     }
@@ -331,7 +331,7 @@ public final class EmergencyWardServicesGrpc {
      *Transfers a patient from the emergency ward to a specific ward.
      * </pre>
      */
-    public com.google.protobuf.Empty transferPatient(EmergencyWardServicesOuterClass.TransferPatientRequest request) {
+    public com.google.protobuf.Empty transferPatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTransferPatientMethod(), getCallOptions(), request);
     }
@@ -341,7 +341,7 @@ public final class EmergencyWardServicesGrpc {
      *Removes a patient from the emergency ward.
      * </pre>
      */
-    public com.google.protobuf.Empty removePatient(EmergencyWardServicesOuterClass.RemovePatientRequest request) {
+    public com.google.protobuf.Empty removePatient(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRemovePatientMethod(), getCallOptions(), request);
     }
@@ -351,7 +351,7 @@ public final class EmergencyWardServicesGrpc {
      *Notifies a patient that is called for a visit
      * </pre>
      */
-    public com.google.protobuf.Empty callPatientForVisit(EmergencyWardServicesOuterClass.CallPatientRequest request) {
+    public com.google.protobuf.Empty callPatientForVisit(com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCallPatientForVisitMethod(), getCallOptions(), request);
     }
@@ -367,7 +367,7 @@ public final class EmergencyWardServicesGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmergencyWardServicesFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EmergencyWardServicesFutureStub(channel, callOptions);
@@ -378,8 +378,8 @@ public final class EmergencyWardServicesGrpc {
      *Method for adding a patient to the emergency ward. Returns a code to identify the patient in the waiting queue
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<EmergencyWardServicesOuterClass.AddPatientResponse> addPatient(
-        EmergencyWardServicesOuterClass.AddPatientRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse> addPatient(
+        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAddPatientMethod(), getCallOptions()), request);
     }
@@ -390,7 +390,7 @@ public final class EmergencyWardServicesGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> transferPatient(
-        EmergencyWardServicesOuterClass.TransferPatientRequest request) {
+        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTransferPatientMethod(), getCallOptions()), request);
     }
@@ -401,7 +401,7 @@ public final class EmergencyWardServicesGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> removePatient(
-        EmergencyWardServicesOuterClass.RemovePatientRequest request) {
+        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRemovePatientMethod(), getCallOptions()), request);
     }
@@ -412,7 +412,7 @@ public final class EmergencyWardServicesGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> callPatientForVisit(
-        EmergencyWardServicesOuterClass.CallPatientRequest request) {
+        com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCallPatientForVisitMethod(), getCallOptions()), request);
     }
@@ -436,24 +436,24 @@ public final class EmergencyWardServicesGrpc {
       this.methodId = methodId;
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_ADD_PATIENT:
-          serviceImpl.addPatient((EmergencyWardServicesOuterClass.AddPatientRequest) request,
-              (io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.AddPatientResponse>) responseObserver);
+          serviceImpl.addPatient((com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest) request,
+              (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse>) responseObserver);
           break;
         case METHODID_TRANSFER_PATIENT:
-          serviceImpl.transferPatient((EmergencyWardServicesOuterClass.TransferPatientRequest) request,
+          serviceImpl.transferPatient((com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_REMOVE_PATIENT:
-          serviceImpl.removePatient((EmergencyWardServicesOuterClass.RemovePatientRequest) request,
+          serviceImpl.removePatient((com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CALL_PATIENT_FOR_VISIT:
-          serviceImpl.callPatientForVisit((EmergencyWardServicesOuterClass.CallPatientRequest) request,
+          serviceImpl.callPatientForVisit((com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -461,8 +461,8 @@ public final class EmergencyWardServicesGrpc {
       }
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -478,28 +478,28 @@ public final class EmergencyWardServicesGrpc {
           getAddPatientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              EmergencyWardServicesOuterClass.AddPatientRequest,
-              EmergencyWardServicesOuterClass.AddPatientResponse>(
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientRequest,
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.AddPatientResponse>(
                 service, METHODID_ADD_PATIENT)))
         .addMethod(
           getTransferPatientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              EmergencyWardServicesOuterClass.TransferPatientRequest,
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.TransferPatientRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_TRANSFER_PATIENT)))
         .addMethod(
           getRemovePatientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              EmergencyWardServicesOuterClass.RemovePatientRequest,
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.RemovePatientRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_REMOVE_PATIENT)))
         .addMethod(
           getCallPatientForVisitMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              EmergencyWardServicesOuterClass.CallPatientRequest,
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.CallPatientRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_CALL_PATIENT_FOR_VISIT)))
         .build();
@@ -509,12 +509,12 @@ public final class EmergencyWardServicesGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     EmergencyWardServicesBaseDescriptorSupplier() {}
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return EmergencyWardServicesOuterClass.getDescriptor();
+      return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.getDescriptor();
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("EmergencyWardServices");
     }
@@ -528,13 +528,13 @@ public final class EmergencyWardServicesGrpc {
   private static final class EmergencyWardServicesMethodDescriptorSupplier
       extends EmergencyWardServicesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    EmergencyWardServicesMethodDescriptorSupplier(String methodName) {
+    EmergencyWardServicesMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }

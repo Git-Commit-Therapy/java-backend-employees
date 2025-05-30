@@ -12,32 +12,32 @@ public final class EmergencyWardPanelsServiceGrpc {
 
   private EmergencyWardPanelsServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "com.git_commit_therapy.proto.emergency.EmergencyWardPanelsService";
+  public static final java.lang.String SERVICE_NAME = "com.git_commit_therapy.proto.emergency.EmergencyWardPanelsService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveNeedToBeVisitedStatusMethod;
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveNeedToBeVisitedStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "RetrieveNeedToBeVisitedStatus",
       requestType = com.google.protobuf.Empty.class,
-      responseType = EmergencyWardServicesOuterClass.QueueStatusResponse.class,
+      responseType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveNeedToBeVisitedStatusMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveNeedToBeVisitedStatusMethod;
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveNeedToBeVisitedStatusMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveNeedToBeVisitedStatusMethod;
     if ((getRetrieveNeedToBeVisitedStatusMethod = EmergencyWardPanelsServiceGrpc.getRetrieveNeedToBeVisitedStatusMethod) == null) {
       synchronized (EmergencyWardPanelsServiceGrpc.class) {
         if ((getRetrieveNeedToBeVisitedStatusMethod = EmergencyWardPanelsServiceGrpc.getRetrieveNeedToBeVisitedStatusMethod) == null) {
           EmergencyWardPanelsServiceGrpc.getRetrieveNeedToBeVisitedStatusMethod = getRetrieveNeedToBeVisitedStatusMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, EmergencyWardServicesOuterClass.QueueStatusResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RetrieveNeedToBeVisitedStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.QueueStatusResponse.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse.getDefaultInstance()))
               .setSchemaDescriptor(new EmergencyWardPanelsServiceMethodDescriptorSupplier("RetrieveNeedToBeVisitedStatus"))
               .build();
         }
@@ -47,28 +47,28 @@ public final class EmergencyWardPanelsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveInVisitingStatusMethod;
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveInVisitingStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "RetrieveInVisitingStatus",
       requestType = com.google.protobuf.Empty.class,
-      responseType = EmergencyWardServicesOuterClass.QueueStatusResponse.class,
+      responseType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveInVisitingStatusMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveInVisitingStatusMethod;
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveInVisitingStatusMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> getRetrieveInVisitingStatusMethod;
     if ((getRetrieveInVisitingStatusMethod = EmergencyWardPanelsServiceGrpc.getRetrieveInVisitingStatusMethod) == null) {
       synchronized (EmergencyWardPanelsServiceGrpc.class) {
         if ((getRetrieveInVisitingStatusMethod = EmergencyWardPanelsServiceGrpc.getRetrieveInVisitingStatusMethod) == null) {
           EmergencyWardPanelsServiceGrpc.getRetrieveInVisitingStatusMethod = getRetrieveInVisitingStatusMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, EmergencyWardServicesOuterClass.QueueStatusResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RetrieveInVisitingStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.QueueStatusResponse.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse.getDefaultInstance()))
               .setSchemaDescriptor(new EmergencyWardPanelsServiceMethodDescriptorSupplier("RetrieveInVisitingStatus"))
               .build();
         }
@@ -78,28 +78,28 @@ public final class EmergencyWardPanelsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      EmergencyWardServicesOuterClass.LastPatientsCalledResponse> getRetrieveLastPatientsCalledMethod;
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse> getRetrieveLastPatientsCalledMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "RetrieveLastPatientsCalled",
       requestType = com.google.protobuf.Empty.class,
-      responseType = EmergencyWardServicesOuterClass.LastPatientsCalledResponse.class,
+      responseType = com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      EmergencyWardServicesOuterClass.LastPatientsCalledResponse> getRetrieveLastPatientsCalledMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, EmergencyWardServicesOuterClass.LastPatientsCalledResponse> getRetrieveLastPatientsCalledMethod;
+      com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse> getRetrieveLastPatientsCalledMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse> getRetrieveLastPatientsCalledMethod;
     if ((getRetrieveLastPatientsCalledMethod = EmergencyWardPanelsServiceGrpc.getRetrieveLastPatientsCalledMethod) == null) {
       synchronized (EmergencyWardPanelsServiceGrpc.class) {
         if ((getRetrieveLastPatientsCalledMethod = EmergencyWardPanelsServiceGrpc.getRetrieveLastPatientsCalledMethod) == null) {
           EmergencyWardPanelsServiceGrpc.getRetrieveLastPatientsCalledMethod = getRetrieveLastPatientsCalledMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, EmergencyWardServicesOuterClass.LastPatientsCalledResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RetrieveLastPatientsCalled"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  EmergencyWardServicesOuterClass.LastPatientsCalledResponse.getDefaultInstance()))
+                  com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse.getDefaultInstance()))
               .setSchemaDescriptor(new EmergencyWardPanelsServiceMethodDescriptorSupplier("RetrieveLastPatientsCalled"))
               .build();
         }
@@ -114,7 +114,7 @@ public final class EmergencyWardPanelsServiceGrpc {
   public static EmergencyWardPanelsServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EmergencyWardPanelsServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<EmergencyWardPanelsServiceStub>() {
-        @Override
+        @java.lang.Override
         public EmergencyWardPanelsServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new EmergencyWardPanelsServiceStub(channel, callOptions);
         }
@@ -129,7 +129,7 @@ public final class EmergencyWardPanelsServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EmergencyWardPanelsServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<EmergencyWardPanelsServiceBlockingStub>() {
-        @Override
+        @java.lang.Override
         public EmergencyWardPanelsServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new EmergencyWardPanelsServiceBlockingStub(channel, callOptions);
         }
@@ -144,7 +144,7 @@ public final class EmergencyWardPanelsServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EmergencyWardPanelsServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<EmergencyWardPanelsServiceFutureStub>() {
-        @Override
+        @java.lang.Override
         public EmergencyWardPanelsServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new EmergencyWardPanelsServiceFutureStub(channel, callOptions);
         }
@@ -162,7 +162,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * </pre>
      */
     default void retrieveNeedToBeVisitedStatus(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetrieveNeedToBeVisitedStatusMethod(), responseObserver);
     }
 
@@ -172,7 +172,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * </pre>
      */
     default void retrieveInVisitingStatus(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetrieveInVisitingStatusMethod(), responseObserver);
     }
 
@@ -182,7 +182,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * </pre>
      */
     default void retrieveLastPatientsCalled(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.LastPatientsCalledResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetrieveLastPatientsCalledMethod(), responseObserver);
     }
   }
@@ -193,7 +193,7 @@ public final class EmergencyWardPanelsServiceGrpc {
   public static abstract class EmergencyWardPanelsServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
-    @Override public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return EmergencyWardPanelsServiceGrpc.bindService(this);
     }
   }
@@ -208,7 +208,7 @@ public final class EmergencyWardPanelsServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmergencyWardPanelsServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EmergencyWardPanelsServiceStub(channel, callOptions);
@@ -220,7 +220,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * </pre>
      */
     public void retrieveNeedToBeVisitedStatus(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRetrieveNeedToBeVisitedStatusMethod(), getCallOptions()), request, responseObserver);
     }
@@ -231,7 +231,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * </pre>
      */
     public void retrieveInVisitingStatus(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRetrieveInVisitingStatusMethod(), getCallOptions()), request, responseObserver);
     }
@@ -242,7 +242,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * </pre>
      */
     public void retrieveLastPatientsCalled(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.LastPatientsCalledResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRetrieveLastPatientsCalledMethod(), getCallOptions()), request, responseObserver);
     }
@@ -258,7 +258,7 @@ public final class EmergencyWardPanelsServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmergencyWardPanelsServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EmergencyWardPanelsServiceBlockingStub(channel, callOptions);
@@ -269,7 +269,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * Retrieve the status of the "needToBeVisited" queue.
      * </pre>
      */
-    public EmergencyWardServicesOuterClass.QueueStatusResponse retrieveNeedToBeVisitedStatus(com.google.protobuf.Empty request) {
+    public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse retrieveNeedToBeVisitedStatus(com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRetrieveNeedToBeVisitedStatusMethod(), getCallOptions(), request);
     }
@@ -279,7 +279,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * Retrieve the status of the "inVisiting" queue.
      * </pre>
      */
-    public EmergencyWardServicesOuterClass.QueueStatusResponse retrieveInVisitingStatus(com.google.protobuf.Empty request) {
+    public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse retrieveInVisitingStatus(com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRetrieveInVisitingStatusMethod(), getCallOptions(), request);
     }
@@ -289,7 +289,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * Retrieve a list of the last patients called.
      * </pre>
      */
-    public EmergencyWardServicesOuterClass.LastPatientsCalledResponse retrieveLastPatientsCalled(com.google.protobuf.Empty request) {
+    public com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse retrieveLastPatientsCalled(com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRetrieveLastPatientsCalledMethod(), getCallOptions(), request);
     }
@@ -305,7 +305,7 @@ public final class EmergencyWardPanelsServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmergencyWardPanelsServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EmergencyWardPanelsServiceFutureStub(channel, callOptions);
@@ -316,7 +316,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * Retrieve the status of the "needToBeVisited" queue.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<EmergencyWardServicesOuterClass.QueueStatusResponse> retrieveNeedToBeVisitedStatus(
+    public com.google.common.util.concurrent.ListenableFuture<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> retrieveNeedToBeVisitedStatus(
         com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRetrieveNeedToBeVisitedStatusMethod(), getCallOptions()), request);
@@ -327,7 +327,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * Retrieve the status of the "inVisiting" queue.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<EmergencyWardServicesOuterClass.QueueStatusResponse> retrieveInVisitingStatus(
+    public com.google.common.util.concurrent.ListenableFuture<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse> retrieveInVisitingStatus(
         com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRetrieveInVisitingStatusMethod(), getCallOptions()), request);
@@ -338,7 +338,7 @@ public final class EmergencyWardPanelsServiceGrpc {
      * Retrieve a list of the last patients called.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<EmergencyWardServicesOuterClass.LastPatientsCalledResponse> retrieveLastPatientsCalled(
+    public com.google.common.util.concurrent.ListenableFuture<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse> retrieveLastPatientsCalled(
         com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRetrieveLastPatientsCalledMethod(), getCallOptions()), request);
@@ -362,29 +362,29 @@ public final class EmergencyWardPanelsServiceGrpc {
       this.methodId = methodId;
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_RETRIEVE_NEED_TO_BE_VISITED_STATUS:
           serviceImpl.retrieveNeedToBeVisitedStatus((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.QueueStatusResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse>) responseObserver);
           break;
         case METHODID_RETRIEVE_IN_VISITING_STATUS:
           serviceImpl.retrieveInVisitingStatus((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.QueueStatusResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse>) responseObserver);
           break;
         case METHODID_RETRIEVE_LAST_PATIENTS_CALLED:
           serviceImpl.retrieveLastPatientsCalled((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<EmergencyWardServicesOuterClass.LastPatientsCalledResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -401,21 +401,21 @@ public final class EmergencyWardPanelsServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.google.protobuf.Empty,
-              EmergencyWardServicesOuterClass.QueueStatusResponse>(
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse>(
                 service, METHODID_RETRIEVE_NEED_TO_BE_VISITED_STATUS)))
         .addMethod(
           getRetrieveInVisitingStatusMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.google.protobuf.Empty,
-              EmergencyWardServicesOuterClass.QueueStatusResponse>(
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.QueueStatusResponse>(
                 service, METHODID_RETRIEVE_IN_VISITING_STATUS)))
         .addMethod(
           getRetrieveLastPatientsCalledMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.google.protobuf.Empty,
-              EmergencyWardServicesOuterClass.LastPatientsCalledResponse>(
+              com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.LastPatientsCalledResponse>(
                 service, METHODID_RETRIEVE_LAST_PATIENTS_CALLED)))
         .build();
   }
@@ -424,12 +424,12 @@ public final class EmergencyWardPanelsServiceGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     EmergencyWardPanelsServiceBaseDescriptorSupplier() {}
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return EmergencyWardServicesOuterClass.getDescriptor();
+      return com.git_commit_therapy.proto.emergency.EmergencyWardServicesOuterClass.getDescriptor();
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("EmergencyWardPanelsService");
     }
@@ -443,13 +443,13 @@ public final class EmergencyWardPanelsServiceGrpc {
   private static final class EmergencyWardPanelsServiceMethodDescriptorSupplier
       extends EmergencyWardPanelsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    EmergencyWardPanelsServiceMethodDescriptorSupplier(String methodName) {
+    EmergencyWardPanelsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }
