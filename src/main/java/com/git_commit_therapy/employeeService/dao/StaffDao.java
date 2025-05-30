@@ -29,6 +29,10 @@ public class StaffDao {
         return staffRepository.findById(staffId);
     }
 
+    public Staff findStaffBySub(String sub) {
+        return staffRepository.findBySub(sub);
+    }
+
     public List<Staff> findAll() {
         return staffRepository.findAll();
     }

@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface DoctorRepository extends JpaRepository<Doctor, String> {
     @Query("select d from Doctor d where d.user.id = :id")
     Doctor findByUserId(String id);
+
+    @Query("select d from Doctor d where d.user.sub = :sub")
+    Doctor findByUserSub(String sub);
 }

@@ -28,6 +28,11 @@ public class DoctorDao {
         return doctorRepository.findById(doctorId);
     }
 
+    public Doctor getDoctorBySub(String sub) {
+        return doctorRepository.findByUserSub(sub);
+    }
+
+
     public List<Doctor> findAll() {
         return doctorRepository.findAll();
     }

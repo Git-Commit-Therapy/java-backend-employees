@@ -74,12 +74,12 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             UserOuterClass.Doctor.Builder builder = UserOuterClass.Doctor.newBuilder();
             String sub = getSubjectFromContext();
             if(sub != null){
-                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
-                if (optionalDoctor.isPresent()) {
-                    builder.setUser(toProto(optionalDoctor.get().getUser()));
-                    builder.setMedSpecialization(optionalDoctor.get().getMedSpecialization());
-                    builder.setOfficePhoneNumber(optionalDoctor.get().getOfficePhoneNumber());
-                    builder.setWard(toProto(optionalDoctor.get().getWard()));
+                Doctor optionalDoctor = doctorDao.getDoctorBySub(sub);
+                if (optionalDoctor != null) {
+                    builder.setUser(toProto(optionalDoctor.getUser()));
+                    builder.setMedSpecialization(optionalDoctor.getMedSpecialization());
+                    builder.setOfficePhoneNumber(optionalDoctor.getOfficePhoneNumber());
+                    builder.setWard(toProto(optionalDoctor.getWard()));
                 }
             }
             log.fine("getDoctor: " + builder.build());
@@ -108,8 +108,10 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             UserOuterClass.Staff.Builder builder = UserOuterClass.Staff.newBuilder();
             String sub = getSubjectFromContext();
             if(sub != null){
-                Optional<Staff> optionalStaff = staffDao.findStaffById(sub);
-                optionalStaff.ifPresent(staff -> builder.setUser(EmployeeTransformer.toProto(staff.getUser())));
+                Staff optionalStaff = staffDao.findStaffBySub(sub);
+                if(optionalStaff != null) {
+                    builder.setUser(EmployeeTransformer.toProto(optionalStaff.getUser()));
+                }
             }
             return builder.build();
         });
@@ -199,11 +201,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             EmployeeServicesOuterClass.GetAllMedicalExamResponse.Builder builder = EmployeeServicesOuterClass.GetAllMedicalExamResponse.newBuilder();
             String sub = getSubjectFromContext();
             if(sub != null){
-                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
-                if (optionalDoctor.isPresent()) {
+                Doctor optionalDoctor = doctorDao.getDoctorBySub(sub);
+                if (optionalDoctor != null) {
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<MedicalExam> medicalExams = medicalExamDao.findAll(optionalDoctor.get().getDoctorId(), from, to);
+                    List<MedicalExam> medicalExams = medicalExamDao.findAll(optionalDoctor.getDoctorId(), from, to);
                     if (medicalExams != null){
                         medicalExams.stream().map(EmployeeTransformer::toProtoReduced).forEach(builder::addMedicalExams);
                     }
@@ -232,11 +234,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
            EmployeeServicesOuterClass.GetAllMedicalEventResponse.Builder builder = EmployeeServicesOuterClass.GetAllMedicalEventResponse.newBuilder();
            String sub = getSubjectFromContext();
            if(sub != null){
-               Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
-               if (optionalDoctor.isPresent()) {
+               Doctor optionalDoctor = doctorDao.getDoctorBySub(sub);
+               if (optionalDoctor != null) {
                    Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                    Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                   List<MedicalEvent> medicalEvents = medicalEventDao.findAll(optionalDoctor.get().getDoctorId(), from, to);
+                   List<MedicalEvent> medicalEvents = medicalEventDao.findAll(optionalDoctor.getDoctorId(), from, to);
                    if (medicalEvents != null){
                        medicalEvents.stream().map(EmployeeTransformer::toProto).forEach(builder::addMedicalEvent);
                    }
@@ -785,11 +787,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             EmployeeServicesOuterClass.GetAppointmentsFromDoctorResponse.Builder builder = EmployeeServicesOuterClass.GetAppointmentsFromDoctorResponse.newBuilder();
             String sub = getSubjectFromContext();
             if(sub != null){
-                Optional<Doctor> optionalDoctor = doctorDao.getDoctorById(sub);
-                if (optionalDoctor.isPresent()) {
+                Doctor optionalDoctor = doctorDao.getDoctorBySub(sub);
+                if (optionalDoctor != null) {
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<Appointment> appointments = appointmentDao.findAll(optionalDoctor.get().getDoctorId(), from, to);
+                    List<Appointment> appointments = appointmentDao.findAll(optionalDoctor.getDoctorId(), from, to);
                     if (appointments != null){
                         appointments.stream().map(EmployeeTransformer::toProto).forEach(builder::addAppointments);
                     }
