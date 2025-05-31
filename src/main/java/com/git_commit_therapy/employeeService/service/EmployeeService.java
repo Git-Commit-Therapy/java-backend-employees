@@ -718,12 +718,10 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 if(optionalMedicalEvent.isPresent()){
                     MedicalEvent medicalEvent = optionalMedicalEvent.get();
                     if (request.hasWard()) medicalEvent.setWard(toEntity(request.getWard()));
-                    if (request.getMedicalExamIdsList() != null){
-                        List<MedicalExam> medicalExamList = request.getMedicalExamIdsList().stream()
-                                .map(medicalExamId -> medicalExamDao.findMedicalExamById(medicalExamId).orElse(null)).collect(Collectors.toList());
-                        medicalEvent.setExams(medicalExamList);
-                    }
-                    if (request.getSeverityCode() != null) medicalEvent.setSeverity(SeverityCode.valueOf(request.getSeverityCode().name()));
+                    List<MedicalExam> medicalExamList = request.getMedicalExamIdsList().stream()
+                            .map(medicalExamId -> medicalExamDao.findMedicalExamById(medicalExamId).orElse(null)).collect(Collectors.toList());
+                    medicalEvent.setExams(medicalExamList);
+                    medicalEvent.setSeverity(EmployeeTransformer.fromProto(request.getSeverityCode()));
                     if (StringUtils.isNotBlank(request.getDischargeLetter())) medicalEvent.setDischargeLetter(request.getDischargeLetter());
                     if (request.hasFromDateTime()) medicalEvent.setFromDateTime(convertToDate(request.getFromDateTime()));
                     if (request.hasToDateTime()) medicalEvent.setToDateTime(convertToDate(request.getToDateTime()));

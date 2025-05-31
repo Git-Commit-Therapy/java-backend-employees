@@ -2,7 +2,8 @@ package com.git_commit_therapy.employeeService.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.checkerframework.checker.units.qual.A;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,7 +18,7 @@ import java.util.List;
 @Table(name = "medical_event")
 public class MedicalEvent {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id", nullable = false)
     private Integer id;
 
@@ -27,8 +28,9 @@ public class MedicalEvent {
     @Column(name = "to_date_time")
     private Date toDateTime;
 
-    @Column(name = "severity_code")
     @Enumerated(EnumType.STRING)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
+    @Column(name = "severity_code", columnDefinition = "severity")
     private SeverityCode severity;
 
     @Column(name = "discharge_letter")
@@ -38,12 +40,12 @@ public class MedicalEvent {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = {CascadeType.MERGE}, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER,cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "exam_id")
     List<MedicalExam> exams;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "ward_id")
+    @JoinColumn(name = "ward_id",nullable = true)
     private Ward ward;
 
     public MedicalEvent(SeverityCode severity, Patient patient) {

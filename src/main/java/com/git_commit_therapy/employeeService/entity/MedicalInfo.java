@@ -10,7 +10,7 @@ import lombok.Setter;
 @Table(name = "medical_info")
 public class MedicalInfo {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "medical_info_id", nullable = false)
     private Integer id;
 

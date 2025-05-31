@@ -15,7 +15,7 @@ import java.util.Date;
 @Table(name = "medical_exam")
 public class MedicalExam {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "exam_id", nullable = false)
     private Integer id;
 

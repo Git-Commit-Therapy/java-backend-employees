@@ -66,6 +66,7 @@ public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWar
                     // Create the MedicalEvent
                     SeverityCode severityCode = EmployeeTransformer.fromProto(request.getSeverityCode());
                     MedicalEvent medicalEvent = new MedicalEvent(severityCode, patient.get());
+                    medicalEvent = medicalEventDao.upsert(medicalEvent);
                     // Create the medicalExam
                     MedicalExam medicalExam = new MedicalExam(request.getMedicalReport(), request.getExamType(), doctor.get(), patient.get(), medicalEvent);
                     medicalEvent.addExam(medicalExam);

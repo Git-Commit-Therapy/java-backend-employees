@@ -29,7 +29,7 @@ public class MedicalEventDao {
     }
 
     public MedicalEvent upsert(MedicalEvent medicalEvent) {
-        return medicalEventRepository.save(medicalEvent);
+        return medicalEventRepository.saveAndFlush(medicalEvent);
     }
 
     public boolean closeMedicalEvent(int medicalEventId, String dischargeLetter) {
