@@ -2278,6 +2278,21 @@ public final class EmployeeServicesOuterClass {
      * <code>.google.protobuf.Timestamp toDate = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getToDateOrBuilder();
+
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return Whether the patient field is set.
+     */
+    boolean hasPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return The patient.
+     */
+    com.git_commit_therapy.proto.UserOuterClass.Patient getPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     */
+    com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder();
   }
   /**
    * Protobuf type {@code com.git_commit_therapy.proto.GetAppointmentsRequest}
@@ -2369,6 +2384,32 @@ public final class EmployeeServicesOuterClass {
       return toDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : toDate_;
     }
 
+    public static final int PATIENT_FIELD_NUMBER = 3;
+    private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return Whether the patient field is set.
+     */
+    @java.lang.Override
+    public boolean hasPatient() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return The patient.
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2389,6 +2430,9 @@ public final class EmployeeServicesOuterClass {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getToDate());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getPatient());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2405,6 +2449,10 @@ public final class EmployeeServicesOuterClass {
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getToDate());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPatient());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2431,6 +2479,11 @@ public final class EmployeeServicesOuterClass {
         if (!getToDate()
             .equals(other.getToDate())) return false;
       }
+      if (hasPatient() != other.hasPatient()) return false;
+      if (hasPatient()) {
+        if (!getPatient()
+            .equals(other.getPatient())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2449,6 +2502,10 @@ public final class EmployeeServicesOuterClass {
       if (hasToDate()) {
         hash = (37 * hash) + TODATE_FIELD_NUMBER;
         hash = (53 * hash) + getToDate().hashCode();
+      }
+      if (hasPatient()) {
+        hash = (37 * hash) + PATIENT_FIELD_NUMBER;
+        hash = (53 * hash) + getPatient().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2582,6 +2639,7 @@ public final class EmployeeServicesOuterClass {
                 .alwaysUseFieldBuilders) {
           getFromDateFieldBuilder();
           getToDateFieldBuilder();
+          getPatientFieldBuilder();
         }
       }
       @java.lang.Override
@@ -2597,6 +2655,11 @@ public final class EmployeeServicesOuterClass {
         if (toDateBuilder_ != null) {
           toDateBuilder_.dispose();
           toDateBuilder_ = null;
+        }
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
         }
         return this;
       }
@@ -2644,6 +2707,12 @@ public final class EmployeeServicesOuterClass {
               : toDateBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.patient_ = patientBuilder_ == null
+              ? patient_
+              : patientBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2664,6 +2733,9 @@ public final class EmployeeServicesOuterClass {
         }
         if (other.hasToDate()) {
           mergeToDate(other.getToDate());
+        }
+        if (other.hasPatient()) {
+          mergePatient(other.getPatient());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2705,6 +2777,13 @@ public final class EmployeeServicesOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    getPatientFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2962,6 +3041,127 @@ public final class EmployeeServicesOuterClass {
           toDate_ = null;
         }
         return toDateBuilder_;
+      }
+
+      private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> patientBuilder_;
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       * @return Whether the patient field is set.
+       */
+      public boolean hasPatient() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       * @return The patient.
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+        if (patientBuilder_ == null) {
+          return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        } else {
+          return patientBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder setPatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          patient_ = value;
+        } else {
+          patientBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder setPatient(
+          com.git_commit_therapy.proto.UserOuterClass.Patient.Builder builderForValue) {
+        if (patientBuilder_ == null) {
+          patient_ = builderForValue.build();
+        } else {
+          patientBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder mergePatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            patient_ != null &&
+            patient_ != com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()) {
+            getPatientBuilder().mergeFrom(value);
+          } else {
+            patient_ = value;
+          }
+        } else {
+          patientBuilder_.mergeFrom(value);
+        }
+        if (patient_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder clearPatient() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient.Builder getPatientBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getPatientFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+        if (patientBuilder_ != null) {
+          return patientBuilder_.getMessageOrBuilder();
+        } else {
+          return patient_ == null ?
+              com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> 
+          getPatientFieldBuilder() {
+        if (patientBuilder_ == null) {
+          patientBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder>(
+                  getPatient(),
+                  getParentForChildren(),
+                  isClean());
+          patient_ = null;
+        }
+        return patientBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.git_commit_therapy.proto.GetAppointmentsRequest)
@@ -7234,6 +7434,21 @@ public final class EmployeeServicesOuterClass {
      * <code>.google.protobuf.Timestamp toDate = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getToDateOrBuilder();
+
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return Whether the patient field is set.
+     */
+    boolean hasPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return The patient.
+     */
+    com.git_commit_therapy.proto.UserOuterClass.Patient getPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     */
+    com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder();
   }
   /**
    * Protobuf type {@code com.git_commit_therapy.proto.GetAllMedicalExamRequest}
@@ -7325,6 +7540,32 @@ public final class EmployeeServicesOuterClass {
       return toDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : toDate_;
     }
 
+    public static final int PATIENT_FIELD_NUMBER = 3;
+    private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return Whether the patient field is set.
+     */
+    @java.lang.Override
+    public boolean hasPatient() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return The patient.
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7345,6 +7586,9 @@ public final class EmployeeServicesOuterClass {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getToDate());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getPatient());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7361,6 +7605,10 @@ public final class EmployeeServicesOuterClass {
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getToDate());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPatient());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7387,6 +7635,11 @@ public final class EmployeeServicesOuterClass {
         if (!getToDate()
             .equals(other.getToDate())) return false;
       }
+      if (hasPatient() != other.hasPatient()) return false;
+      if (hasPatient()) {
+        if (!getPatient()
+            .equals(other.getPatient())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7405,6 +7658,10 @@ public final class EmployeeServicesOuterClass {
       if (hasToDate()) {
         hash = (37 * hash) + TODATE_FIELD_NUMBER;
         hash = (53 * hash) + getToDate().hashCode();
+      }
+      if (hasPatient()) {
+        hash = (37 * hash) + PATIENT_FIELD_NUMBER;
+        hash = (53 * hash) + getPatient().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -7538,6 +7795,7 @@ public final class EmployeeServicesOuterClass {
                 .alwaysUseFieldBuilders) {
           getFromDateFieldBuilder();
           getToDateFieldBuilder();
+          getPatientFieldBuilder();
         }
       }
       @java.lang.Override
@@ -7553,6 +7811,11 @@ public final class EmployeeServicesOuterClass {
         if (toDateBuilder_ != null) {
           toDateBuilder_.dispose();
           toDateBuilder_ = null;
+        }
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
         }
         return this;
       }
@@ -7600,6 +7863,12 @@ public final class EmployeeServicesOuterClass {
               : toDateBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.patient_ = patientBuilder_ == null
+              ? patient_
+              : patientBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -7620,6 +7889,9 @@ public final class EmployeeServicesOuterClass {
         }
         if (other.hasToDate()) {
           mergeToDate(other.getToDate());
+        }
+        if (other.hasPatient()) {
+          mergePatient(other.getPatient());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -7661,6 +7933,13 @@ public final class EmployeeServicesOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    getPatientFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -7918,6 +8197,127 @@ public final class EmployeeServicesOuterClass {
           toDate_ = null;
         }
         return toDateBuilder_;
+      }
+
+      private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> patientBuilder_;
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       * @return Whether the patient field is set.
+       */
+      public boolean hasPatient() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       * @return The patient.
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+        if (patientBuilder_ == null) {
+          return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        } else {
+          return patientBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder setPatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          patient_ = value;
+        } else {
+          patientBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder setPatient(
+          com.git_commit_therapy.proto.UserOuterClass.Patient.Builder builderForValue) {
+        if (patientBuilder_ == null) {
+          patient_ = builderForValue.build();
+        } else {
+          patientBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder mergePatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            patient_ != null &&
+            patient_ != com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()) {
+            getPatientBuilder().mergeFrom(value);
+          } else {
+            patient_ = value;
+          }
+        } else {
+          patientBuilder_.mergeFrom(value);
+        }
+        if (patient_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder clearPatient() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient.Builder getPatientBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getPatientFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+        if (patientBuilder_ != null) {
+          return patientBuilder_.getMessageOrBuilder();
+        } else {
+          return patient_ == null ?
+              com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> 
+          getPatientFieldBuilder() {
+        if (patientBuilder_ == null) {
+          patientBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder>(
+                  getPatient(),
+                  getParentForChildren(),
+                  isClean());
+          patient_ = null;
+        }
+        return patientBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.git_commit_therapy.proto.GetAllMedicalExamRequest)
@@ -8744,6 +9144,21 @@ public final class EmployeeServicesOuterClass {
      * <code>.google.protobuf.Timestamp toDate = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getToDateOrBuilder();
+
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return Whether the patient field is set.
+     */
+    boolean hasPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return The patient.
+     */
+    com.git_commit_therapy.proto.UserOuterClass.Patient getPatient();
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     */
+    com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder();
   }
   /**
    * Protobuf type {@code com.git_commit_therapy.proto.GetAllMedicalEventRequest}
@@ -8835,6 +9250,32 @@ public final class EmployeeServicesOuterClass {
       return toDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : toDate_;
     }
 
+    public static final int PATIENT_FIELD_NUMBER = 3;
+    private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return Whether the patient field is set.
+     */
+    @java.lang.Override
+    public boolean hasPatient() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     * @return The patient.
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+    /**
+     * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+      return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8855,6 +9296,9 @@ public final class EmployeeServicesOuterClass {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getToDate());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getPatient());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8871,6 +9315,10 @@ public final class EmployeeServicesOuterClass {
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getToDate());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPatient());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8897,6 +9345,11 @@ public final class EmployeeServicesOuterClass {
         if (!getToDate()
             .equals(other.getToDate())) return false;
       }
+      if (hasPatient() != other.hasPatient()) return false;
+      if (hasPatient()) {
+        if (!getPatient()
+            .equals(other.getPatient())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8915,6 +9368,10 @@ public final class EmployeeServicesOuterClass {
       if (hasToDate()) {
         hash = (37 * hash) + TODATE_FIELD_NUMBER;
         hash = (53 * hash) + getToDate().hashCode();
+      }
+      if (hasPatient()) {
+        hash = (37 * hash) + PATIENT_FIELD_NUMBER;
+        hash = (53 * hash) + getPatient().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -9048,6 +9505,7 @@ public final class EmployeeServicesOuterClass {
                 .alwaysUseFieldBuilders) {
           getFromDateFieldBuilder();
           getToDateFieldBuilder();
+          getPatientFieldBuilder();
         }
       }
       @java.lang.Override
@@ -9063,6 +9521,11 @@ public final class EmployeeServicesOuterClass {
         if (toDateBuilder_ != null) {
           toDateBuilder_.dispose();
           toDateBuilder_ = null;
+        }
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
         }
         return this;
       }
@@ -9110,6 +9573,12 @@ public final class EmployeeServicesOuterClass {
               : toDateBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.patient_ = patientBuilder_ == null
+              ? patient_
+              : patientBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -9130,6 +9599,9 @@ public final class EmployeeServicesOuterClass {
         }
         if (other.hasToDate()) {
           mergeToDate(other.getToDate());
+        }
+        if (other.hasPatient()) {
+          mergePatient(other.getPatient());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9171,6 +9643,13 @@ public final class EmployeeServicesOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    getPatientFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -9428,6 +9907,127 @@ public final class EmployeeServicesOuterClass {
           toDate_ = null;
         }
         return toDateBuilder_;
+      }
+
+      private com.git_commit_therapy.proto.UserOuterClass.Patient patient_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> patientBuilder_;
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       * @return Whether the patient field is set.
+       */
+      public boolean hasPatient() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       * @return The patient.
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient() {
+        if (patientBuilder_ == null) {
+          return patient_ == null ? com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        } else {
+          return patientBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder setPatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          patient_ = value;
+        } else {
+          patientBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder setPatient(
+          com.git_commit_therapy.proto.UserOuterClass.Patient.Builder builderForValue) {
+        if (patientBuilder_ == null) {
+          patient_ = builderForValue.build();
+        } else {
+          patientBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder mergePatient(com.git_commit_therapy.proto.UserOuterClass.Patient value) {
+        if (patientBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            patient_ != null &&
+            patient_ != com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()) {
+            getPatientBuilder().mergeFrom(value);
+          } else {
+            patient_ = value;
+          }
+        } else {
+          patientBuilder_.mergeFrom(value);
+        }
+        if (patient_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public Builder clearPatient() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        patient_ = null;
+        if (patientBuilder_ != null) {
+          patientBuilder_.dispose();
+          patientBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.Patient.Builder getPatientBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getPatientFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      public com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder getPatientOrBuilder() {
+        if (patientBuilder_ != null) {
+          return patientBuilder_.getMessageOrBuilder();
+        } else {
+          return patient_ == null ?
+              com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance() : patient_;
+        }
+      }
+      /**
+       * <code>.com.git_commit_therapy.proto.Patient patient = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder> 
+          getPatientFieldBuilder() {
+        if (patientBuilder_ == null) {
+          patientBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient.Builder, com.git_commit_therapy.proto.UserOuterClass.PatientOrBuilder>(
+                  getPatient(),
+                  getParentForChildren(),
+                  isClean());
+          patient_ = null;
+        }
+        return patientBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.git_commit_therapy.proto.GetAllMedicalEventRequest)
@@ -12096,6 +12696,746 @@ public final class EmployeeServicesOuterClass {
 
     @java.lang.Override
     public com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetAllWardResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetMedicalInfoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.git_commit_therapy.proto.GetMedicalInfoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    java.util.List<com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo> 
+        getMedicalInfoList();
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo getMedicalInfo(int index);
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    int getMedicalInfoCount();
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    java.util.List<? extends com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder> 
+        getMedicalInfoOrBuilderList();
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder getMedicalInfoOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.git_commit_therapy.proto.GetMedicalInfoResponse}
+   */
+  public static final class GetMedicalInfoResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.git_commit_therapy.proto.GetMedicalInfoResponse)
+      GetMedicalInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetMedicalInfoResponse.class.getName());
+    }
+    // Use GetMedicalInfoResponse.newBuilder() to construct.
+    private GetMedicalInfoResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetMedicalInfoResponse() {
+      medicalInfo_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.git_commit_therapy.proto.EmployeeServicesOuterClass.internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.git_commit_therapy.proto.EmployeeServicesOuterClass.internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.class, com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.Builder.class);
+    }
+
+    public static final int MEDICALINFO_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo> medicalInfo_;
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo> getMedicalInfoList() {
+      return medicalInfo_;
+    }
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder> 
+        getMedicalInfoOrBuilderList() {
+      return medicalInfo_;
+    }
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    @java.lang.Override
+    public int getMedicalInfoCount() {
+      return medicalInfo_.size();
+    }
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo getMedicalInfo(int index) {
+      return medicalInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+     */
+    @java.lang.Override
+    public com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder getMedicalInfoOrBuilder(
+        int index) {
+      return medicalInfo_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < medicalInfo_.size(); i++) {
+        output.writeMessage(1, medicalInfo_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < medicalInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, medicalInfo_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse)) {
+        return super.equals(obj);
+      }
+      com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse other = (com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse) obj;
+
+      if (!getMedicalInfoList()
+          .equals(other.getMedicalInfoList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMedicalInfoCount() > 0) {
+        hash = (37 * hash) + MEDICALINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getMedicalInfoList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.git_commit_therapy.proto.GetMedicalInfoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.git_commit_therapy.proto.GetMedicalInfoResponse)
+        com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.git_commit_therapy.proto.EmployeeServicesOuterClass.internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.git_commit_therapy.proto.EmployeeServicesOuterClass.internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.class, com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.Builder.class);
+      }
+
+      // Construct using com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (medicalInfoBuilder_ == null) {
+          medicalInfo_ = java.util.Collections.emptyList();
+        } else {
+          medicalInfo_ = null;
+          medicalInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.git_commit_therapy.proto.EmployeeServicesOuterClass.internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse getDefaultInstanceForType() {
+        return com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse build() {
+        com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse buildPartial() {
+        com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse result = new com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse result) {
+        if (medicalInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            medicalInfo_ = java.util.Collections.unmodifiableList(medicalInfo_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.medicalInfo_ = medicalInfo_;
+        } else {
+          result.medicalInfo_ = medicalInfoBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse) {
+          return mergeFrom((com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse other) {
+        if (other == com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.getDefaultInstance()) return this;
+        if (medicalInfoBuilder_ == null) {
+          if (!other.medicalInfo_.isEmpty()) {
+            if (medicalInfo_.isEmpty()) {
+              medicalInfo_ = other.medicalInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMedicalInfoIsMutable();
+              medicalInfo_.addAll(other.medicalInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.medicalInfo_.isEmpty()) {
+            if (medicalInfoBuilder_.isEmpty()) {
+              medicalInfoBuilder_.dispose();
+              medicalInfoBuilder_ = null;
+              medicalInfo_ = other.medicalInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              medicalInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getMedicalInfoFieldBuilder() : null;
+            } else {
+              medicalInfoBuilder_.addAllMessages(other.medicalInfo_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo m =
+                    input.readMessage(
+                        com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.parser(),
+                        extensionRegistry);
+                if (medicalInfoBuilder_ == null) {
+                  ensureMedicalInfoIsMutable();
+                  medicalInfo_.add(m);
+                } else {
+                  medicalInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo> medicalInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureMedicalInfoIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          medicalInfo_ = new java.util.ArrayList<com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo>(medicalInfo_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder> medicalInfoBuilder_;
+
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public java.util.List<com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo> getMedicalInfoList() {
+        if (medicalInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(medicalInfo_);
+        } else {
+          return medicalInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public int getMedicalInfoCount() {
+        if (medicalInfoBuilder_ == null) {
+          return medicalInfo_.size();
+        } else {
+          return medicalInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo getMedicalInfo(int index) {
+        if (medicalInfoBuilder_ == null) {
+          return medicalInfo_.get(index);
+        } else {
+          return medicalInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder setMedicalInfo(
+          int index, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo value) {
+        if (medicalInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMedicalInfoIsMutable();
+          medicalInfo_.set(index, value);
+          onChanged();
+        } else {
+          medicalInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder setMedicalInfo(
+          int index, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder builderForValue) {
+        if (medicalInfoBuilder_ == null) {
+          ensureMedicalInfoIsMutable();
+          medicalInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          medicalInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder addMedicalInfo(com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo value) {
+        if (medicalInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMedicalInfoIsMutable();
+          medicalInfo_.add(value);
+          onChanged();
+        } else {
+          medicalInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder addMedicalInfo(
+          int index, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo value) {
+        if (medicalInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMedicalInfoIsMutable();
+          medicalInfo_.add(index, value);
+          onChanged();
+        } else {
+          medicalInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder addMedicalInfo(
+          com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder builderForValue) {
+        if (medicalInfoBuilder_ == null) {
+          ensureMedicalInfoIsMutable();
+          medicalInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          medicalInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder addMedicalInfo(
+          int index, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder builderForValue) {
+        if (medicalInfoBuilder_ == null) {
+          ensureMedicalInfoIsMutable();
+          medicalInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          medicalInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder addAllMedicalInfo(
+          java.lang.Iterable<? extends com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo> values) {
+        if (medicalInfoBuilder_ == null) {
+          ensureMedicalInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, medicalInfo_);
+          onChanged();
+        } else {
+          medicalInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder clearMedicalInfo() {
+        if (medicalInfoBuilder_ == null) {
+          medicalInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          medicalInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public Builder removeMedicalInfo(int index) {
+        if (medicalInfoBuilder_ == null) {
+          ensureMedicalInfoIsMutable();
+          medicalInfo_.remove(index);
+          onChanged();
+        } else {
+          medicalInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder getMedicalInfoBuilder(
+          int index) {
+        return getMedicalInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder getMedicalInfoOrBuilder(
+          int index) {
+        if (medicalInfoBuilder_ == null) {
+          return medicalInfo_.get(index);  } else {
+          return medicalInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public java.util.List<? extends com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder> 
+           getMedicalInfoOrBuilderList() {
+        if (medicalInfoBuilder_ != null) {
+          return medicalInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(medicalInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder addMedicalInfoBuilder() {
+        return getMedicalInfoFieldBuilder().addBuilder(
+            com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder addMedicalInfoBuilder(
+          int index) {
+        return getMedicalInfoFieldBuilder().addBuilder(
+            index, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.git_commit_therapy.proto.MedicalInfo medicalInfo = 1;</code>
+       */
+      public java.util.List<com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder> 
+           getMedicalInfoBuilderList() {
+        return getMedicalInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder> 
+          getMedicalInfoFieldBuilder() {
+        if (medicalInfoBuilder_ == null) {
+          medicalInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo.Builder, com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfoOrBuilder>(
+                  medicalInfo_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          medicalInfo_ = null;
+        }
+        return medicalInfoBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.git_commit_therapy.proto.GetMedicalInfoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.git_commit_therapy.proto.GetMedicalInfoResponse)
+    private static final com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse();
+    }
+
+    public static com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetMedicalInfoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetMedicalInfoResponse>() {
+      @java.lang.Override
+      public GetMedicalInfoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetMedicalInfoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetMedicalInfoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -19766,6 +21106,11 @@ public final class EmployeeServicesOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_git_commit_therapy_proto_GetAllWardResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_git_commit_therapy_proto_CreateMedicalExamResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -19850,145 +21195,157 @@ public final class EmployeeServicesOuterClass {
       "ponse\0223\n\006staffs\030\001 \003(\0132#.com.git_commit_t" +
       "herapy.proto.Staff\"Q\n\026GetAllPatientsResp" +
       "onse\0227\n\010patients\030\001 \003(\0132%.com.git_commit_" +
-      "therapy.proto.Patient\"r\n\026GetAppointments" +
-      "Request\022,\n\010fromDate\030\001 \001(\0132\032.google.proto" +
-      "buf.Timestamp\022*\n\006toDate\030\002 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\"\262\001\n GetAppointmentsFro" +
-      "mDoctorRequest\0224\n\006doctor\030\001 \001(\0132$.com.git" +
-      "_commit_therapy.proto.Doctor\022,\n\010fromDate" +
-      "\030\002 \001(\0132\032.google.protobuf.Timestamp\022*\n\006to" +
-      "Date\030\003 \001(\0132\032.google.protobuf.Timestamp\"Z" +
-      "\n\027GetAppointmentsResponse\022?\n\014appointment" +
-      "s\030\001 \003(\0132).com.git_commit_therapy.proto.A" +
-      "ppointment\"=\n\031ModifyAppointmentResponse\022" +
-      "\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"=\n\031Cre" +
-      "ateAppointmentResponse\022\017\n\007success\030\001 \001(\010\022" +
-      "\017\n\007message\030\002 \001(\t\"_\n\035GetAppointmentDetail" +
-      "sResponse\022>\n\013appointment\030\001 \001(\0132).com.git" +
-      "_commit_therapy.proto.Appointment\"d\n!Get" +
-      "AppointmentsFromDoctorResponse\022?\n\014appoin" +
-      "tments\030\001 \003(\0132).com.git_commit_therapy.pr" +
-      "oto.Appointment\"t\n\030GetAllMedicalExamRequ" +
-      "est\022,\n\010fromDate\030\001 \001(\0132\032.google.protobuf." +
-      "Timestamp\022*\n\006toDate\030\002 \001(\0132\032.google.proto" +
-      "buf.Timestamp\"\\\n\031GetAllMedicalExamRespon" +
-      "se\022?\n\014medicalExams\030\001 \003(\0132).com.git_commi" +
-      "t_therapy.proto.MedicalExam\"u\n\031GetAllMed" +
-      "icalEventRequest\022,\n\010fromDate\030\001 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\022*\n\006toDate\030\002 \001(\0132\032" +
-      ".google.protobuf.Timestamp\"^\n\032GetAllMedi" +
-      "calEventResponse\022@\n\014medicalEvent\030\001 \003(\0132*" +
-      ".com.git_commit_therapy.proto.MedicalEve" +
-      "nt\"X\n\035GetMedicalExamDetailsResponse\0227\n\004e" +
-      "xam\030\001 \001(\0132).com.git_commit_therapy.proto" +
-      ".MedicalExam\"[\n\036GetMedicalEventDetailsRe" +
-      "sponse\0229\n\005event\030\001 \001(\0132*.com.git_commit_t" +
-      "herapy.proto.MedicalEvent\"F\n\022GetAllWardR" +
-      "esponse\0220\n\004ward\030\001 \003(\0132\".com.git_commit_t" +
-      "herapy.proto.Ward\"=\n\031CreateMedicalExamRe" +
-      "sponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t" +
-      "\">\n\032CreateMedicalEventResponse\022\017\n\007succes" +
-      "s\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"=\n\031CreateMedica" +
-      "lInfoResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007messag" +
-      "e\030\002 \001(\t\"9\n\025CreatePatientResponse\022\017\n\007succ" +
-      "ess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"8\n\024CreateDoct" +
-      "orResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002" +
-      " \001(\t\"7\n\023CreateStaffResponse\022\017\n\007success\030\001" +
-      " \001(\010\022\017\n\007message\030\002 \001(\t\"6\n\022CreateWardRespo" +
-      "nse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"9\n" +
-      "\025ModifyPatientResponse\022\017\n\007success\030\001 \001(\010\022" +
-      "\017\n\007message\030\002 \001(\t\"8\n\024ModifyDoctorResponse" +
-      "\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"7\n\023Mo" +
-      "difyStaffResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007me" +
-      "ssage\030\002 \001(\t\">\n\032ModifyMedicalEventRespons" +
-      "e\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"=\n\031M" +
-      "odifyMedicalExamResponse\022\017\n\007success\030\001 \001(" +
-      "\010\022\017\n\007message\030\002 \001(\t\"=\n\031ModifyMedicalInfoR" +
-      "esponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(" +
-      "\t2\312\031\n\020EmployeeServices\022I\n\tGetDoctor\022\026.go" +
-      "ogle.protobuf.Empty\032$.com.git_commit_the" +
-      "rapy.proto.Doctor\022\\\n\rGetAllDoctors\022\026.goo" +
-      "gle.protobuf.Empty\0323.com.git_commit_ther" +
-      "apy.proto.GetAllDoctorsResponse\022G\n\010GetSt" +
-      "aff\022\026.google.protobuf.Empty\032#.com.git_co" +
-      "mmit_therapy.proto.Staff\022Z\n\014GetAllStaffs" +
-      "\022\026.google.protobuf.Empty\0322.com.git_commi" +
-      "t_therapy.proto.GetAllStaffsResponse\022K\n\n" +
-      "GetPatient\022\026.google.protobuf.Empty\032%.com" +
-      ".git_commit_therapy.proto.Patient\022^\n\016Get" +
-      "AllPatients\022\026.google.protobuf.Empty\0324.co" +
-      "m.git_commit_therapy.proto.GetAllPatient" +
-      "sResponse\022~\n\017GetAppointments\0224.com.git_c" +
-      "ommit_therapy.proto.GetAppointmentsReque" +
-      "st\0325.com.git_commit_therapy.proto.GetApp" +
-      "ointmentsResponse\022\234\001\n\031GetAppointmentsFro" +
-      "mDoctor\022>.com.git_commit_therapy.proto.G" +
-      "etAppointmentsFromDoctorRequest\032?.com.gi" +
-      "t_commit_therapy.proto.GetAppointmentsFr" +
-      "omDoctorResponse\022\177\n\025GetAppointmentDetail" +
-      "s\022).com.git_commit_therapy.proto.Appoint" +
-      "ment\032;.com.git_commit_therapy.proto.GetA" +
-      "ppointmentDetailsResponse\022\204\001\n\021GetAllMedi" +
-      "calExam\0226.com.git_commit_therapy.proto.G" +
-      "etAllMedicalExamRequest\0327.com.git_commit" +
-      "_therapy.proto.GetAllMedicalExamResponse" +
-      "\022\177\n\025GetMedicalExamDetails\022).com.git_comm" +
-      "it_therapy.proto.MedicalExam\032;.com.git_c" +
-      "ommit_therapy.proto.GetMedicalExamDetail" +
-      "sResponse\022\207\001\n\022GetAllMedicalEvent\0227.com.g" +
-      "it_commit_therapy.proto.GetAllMedicalEve" +
-      "ntRequest\0328.com.git_commit_therapy.proto" +
-      ".GetAllMedicalEventResponse\022\202\001\n\026GetMedic" +
-      "alEventDetails\022*.com.git_commit_therapy." +
-      "proto.MedicalEvent\032<.com.git_commit_ther" +
-      "apy.proto.GetMedicalEventDetailsResponse" +
-      "\022V\n\nGetAllWard\022\026.google.protobuf.Empty\0320" +
-      ".com.git_commit_therapy.proto.GetAllWard" +
-      "Response\022w\n\021CreateMedicalExam\022).com.git_" +
-      "commit_therapy.proto.MedicalExam\0327.com.g" +
-      "it_commit_therapy.proto.CreateMedicalExa" +
-      "mResponse\022z\n\022CreateMedicalEvent\022*.com.gi" +
-      "t_commit_therapy.proto.MedicalEvent\0328.co" +
-      "m.git_commit_therapy.proto.CreateMedical" +
-      "EventResponse\022w\n\021CreateMedicalInfo\022).com" +
-      ".git_commit_therapy.proto.MedicalInfo\0327." +
-      "com.git_commit_therapy.proto.CreateMedic" +
-      "alInfoResponse\022w\n\021CreateAppointment\022).co" +
-      "m.git_commit_therapy.proto.Appointment\0327" +
-      ".com.git_commit_therapy.proto.CreateAppo" +
-      "intmentResponse\022k\n\rCreatePatient\022%.com.g" +
-      "it_commit_therapy.proto.Patient\0323.com.gi" +
-      "t_commit_therapy.proto.CreatePatientResp" +
-      "onse\022h\n\014CreateDoctor\022$.com.git_commit_th" +
-      "erapy.proto.Doctor\0322.com.git_commit_ther" +
-      "apy.proto.CreateDoctorResponse\022e\n\013Create" +
-      "Staff\022#.com.git_commit_therapy.proto.Sta" +
-      "ff\0321.com.git_commit_therapy.proto.Create" +
-      "StaffResponse\022b\n\nCreateWard\022\".com.git_co" +
-      "mmit_therapy.proto.Ward\0320.com.git_commit" +
-      "_therapy.proto.CreateWardResponse\022w\n\021Mod" +
-      "ifyAppointment\022).com.git_commit_therapy." +
-      "proto.Appointment\0327.com.git_commit_thera" +
-      "py.proto.ModifyAppointmentResponse\022k\n\rMo" +
-      "difyPatient\022%.com.git_commit_therapy.pro" +
-      "to.Patient\0323.com.git_commit_therapy.prot" +
-      "o.ModifyPatientResponse\022h\n\014ModifyDoctor\022" +
-      "$.com.git_commit_therapy.proto.Doctor\0322." +
-      "com.git_commit_therapy.proto.ModifyDocto" +
-      "rResponse\022e\n\013ModifyStaff\022#.com.git_commi" +
-      "t_therapy.proto.Staff\0321.com.git_commit_t" +
-      "herapy.proto.ModifyStaffResponse\022z\n\022Modi" +
-      "fyMedicalEvent\022*.com.git_commit_therapy." +
-      "proto.MedicalEvent\0328.com.git_commit_ther" +
-      "apy.proto.ModifyMedicalEventResponse\022w\n\021" +
-      "ModifyMedicalExam\022).com.git_commit_thera" +
-      "py.proto.MedicalExam\0327.com.git_commit_th" +
-      "erapy.proto.ModifyMedicalExamResponse\022w\n" +
-      "\021ModifyMedicalInfo\022).com.git_commit_ther" +
-      "apy.proto.MedicalInfo\0327.com.git_commit_t" +
-      "herapy.proto.ModifyMedicalInfoResponseB%" +
-      "Z#github.com/git_commit_therapy/protob\006p" +
-      "roto3"
+      "therapy.proto.Patient\"\252\001\n\026GetAppointment" +
+      "sRequest\022,\n\010fromDate\030\001 \001(\0132\032.google.prot" +
+      "obuf.Timestamp\022*\n\006toDate\030\002 \001(\0132\032.google." +
+      "protobuf.Timestamp\0226\n\007patient\030\003 \001(\0132%.co" +
+      "m.git_commit_therapy.proto.Patient\"\262\001\n G" +
+      "etAppointmentsFromDoctorRequest\0224\n\006docto" +
+      "r\030\001 \001(\0132$.com.git_commit_therapy.proto.D" +
+      "octor\022,\n\010fromDate\030\002 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022*\n\006toDate\030\003 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\"Z\n\027GetAppointmentsRespon" +
+      "se\022?\n\014appointments\030\001 \003(\0132).com.git_commi" +
+      "t_therapy.proto.Appointment\"=\n\031ModifyApp" +
+      "ointmentResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007mes" +
+      "sage\030\002 \001(\t\"=\n\031CreateAppointmentResponse\022" +
+      "\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"_\n\035Get" +
+      "AppointmentDetailsResponse\022>\n\013appointmen" +
+      "t\030\001 \001(\0132).com.git_commit_therapy.proto.A" +
+      "ppointment\"d\n!GetAppointmentsFromDoctorR" +
+      "esponse\022?\n\014appointments\030\001 \003(\0132).com.git_" +
+      "commit_therapy.proto.Appointment\"\254\001\n\030Get" +
+      "AllMedicalExamRequest\022,\n\010fromDate\030\001 \001(\0132" +
+      "\032.google.protobuf.Timestamp\022*\n\006toDate\030\002 " +
+      "\001(\0132\032.google.protobuf.Timestamp\0226\n\007patie" +
+      "nt\030\003 \001(\0132%.com.git_commit_therapy.proto." +
+      "Patient\"\\\n\031GetAllMedicalExamResponse\022?\n\014" +
+      "medicalExams\030\001 \003(\0132).com.git_commit_ther" +
+      "apy.proto.MedicalExam\"\255\001\n\031GetAllMedicalE" +
+      "ventRequest\022,\n\010fromDate\030\001 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022*\n\006toDate\030\002 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\0226\n\007patient\030\003 \001(\0132%" +
+      ".com.git_commit_therapy.proto.Patient\"^\n" +
+      "\032GetAllMedicalEventResponse\022@\n\014medicalEv" +
+      "ent\030\001 \003(\0132*.com.git_commit_therapy.proto" +
+      ".MedicalEvent\"X\n\035GetMedicalExamDetailsRe" +
+      "sponse\0227\n\004exam\030\001 \001(\0132).com.git_commit_th" +
+      "erapy.proto.MedicalExam\"[\n\036GetMedicalEve" +
+      "ntDetailsResponse\0229\n\005event\030\001 \001(\0132*.com.g" +
+      "it_commit_therapy.proto.MedicalEvent\"F\n\022" +
+      "GetAllWardResponse\0220\n\004ward\030\001 \003(\0132\".com.g" +
+      "it_commit_therapy.proto.Ward\"X\n\026GetMedic" +
+      "alInfoResponse\022>\n\013medicalInfo\030\001 \003(\0132).co" +
+      "m.git_commit_therapy.proto.MedicalInfo\"=" +
+      "\n\031CreateMedicalExamResponse\022\017\n\007success\030\001" +
+      " \001(\010\022\017\n\007message\030\002 \001(\t\">\n\032CreateMedicalEv" +
+      "entResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030" +
+      "\002 \001(\t\"=\n\031CreateMedicalInfoResponse\022\017\n\007su" +
+      "ccess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"9\n\025CreatePa" +
+      "tientResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007messag" +
+      "e\030\002 \001(\t\"8\n\024CreateDoctorResponse\022\017\n\007succe" +
+      "ss\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"7\n\023CreateStaff" +
+      "Response\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001" +
+      "(\t\"6\n\022CreateWardResponse\022\017\n\007success\030\001 \001(" +
+      "\010\022\017\n\007message\030\002 \001(\t\"9\n\025ModifyPatientRespo" +
+      "nse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"8\n" +
+      "\024ModifyDoctorResponse\022\017\n\007success\030\001 \001(\010\022\017" +
+      "\n\007message\030\002 \001(\t\"7\n\023ModifyStaffResponse\022\017" +
+      "\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\">\n\032Modi" +
+      "fyMedicalEventResponse\022\017\n\007success\030\001 \001(\010\022" +
+      "\017\n\007message\030\002 \001(\t\"=\n\031ModifyMedicalExamRes" +
+      "ponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"" +
+      "=\n\031ModifyMedicalInfoResponse\022\017\n\007success\030" +
+      "\001 \001(\010\022\017\n\007message\030\002 \001(\t2\301\033\n\020EmployeeServi" +
+      "ces\022I\n\tGetDoctor\022\026.google.protobuf.Empty" +
+      "\032$.com.git_commit_therapy.proto.Doctor\022\\" +
+      "\n\rGetAllDoctors\022\026.google.protobuf.Empty\032" +
+      "3.com.git_commit_therapy.proto.GetAllDoc" +
+      "torsResponse\022G\n\010GetStaff\022\026.google.protob" +
+      "uf.Empty\032#.com.git_commit_therapy.proto." +
+      "Staff\022Z\n\014GetAllStaffs\022\026.google.protobuf." +
+      "Empty\0322.com.git_commit_therapy.proto.Get" +
+      "AllStaffsResponse\022Z\n\nGetPatient\022%.com.gi" +
+      "t_commit_therapy.proto.Patient\032%.com.git" +
+      "_commit_therapy.proto.Patient\022^\n\016GetAllP" +
+      "atients\022\026.google.protobuf.Empty\0324.com.gi" +
+      "t_commit_therapy.proto.GetAllPatientsRes" +
+      "ponse\022~\n\017GetAppointments\0224.com.git_commi" +
+      "t_therapy.proto.GetAppointmentsRequest\0325" +
+      ".com.git_commit_therapy.proto.GetAppoint" +
+      "mentsResponse\022\234\001\n\031GetAppointmentsFromDoc" +
+      "tor\022>.com.git_commit_therapy.proto.GetAp" +
+      "pointmentsFromDoctorRequest\032?.com.git_co" +
+      "mmit_therapy.proto.GetAppointmentsFromDo" +
+      "ctorResponse\022\177\n\025GetAppointmentDetails\022)." +
+      "com.git_commit_therapy.proto.Appointment" +
+      "\032;.com.git_commit_therapy.proto.GetAppoi" +
+      "ntmentDetailsResponse\022\204\001\n\021GetAllMedicalE" +
+      "xam\0226.com.git_commit_therapy.proto.GetAl" +
+      "lMedicalExamRequest\0327.com.git_commit_the" +
+      "rapy.proto.GetAllMedicalExamResponse\022\177\n\025" +
+      "GetMedicalExamDetails\022).com.git_commit_t" +
+      "herapy.proto.MedicalExam\032;.com.git_commi" +
+      "t_therapy.proto.GetMedicalExamDetailsRes" +
+      "ponse\022\207\001\n\022GetAllMedicalEvent\0227.com.git_c" +
+      "ommit_therapy.proto.GetAllMedicalEventRe" +
+      "quest\0328.com.git_commit_therapy.proto.Get" +
+      "AllMedicalEventResponse\022\202\001\n\026GetMedicalEv" +
+      "entDetails\022*.com.git_commit_therapy.prot" +
+      "o.MedicalEvent\032<.com.git_commit_therapy." +
+      "proto.GetMedicalEventDetailsResponse\022V\n\n" +
+      "GetAllWard\022\026.google.protobuf.Empty\0320.com" +
+      ".git_commit_therapy.proto.GetAllWardResp" +
+      "onse\022m\n\016GetMedicalInfo\022%.com.git_commit_" +
+      "therapy.proto.Patient\0324.com.git_commit_t" +
+      "herapy.proto.GetMedicalInfoResponse\022w\n\021C" +
+      "reateMedicalExam\022).com.git_commit_therap" +
+      "y.proto.MedicalExam\0327.com.git_commit_the" +
+      "rapy.proto.CreateMedicalExamResponse\022z\n\022" +
+      "CreateMedicalEvent\022*.com.git_commit_ther" +
+      "apy.proto.MedicalEvent\0328.com.git_commit_" +
+      "therapy.proto.CreateMedicalEventResponse" +
+      "\022w\n\021CreateMedicalInfo\022).com.git_commit_t" +
+      "herapy.proto.MedicalInfo\0327.com.git_commi" +
+      "t_therapy.proto.CreateMedicalInfoRespons" +
+      "e\022w\n\021CreateAppointment\022).com.git_commit_" +
+      "therapy.proto.Appointment\0327.com.git_comm" +
+      "it_therapy.proto.CreateAppointmentRespon" +
+      "se\022k\n\rCreatePatient\022%.com.git_commit_the" +
+      "rapy.proto.Patient\0323.com.git_commit_ther" +
+      "apy.proto.CreatePatientResponse\022h\n\014Creat" +
+      "eDoctor\022$.com.git_commit_therapy.proto.D" +
+      "octor\0322.com.git_commit_therapy.proto.Cre" +
+      "ateDoctorResponse\022e\n\013CreateStaff\022#.com.g" +
+      "it_commit_therapy.proto.Staff\0321.com.git_" +
+      "commit_therapy.proto.CreateStaffResponse" +
+      "\022b\n\nCreateWard\022\".com.git_commit_therapy." +
+      "proto.Ward\0320.com.git_commit_therapy.prot" +
+      "o.CreateWardResponse\022w\n\021ModifyAppointmen" +
+      "t\022).com.git_commit_therapy.proto.Appoint" +
+      "ment\0327.com.git_commit_therapy.proto.Modi" +
+      "fyAppointmentResponse\022k\n\rModifyPatient\022%" +
+      ".com.git_commit_therapy.proto.Patient\0323." +
+      "com.git_commit_therapy.proto.ModifyPatie" +
+      "ntResponse\022h\n\014ModifyDoctor\022$.com.git_com" +
+      "mit_therapy.proto.Doctor\0322.com.git_commi" +
+      "t_therapy.proto.ModifyDoctorResponse\022e\n\013" +
+      "ModifyStaff\022#.com.git_commit_therapy.pro" +
+      "to.Staff\0321.com.git_commit_therapy.proto." +
+      "ModifyStaffResponse\022z\n\022ModifyMedicalEven" +
+      "t\022*.com.git_commit_therapy.proto.Medical" +
+      "Event\0328.com.git_commit_therapy.proto.Mod" +
+      "ifyMedicalEventResponse\022w\n\021ModifyMedical" +
+      "Exam\022).com.git_commit_therapy.proto.Medi" +
+      "calExam\0327.com.git_commit_therapy.proto.M" +
+      "odifyMedicalExamResponse\022w\n\021ModifyMedica" +
+      "lInfo\022).com.git_commit_therapy.proto.Med" +
+      "icalInfo\0327.com.git_commit_therapy.proto." +
+      "ModifyMedicalInfoResponse\022w\n\021DeleteAppoi" +
+      "ntment\022).com.git_commit_therapy.proto.Ap" +
+      "pointment\0327.com.git_commit_therapy.proto" +
+      ".ModifyAppointmentResponseB%Z#github.com" +
+      "/git_commit_therapy/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20025,7 +21382,7 @@ public final class EmployeeServicesOuterClass {
     internal_static_com_git_commit_therapy_proto_GetAppointmentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_GetAppointmentsRequest_descriptor,
-        new java.lang.String[] { "FromDate", "ToDate", });
+        new java.lang.String[] { "FromDate", "ToDate", "Patient", });
     internal_static_com_git_commit_therapy_proto_GetAppointmentsFromDoctorRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_git_commit_therapy_proto_GetAppointmentsFromDoctorRequest_fieldAccessorTable = new
@@ -20067,7 +21424,7 @@ public final class EmployeeServicesOuterClass {
     internal_static_com_git_commit_therapy_proto_GetAllMedicalExamRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_GetAllMedicalExamRequest_descriptor,
-        new java.lang.String[] { "FromDate", "ToDate", });
+        new java.lang.String[] { "FromDate", "ToDate", "Patient", });
     internal_static_com_git_commit_therapy_proto_GetAllMedicalExamResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_com_git_commit_therapy_proto_GetAllMedicalExamResponse_fieldAccessorTable = new
@@ -20079,7 +21436,7 @@ public final class EmployeeServicesOuterClass {
     internal_static_com_git_commit_therapy_proto_GetAllMedicalEventRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_GetAllMedicalEventRequest_descriptor,
-        new java.lang.String[] { "FromDate", "ToDate", });
+        new java.lang.String[] { "FromDate", "ToDate", "Patient", });
     internal_static_com_git_commit_therapy_proto_GetAllMedicalEventResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_com_git_commit_therapy_proto_GetAllMedicalEventResponse_fieldAccessorTable = new
@@ -20104,80 +21461,86 @@ public final class EmployeeServicesOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_GetAllWardResponse_descriptor,
         new java.lang.String[] { "Ward", });
-    internal_static_com_git_commit_therapy_proto_CreateMedicalExamResponse_descriptor =
+    internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
+    internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_git_commit_therapy_proto_GetMedicalInfoResponse_descriptor,
+        new java.lang.String[] { "MedicalInfo", });
+    internal_static_com_git_commit_therapy_proto_CreateMedicalExamResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
     internal_static_com_git_commit_therapy_proto_CreateMedicalExamResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_CreateMedicalExamResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_CreateMedicalEventResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_com_git_commit_therapy_proto_CreateMedicalEventResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_CreateMedicalEventResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_CreateMedicalInfoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_com_git_commit_therapy_proto_CreateMedicalInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_CreateMedicalInfoResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_CreatePatientResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_com_git_commit_therapy_proto_CreatePatientResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_CreatePatientResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_CreateDoctorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_com_git_commit_therapy_proto_CreateDoctorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_CreateDoctorResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_CreateStaffResponse_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_com_git_commit_therapy_proto_CreateStaffResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_CreateStaffResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_CreateWardResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_com_git_commit_therapy_proto_CreateWardResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_CreateWardResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_ModifyPatientResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_com_git_commit_therapy_proto_ModifyPatientResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_ModifyPatientResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_ModifyDoctorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_com_git_commit_therapy_proto_ModifyDoctorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_ModifyDoctorResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_ModifyStaffResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_com_git_commit_therapy_proto_ModifyStaffResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_ModifyStaffResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_ModifyMedicalEventResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_com_git_commit_therapy_proto_ModifyMedicalEventResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_ModifyMedicalEventResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_ModifyMedicalExamResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_com_git_commit_therapy_proto_ModifyMedicalExamResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_ModifyMedicalExamResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
     internal_static_com_git_commit_therapy_proto_ModifyMedicalInfoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_com_git_commit_therapy_proto_ModifyMedicalInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_git_commit_therapy_proto_ModifyMedicalInfoResponse_descriptor,

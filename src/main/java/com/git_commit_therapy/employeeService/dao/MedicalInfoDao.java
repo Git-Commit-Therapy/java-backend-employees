@@ -5,6 +5,7 @@ import com.git_commit_therapy.employeeService.repository.MedicalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,5 +23,9 @@ public class MedicalInfoDao {
 
     public Optional<MedicalInfo> findMedicalInfoById(Integer medicalInfoId) {
         return medicalInfoRepository.findById(medicalInfoId);
+    }
+
+    public List<MedicalInfo> findAllByPatientId(String patientId) {
+        return medicalInfoRepository.findByPatientId(patientId);
     }
 }

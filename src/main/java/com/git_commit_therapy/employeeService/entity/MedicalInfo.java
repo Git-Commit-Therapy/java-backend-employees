@@ -16,7 +16,7 @@ public class MedicalInfo {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
-    private Patient patientID;
+    private Patient patient;
 
     @Column(name = "description", length = Integer.MAX_VALUE)
     private String description;

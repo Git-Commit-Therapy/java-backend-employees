@@ -139,27 +139,27 @@ public final class EmployeeServicesGrpc {
     return getGetAllStaffsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.UserOuterClass.Patient,
       com.git_commit_therapy.proto.UserOuterClass.Patient> getGetPatientMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetPatient",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.git_commit_therapy.proto.UserOuterClass.Patient.class,
       responseType = com.git_commit_therapy.proto.UserOuterClass.Patient.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.git_commit_therapy.proto.UserOuterClass.Patient,
       com.git_commit_therapy.proto.UserOuterClass.Patient> getGetPatientMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.git_commit_therapy.proto.UserOuterClass.Patient> getGetPatientMethod;
+    io.grpc.MethodDescriptor<com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient> getGetPatientMethod;
     if ((getGetPatientMethod = EmployeeServicesGrpc.getGetPatientMethod) == null) {
       synchronized (EmployeeServicesGrpc.class) {
         if ((getGetPatientMethod = EmployeeServicesGrpc.getGetPatientMethod) == null) {
           EmployeeServicesGrpc.getGetPatientMethod = getGetPatientMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.git_commit_therapy.proto.UserOuterClass.Patient>newBuilder()
+              io.grpc.MethodDescriptor.<com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.UserOuterClass.Patient>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPatient"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()))
               .setSchemaDescriptor(new EmployeeServicesMethodDescriptorSupplier("GetPatient"))
@@ -447,6 +447,37 @@ public final class EmployeeServicesGrpc {
       }
     }
     return getGetAllWardMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.UserOuterClass.Patient,
+      com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse> getGetMedicalInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMedicalInfo",
+      requestType = com.git_commit_therapy.proto.UserOuterClass.Patient.class,
+      responseType = com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.git_commit_therapy.proto.UserOuterClass.Patient,
+      com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse> getGetMedicalInfoMethod() {
+    io.grpc.MethodDescriptor<com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse> getGetMedicalInfoMethod;
+    if ((getGetMedicalInfoMethod = EmployeeServicesGrpc.getGetMedicalInfoMethod) == null) {
+      synchronized (EmployeeServicesGrpc.class) {
+        if ((getGetMedicalInfoMethod = EmployeeServicesGrpc.getGetMedicalInfoMethod) == null) {
+          EmployeeServicesGrpc.getGetMedicalInfoMethod = getGetMedicalInfoMethod =
+              io.grpc.MethodDescriptor.<com.git_commit_therapy.proto.UserOuterClass.Patient, com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMedicalInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.git_commit_therapy.proto.UserOuterClass.Patient.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EmployeeServicesMethodDescriptorSupplier("GetMedicalInfo"))
+              .build();
+        }
+      }
+    }
+    return getGetMedicalInfoMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam,
@@ -914,6 +945,37 @@ public final class EmployeeServicesGrpc {
     return getModifyMedicalInfoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.git_commit_therapy.proto.AppointmentOuterClass.Appointment,
+      com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse> getDeleteAppointmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAppointment",
+      requestType = com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.class,
+      responseType = com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.git_commit_therapy.proto.AppointmentOuterClass.Appointment,
+      com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse> getDeleteAppointmentMethod() {
+    io.grpc.MethodDescriptor<com.git_commit_therapy.proto.AppointmentOuterClass.Appointment, com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse> getDeleteAppointmentMethod;
+    if ((getDeleteAppointmentMethod = EmployeeServicesGrpc.getDeleteAppointmentMethod) == null) {
+      synchronized (EmployeeServicesGrpc.class) {
+        if ((getDeleteAppointmentMethod = EmployeeServicesGrpc.getDeleteAppointmentMethod) == null) {
+          EmployeeServicesGrpc.getDeleteAppointmentMethod = getDeleteAppointmentMethod =
+              io.grpc.MethodDescriptor.<com.git_commit_therapy.proto.AppointmentOuterClass.Appointment, com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAppointment"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.git_commit_therapy.proto.AppointmentOuterClass.Appointment.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EmployeeServicesMethodDescriptorSupplier("DeleteAppointment"))
+              .build();
+        }
+      }
+    }
+    return getDeleteAppointmentMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -1007,7 +1069,7 @@ public final class EmployeeServicesGrpc {
      *Get Patient data
      * </pre>
      */
-    default void getPatient(com.google.protobuf.Empty request,
+    default void getPatient(com.git_commit_therapy.proto.UserOuterClass.Patient request,
         io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.UserOuterClass.Patient> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPatientMethod(), responseObserver);
     }
@@ -1100,6 +1162,16 @@ public final class EmployeeServicesGrpc {
     default void getAllWard(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetAllWardResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllWardMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Get medical info from a patient
+     * </pre>
+     */
+    default void getMedicalInfo(com.git_commit_therapy.proto.UserOuterClass.Patient request,
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMedicalInfoMethod(), responseObserver);
     }
 
     /**
@@ -1251,6 +1323,16 @@ public final class EmployeeServicesGrpc {
         io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyMedicalInfoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getModifyMedicalInfoMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     *Delete a specific appointment
+     * </pre>
+     */
+    default void deleteAppointment(com.git_commit_therapy.proto.AppointmentOuterClass.Appointment request,
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAppointmentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1329,7 +1411,7 @@ public final class EmployeeServicesGrpc {
      *Get Patient data
      * </pre>
      */
-    public void getPatient(com.google.protobuf.Empty request,
+    public void getPatient(com.git_commit_therapy.proto.UserOuterClass.Patient request,
         io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.UserOuterClass.Patient> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPatientMethod(), getCallOptions()), request, responseObserver);
@@ -1432,6 +1514,17 @@ public final class EmployeeServicesGrpc {
         io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetAllWardResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAllWardMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Get medical info from a patient
+     * </pre>
+     */
+    public void getMedicalInfo(com.git_commit_therapy.proto.UserOuterClass.Patient request,
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMedicalInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1598,6 +1691,17 @@ public final class EmployeeServicesGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getModifyMedicalInfoMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *Delete a specific appointment
+     * </pre>
+     */
+    public void deleteAppointment(com.git_commit_therapy.proto.AppointmentOuterClass.Appointment request,
+        io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAppointmentMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1661,7 +1765,7 @@ public final class EmployeeServicesGrpc {
      *Get Patient data
      * </pre>
      */
-    public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient(com.google.protobuf.Empty request) {
+    public com.git_commit_therapy.proto.UserOuterClass.Patient getPatient(com.git_commit_therapy.proto.UserOuterClass.Patient request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPatientMethod(), getCallOptions(), request);
     }
@@ -1754,6 +1858,16 @@ public final class EmployeeServicesGrpc {
     public com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetAllWardResponse getAllWard(com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAllWardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *Get medical info from a patient
+     * </pre>
+     */
+    public com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse getMedicalInfo(com.git_commit_therapy.proto.UserOuterClass.Patient request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMedicalInfoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1905,6 +2019,16 @@ public final class EmployeeServicesGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getModifyMedicalInfoMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     *Delete a specific appointment
+     * </pre>
+     */
+    public com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse deleteAppointment(com.git_commit_therapy.proto.AppointmentOuterClass.Appointment request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAppointmentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1973,7 +2097,7 @@ public final class EmployeeServicesGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.git_commit_therapy.proto.UserOuterClass.Patient> getPatient(
-        com.google.protobuf.Empty request) {
+        com.git_commit_therapy.proto.UserOuterClass.Patient request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPatientMethod(), getCallOptions()), request);
     }
@@ -2075,6 +2199,17 @@ public final class EmployeeServicesGrpc {
         com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAllWardMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *Get medical info from a patient
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse> getMedicalInfo(
+        com.git_commit_therapy.proto.UserOuterClass.Patient request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMedicalInfoMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2241,6 +2376,17 @@ public final class EmployeeServicesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getModifyMedicalInfoMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *Delete a specific appointment
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse> deleteAppointment(
+        com.git_commit_therapy.proto.AppointmentOuterClass.Appointment request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAppointmentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DOCTOR = 0;
@@ -2257,21 +2403,23 @@ public final class EmployeeServicesGrpc {
   private static final int METHODID_GET_ALL_MEDICAL_EVENT = 11;
   private static final int METHODID_GET_MEDICAL_EVENT_DETAILS = 12;
   private static final int METHODID_GET_ALL_WARD = 13;
-  private static final int METHODID_CREATE_MEDICAL_EXAM = 14;
-  private static final int METHODID_CREATE_MEDICAL_EVENT = 15;
-  private static final int METHODID_CREATE_MEDICAL_INFO = 16;
-  private static final int METHODID_CREATE_APPOINTMENT = 17;
-  private static final int METHODID_CREATE_PATIENT = 18;
-  private static final int METHODID_CREATE_DOCTOR = 19;
-  private static final int METHODID_CREATE_STAFF = 20;
-  private static final int METHODID_CREATE_WARD = 21;
-  private static final int METHODID_MODIFY_APPOINTMENT = 22;
-  private static final int METHODID_MODIFY_PATIENT = 23;
-  private static final int METHODID_MODIFY_DOCTOR = 24;
-  private static final int METHODID_MODIFY_STAFF = 25;
-  private static final int METHODID_MODIFY_MEDICAL_EVENT = 26;
-  private static final int METHODID_MODIFY_MEDICAL_EXAM = 27;
-  private static final int METHODID_MODIFY_MEDICAL_INFO = 28;
+  private static final int METHODID_GET_MEDICAL_INFO = 14;
+  private static final int METHODID_CREATE_MEDICAL_EXAM = 15;
+  private static final int METHODID_CREATE_MEDICAL_EVENT = 16;
+  private static final int METHODID_CREATE_MEDICAL_INFO = 17;
+  private static final int METHODID_CREATE_APPOINTMENT = 18;
+  private static final int METHODID_CREATE_PATIENT = 19;
+  private static final int METHODID_CREATE_DOCTOR = 20;
+  private static final int METHODID_CREATE_STAFF = 21;
+  private static final int METHODID_CREATE_WARD = 22;
+  private static final int METHODID_MODIFY_APPOINTMENT = 23;
+  private static final int METHODID_MODIFY_PATIENT = 24;
+  private static final int METHODID_MODIFY_DOCTOR = 25;
+  private static final int METHODID_MODIFY_STAFF = 26;
+  private static final int METHODID_MODIFY_MEDICAL_EVENT = 27;
+  private static final int METHODID_MODIFY_MEDICAL_EXAM = 28;
+  private static final int METHODID_MODIFY_MEDICAL_INFO = 29;
+  private static final int METHODID_DELETE_APPOINTMENT = 30;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2307,7 +2455,7 @@ public final class EmployeeServicesGrpc {
               (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetAllStaffsResponse>) responseObserver);
           break;
         case METHODID_GET_PATIENT:
-          serviceImpl.getPatient((com.google.protobuf.Empty) request,
+          serviceImpl.getPatient((com.git_commit_therapy.proto.UserOuterClass.Patient) request,
               (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.UserOuterClass.Patient>) responseObserver);
           break;
         case METHODID_GET_ALL_PATIENTS:
@@ -2345,6 +2493,10 @@ public final class EmployeeServicesGrpc {
         case METHODID_GET_ALL_WARD:
           serviceImpl.getAllWard((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetAllWardResponse>) responseObserver);
+          break;
+        case METHODID_GET_MEDICAL_INFO:
+          serviceImpl.getMedicalInfo((com.git_commit_therapy.proto.UserOuterClass.Patient) request,
+              (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse>) responseObserver);
           break;
         case METHODID_CREATE_MEDICAL_EXAM:
           serviceImpl.createMedicalExam((com.git_commit_therapy.proto.MedicalExamOuterClass.MedicalExam) request,
@@ -2406,6 +2558,10 @@ public final class EmployeeServicesGrpc {
           serviceImpl.modifyMedicalInfo((com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo) request,
               (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyMedicalInfoResponse>) responseObserver);
           break;
+        case METHODID_DELETE_APPOINTMENT:
+          serviceImpl.deleteAppointment((com.git_commit_therapy.proto.AppointmentOuterClass.Appointment) request,
+              (io.grpc.stub.StreamObserver<com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2456,7 +2612,7 @@ public final class EmployeeServicesGrpc {
           getGetPatientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.google.protobuf.Empty,
+              com.git_commit_therapy.proto.UserOuterClass.Patient,
               com.git_commit_therapy.proto.UserOuterClass.Patient>(
                 service, METHODID_GET_PATIENT)))
         .addMethod(
@@ -2522,6 +2678,13 @@ public final class EmployeeServicesGrpc {
               com.google.protobuf.Empty,
               com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetAllWardResponse>(
                 service, METHODID_GET_ALL_WARD)))
+        .addMethod(
+          getGetMedicalInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.git_commit_therapy.proto.UserOuterClass.Patient,
+              com.git_commit_therapy.proto.EmployeeServicesOuterClass.GetMedicalInfoResponse>(
+                service, METHODID_GET_MEDICAL_INFO)))
         .addMethod(
           getCreateMedicalExamMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2627,6 +2790,13 @@ public final class EmployeeServicesGrpc {
               com.git_commit_therapy.proto.MedicalInfoOuterClass.MedicalInfo,
               com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyMedicalInfoResponse>(
                 service, METHODID_MODIFY_MEDICAL_INFO)))
+        .addMethod(
+          getDeleteAppointmentMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.git_commit_therapy.proto.AppointmentOuterClass.Appointment,
+              com.git_commit_therapy.proto.EmployeeServicesOuterClass.ModifyAppointmentResponse>(
+                service, METHODID_DELETE_APPOINTMENT)))
         .build();
   }
 
@@ -2689,6 +2859,7 @@ public final class EmployeeServicesGrpc {
               .addMethod(getGetAllMedicalEventMethod())
               .addMethod(getGetMedicalEventDetailsMethod())
               .addMethod(getGetAllWardMethod())
+              .addMethod(getGetMedicalInfoMethod())
               .addMethod(getCreateMedicalExamMethod())
               .addMethod(getCreateMedicalEventMethod())
               .addMethod(getCreateMedicalInfoMethod())
@@ -2704,6 +2875,7 @@ public final class EmployeeServicesGrpc {
               .addMethod(getModifyMedicalEventMethod())
               .addMethod(getModifyMedicalExamMethod())
               .addMethod(getModifyMedicalInfoMethod())
+              .addMethod(getDeleteAppointmentMethod())
               .build();
         }
       }

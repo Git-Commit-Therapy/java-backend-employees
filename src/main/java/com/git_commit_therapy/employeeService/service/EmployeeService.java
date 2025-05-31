@@ -82,7 +82,6 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                     builder.setWard(toProto(optionalDoctor.getWard()));
                 }
             }
-            log.fine("getDoctor: " + builder.build());
             return builder.build();
         });
     }
@@ -133,13 +132,46 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
     }
 
     @Override
-    public void getPatient(Empty request, StreamObserver<UserOuterClass.Patient> responseObserver) {
+    public void getPatient(UserOuterClass.Patient request, StreamObserver<UserOuterClass.Patient> responseObserver) {
         GrpcInterceptor(responseObserver, request,null,()->{
             UserOuterClass.Patient.Builder builder = UserOuterClass.Patient.newBuilder();
             String sub = getSubjectFromContext();
             if(sub != null){
-                Optional<Patient> optionalPatient = patientDao.findPatientById(sub);
+                Optional<Patient> optionalPatient = patientDao.findPatientById(request.getUser().getId());
                 optionalPatient.ifPresent(patient -> builder.setUser(EmployeeTransformer.toProto(patient.getUser())));
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
+    public void getMedicalInfo(UserOuterClass.Patient request, StreamObserver<EmployeeServicesOuterClass.GetMedicalInfoResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.GetMedicalInfoResponse.Builder builder = EmployeeServicesOuterClass.GetMedicalInfoResponse.newBuilder();
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                List<MedicalInfo> medicalInfoList = medicalInfoDao.findAllByPatientId(request.getUser().getId());
+                medicalInfoList.stream().map(EmployeeTransformer::toProto).forEach(builder::addMedicalInfo);
+            }
+            return builder.build();
+        });
+    }
+
+    @Override
+    public void deleteAppointment(AppointmentOuterClass.Appointment request, StreamObserver<EmployeeServicesOuterClass.ModifyAppointmentResponse> responseObserver) {
+        GrpcInterceptor(responseObserver, request,null,()->{
+            EmployeeServicesOuterClass.ModifyAppointmentResponse.Builder builder = EmployeeServicesOuterClass.ModifyAppointmentResponse.newBuilder();
+            String sub = getSubjectFromContext();
+            if(sub != null){
+                Optional<Appointment> appointment = appointmentDao.findAppointmentById(request.getAppointmentId());
+                if(appointment.isPresent()) {
+                    appointmentDao.deleteAppointment(appointment.get());
+                    builder.setSuccess(true);
+                    builder.setMessage("Appointment deleted successfully");
+                } else {
+                    builder.setSuccess(false);
+                    builder.setMessage("Appointment not found");
+                }
             }
             return builder.build();
         });
@@ -166,12 +198,12 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             EmployeeServicesOuterClass.GetAppointmentsResponse.Builder builder = EmployeeServicesOuterClass.GetAppointmentsResponse.newBuilder();
             String sub = getSubjectFromContext();
             if(sub != null){
-                // TODO: da capire il sub
-                Patient resFromDB = null;   //.getPatientBysub(sub);
-                if (resFromDB != null){
+                String patientID = request.getPatient().getUser().getId();
+                Optional<Patient> resFromDB = patientDao.findPatientById(patientID);
+                if (resFromDB.isPresent()){
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<Appointment> appointments = appointmentDao.findAll(resFromDB.getPatientId(), from, to);
+                    List<Appointment> appointments = appointmentDao.findAll(resFromDB.get().getPatientId(), from, to);
                     if (appointments != null){
                         appointments.stream().map(EmployeeTransformer::toProto).forEach(builder::addAppointments);
                     }
@@ -201,11 +233,11 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
             EmployeeServicesOuterClass.GetAllMedicalExamResponse.Builder builder = EmployeeServicesOuterClass.GetAllMedicalExamResponse.newBuilder();
             String sub = getSubjectFromContext();
             if(sub != null){
-                Doctor optionalDoctor = doctorDao.getDoctorBySub(sub);
-                if (optionalDoctor != null) {
+                Optional<Patient> patient = patientDao.findPatientById(request.getPatient().getUser().getId());
+                if (patient.isPresent()) {
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<MedicalExam> medicalExams = medicalExamDao.findAll(optionalDoctor.getDoctorId(), from, to);
+                    List<MedicalExam> medicalExams = medicalExamDao.findAll(patient.get().getPatientId(), from, to);
                     if (medicalExams != null){
                         medicalExams.stream().map(EmployeeTransformer::toProtoReduced).forEach(builder::addMedicalExams);
                     }
@@ -372,7 +404,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 MedicalInfo medicalInfo = new MedicalInfo();
                 medicalInfo.setId(request.getMedicalInfoId());
                 medicalInfo.setDescription(request.getDescription());
-                medicalInfo.setPatientID(toEntity(request.getPatient()));
+                medicalInfo.setPatient(toEntity(request.getPatient()));
 
                 MedicalInfo savedMedicalInfo = medicalInfoDao.upsert(medicalInfo);
 

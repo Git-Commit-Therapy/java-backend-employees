@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface MedicalEventRepository extends JpaRepository<MedicalEvent, Integer> {
 
-    @Query("SELECT me FROM MedicalEvent me JOIN FETCH MedicalExam medEx WHERE me.patient.patientId = :patientId " +
+    @Query("SELECT me FROM MedicalEvent me JOIN FETCH me.exams medEx WHERE me.patient.patientId = :patientId " +
             "AND me.fromDateTime BETWEEN :fromDate AND :toDate")
     List<MedicalEvent> findAllByPatientAndDateRange(String patientId, Date fromDate, Date toDate);
 
