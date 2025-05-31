@@ -322,7 +322,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 medicalExam.setDoctor(toEntity(request.getDoctor()));
                 medicalExam.setPatient(toEntity(request.getPatient()));
                 medicalExam.setMedicalEvent(toEntity(request.getMedicalEvent()));
-                medicalExam.getMedicalEvent().setExams(this.retrieveMedialExamList(request.getMedicalEvent().getMedicalExamIdsList()));
+                medicalExam.getMedicalEvent().setExams(this.retrieveMedicalExamList(request.getMedicalEvent().getMedicalExamIdsList()));
 
                 MedicalExam savedMedicalExam = medicalExamDao.upsert(medicalExam);
 
@@ -352,7 +352,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 medicalEvent.setToDateTime(convertToDate(request.getToDateTime()));
                 medicalEvent.setSeverity(SeverityCode.valueOf(request.getSeverityCode().name()));
                 medicalEvent.setDischargeLetter(request.getDischargeLetter());
-                medicalEvent.setExams(retrieveMedialExamList(request.getMedicalExamIdsList()));
+                medicalEvent.setExams(retrieveMedicalExamList(request.getMedicalExamIdsList()));
                 medicalEvent.setWard(toEntity(request.getWard()));
 
                 MedicalEvent savedMedicalEvent = medicalEventDao.upsert(medicalEvent);
@@ -760,7 +760,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                     if (request.hasDoctor()) medicalExam.setDoctor(toEntity(request.getDoctor()));
                     if (request.hasMedicalEvent()) {
                         medicalExam.setMedicalEvent(toEntity(request.getMedicalEvent()));
-                        medicalExam.getMedicalEvent().setExams(this.retrieveMedialExamList(request.getMedicalEvent().getMedicalExamIdsList()));
+                        medicalExam.getMedicalEvent().setExams(this.retrieveMedicalExamList(request.getMedicalEvent().getMedicalExamIdsList()));
                     }
                     if (StringUtils.isNotBlank(request.getExamType())) medicalExam.setExamType(request.getExamType());
                     if (StringUtils.isNotBlank(request.getMedicalReport())) medicalExam.setMedicalReport(request.getMedicalReport());
@@ -837,7 +837,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
      * Utility methods
      */
 
-    private List<MedicalExam> retrieveMedialExamList(List<Integer> medicalExamIdsList) {
+    private List<MedicalExam> retrieveMedicalExamList(List<Integer> medicalExamIdsList) {
         List<MedicalExam> medicalExamList = new ArrayList<>();
 
         for (Integer medicalExamId : medicalExamIdsList) {

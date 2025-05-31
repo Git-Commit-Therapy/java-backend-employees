@@ -51,7 +51,7 @@ public class MedicalEvent {
         this.severity = severity;
         this.dischargeLetter = "";
         this.patient = patient;
-        this.exams = new ArrayList<>(exams);
+        this.exams = new ArrayList<>();
         this.ward = null;
     }
 
