@@ -823,7 +823,7 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 if (optionalDoctor != null) {
                     Date from = EmployeeTransformer.convertToDate(request.getFromDate());
                     Date to = EmployeeTransformer.convertToDate(request.getToDate());
-                    List<Appointment> appointments = appointmentDao.findAll(optionalDoctor.getDoctorId(), from, to);
+                    List<Appointment> appointments = appointmentDao.findAllByDoctorAndDateRange(optionalDoctor.getDoctorId(), from, to);
                     if (appointments != null){
                         appointments.stream().map(EmployeeTransformer::toProto).forEach(builder::addAppointments);
                     }

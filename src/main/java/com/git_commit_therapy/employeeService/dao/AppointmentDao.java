@@ -27,6 +27,10 @@ public class AppointmentDao {
         return appointmentRepository.findAllByPatientAndDateRange(patientId,fromDate,toDate);
     }
 
+    public List<Appointment> findAllByDoctorAndDateRange(String doctorId, Date fromDate, Date toDate) {
+        return appointmentRepository.findAllByDoctorAndDateRange(doctorId, fromDate, toDate);
+    }
+
     public Appointment upsert(Appointment appointment) {
         Appointment app = appointmentRepository.save(appointment);
         appointmentRepository.flush();
