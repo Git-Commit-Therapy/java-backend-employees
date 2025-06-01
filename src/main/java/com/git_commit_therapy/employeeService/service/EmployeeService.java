@@ -352,20 +352,23 @@ public class EmployeeService extends EmployeeServicesGrpc.EmployeeServicesImplBa
                 medicalEvent.setToDateTime(convertToDate(request.getToDateTime()));
                 medicalEvent.setSeverity(SeverityCode.valueOf(request.getSeverityCode().name()));
                 medicalEvent.setDischargeLetter(request.getDischargeLetter());
-                medicalEvent.setExams(retrieveMedicalExamList(request.getMedicalExamIdsList()));
                 medicalEvent.setWard(toEntity(request.getWard()));
+                //Save the medical event
+                medicalEvent = medicalEventDao.upsert(medicalEvent);
+
+                medicalEvent.setExams(retrieveMedicalExamList(request.getMedicalExamIdsList()));
 
                 MedicalEvent savedMedicalEvent = medicalEventDao.upsert(medicalEvent);
 
                 if (savedMedicalEvent != null) {
-                    String mailBody = "Gentile "+medicalEvent.getPatient().getUser().getName()+" "+
+                    String mailBody = "Dear "+medicalEvent.getPatient().getUser().getName()+" "+
                             medicalEvent.getPatient().getUser().getSurname()+", "+
-                            "la informiamo che è stato creato un nuovo evento medico a suo nome.";
+                            "we inform you that a new medical event has been created in your name.";
 
                     EmailDTO newEmail = new EmailDTO(
                             senderMail,
                             medicalEvent.getPatient().getUser().getEmail(),
-                            "Creazione nuovo evento medico",
+                            "Creation of a new medical event",
                             mailBody,
                             null
                     );
