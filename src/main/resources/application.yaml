@@ -29,7 +29,7 @@ application:
     public-key: ${KEYCLOAK_PUBLIC_KEY}
   emergency:
     task:
-      clean-old-call: 30 #Time in seconds (for the schedule task)
-      max-old-call: 30 #Time in seconds
+      clean-old-call: ${EMERGENCY_CLEAN_OLD_CALL}  #Time in seconds (for the schedule task)
+      max-old-call: ${EMERGENCY_MAX_OLD_CALL}  #Time in seconds
   senderMail: ${SENDER_MAIL} #"therapyHospital@gmail.com"
   uriMail: ${MAIL_SERVER_URL}
