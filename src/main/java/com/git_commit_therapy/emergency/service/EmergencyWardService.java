@@ -66,18 +66,27 @@ public class EmergencyWardService extends EmergencyWardServicesGrpc.EmergencyWar
                     // Create the MedicalEvent
                     SeverityCode severityCode = EmployeeTransformer.fromProto(request.getSeverityCode());
                     MedicalEvent medicalEvent = new MedicalEvent(severityCode, patient.get());
-                    medicalEvent = medicalEventDao.upsert(medicalEvent);
-                    // Create the medicalExam
-                    MedicalExam medicalExam = new MedicalExam(request.getMedicalReport(), request.getExamType(), doctor.get(), patient.get(), medicalEvent);
-                    medicalEvent.addExam(medicalExam);
-                    // Persist data
-                    medicalEvent = medicalEventDao.upsert(medicalEvent);
 
                     // Add the patient to the emergency ward
                     String emIdentifier = emergencyWardDao.addPatient(patient.get(), severityCode);
+                    if(emIdentifier == null) {
+                        throw Status.ALREADY_EXISTS.withDescription("Patient already exists").asRuntimeException();
+                    }
                     builder.setPatient(request.getPatient());
                     builder.setEmergencyPatientId(emIdentifier);
                     builder.setMedicalEventId(medicalEvent.getId());
+                    try{
+                        medicalEvent = medicalEventDao.upsert(medicalEvent);
+                        // Create the medicalExam
+                        MedicalExam medicalExam = new MedicalExam(request.getMedicalReport(), request.getExamType(), doctor.get(), patient.get(), medicalEvent);
+                        medicalEvent.addExam(medicalExam);
+                        // Persist data
+                        medicalEvent = medicalEventDao.upsert(medicalEvent);
+                    }catch(Exception e){
+                        emergencyWardDao.removePatient(patient.get());
+                        throw Status.INTERNAL.withDescription("Error while creating medical event").asRuntimeException();
+                    }
+
                     return builder.build();
                 }
                 throw Status.NOT_FOUND.withDescription("Doctor not found").asRuntimeException();
